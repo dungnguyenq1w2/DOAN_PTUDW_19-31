@@ -1,0 +1,2 @@
+body : Montserrat, sans-serif
+.title: "Playfair Display", serif

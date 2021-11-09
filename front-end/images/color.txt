@@ -1,0 +1,6 @@
+Cam: 		rgb(240, 134, 50)
+Background hồng: 	rgba(240,135,50,.1)
+text xám: 		#a4a4a4, 	#444
+tên sản phẩm: 	#111
+text cam: 		#f08632
+background input: 	#fafafa
