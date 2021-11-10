@@ -11,3 +11,11 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-family: "Playfair Display", serif;
 }
+
+a {
+	border: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
