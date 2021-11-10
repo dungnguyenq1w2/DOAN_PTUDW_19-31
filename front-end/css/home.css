@@ -1,0 +1,265 @@
+@import "global.css";
+
+header {
+	/* width: 100%; */
+}
+
+.header__top {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100px;
+}
+
+.header__top__left {
+	display: flex;
+	flex: 4;
+	justify-content: center;
+}
+
+.header__top__left span {
+	cursor: pointer;
+}
+
+.header__top__mid {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+}
+
+.header__top__right {
+	display: flex;
+	flex: 4;
+	justify-content: center;
+}
+
+.header__top__right > * {
+	margin: 0 10px;
+}
+
+.header__top__right > img {
+	object-fit: contain;
+	cursor: pointer;
+}
+
+.header__top__right > p {
+	margin: 0;
+}
+
+.header__bottom {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(240, 134, 50);
+	/* width: 100vw; */
+}
+
+.header__bottom > * {
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: 800;
+	padding: 20px 35px 18px;
+	letter-spacing: 1px;
+	transition: all, 0.3s;
+}
+
+.header__bottom > *:hover {
+	background-color: black;
+	cursor: pointer;
+}
+
+.active {
+	background-color: black;
+}
+.title {
+	font-size: 46px;
+	color: #111111;
+	line-height: 60px;
+	font-weight: 700;
+	font-style: italic;
+	margin-bottom: 18 px;
+	position: relative;
+}
+
+.title__thin {
+	font-size: 46px;
+	color: #111111;
+	line-height: 60px;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: "Playfair Display", serif;
+}
+
+.section__title {
+	color: #f08632;
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	display: block;
+	margin-bottom: 10px;
+}
+/* .hero { */
+/* background-image: url("../images/hero-1.jpg"); */
+/* height: 700px; */
+/* width: 100%; */
+/* } */
+
+.hero__box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40%;
+	padding: 80px 50px;
+	background-color: white;
+	text-align: center;
+	border-radius: 10px;
+	background: rgb(255, 255, 255, 0.7);
+}
+
+.hero__box a {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 20px;
+	padding: 14px 30px;
+	color: #ffffff;
+	background: #f08632;
+	letter-spacing: 2px;
+	border: none;
+	border-radius: 10px;
+}
+.hero__box a:hover {
+	text-decoration: none;
+	color: inherit;
+	transition: all, 0.3s;
+}
+
+.about {
+	padding: 80px 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about__text {
+	flex: 0.3;
+	padding-right: 60px;
+}
+
+.about__text p {
+	margin-top: 30px;
+}
+
+.about__img {
+	flex: 0.3;
+	display: flex;
+	justify-content: center;
+}
+
+.about__img img {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.categories {
+	display: flex;
+	justify-content: center;
+	padding: 80px 80px 0px 80px;
+}
+
+.category {
+	padding: 0px 20px;
+	text-align: center;
+	cursor: pointer;
+	padding-bottom: 50px;
+	border-bottom: 2px solid rgba(240, 135, 50, 0.5);
+}
+
+.category:hover img {
+	transform: scale(1.1);
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+		rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.category > img {
+	height: 250px;
+	width: 250px;
+	border-radius: 100%;
+
+	transition: all, 0.3s;
+}
+
+.category > h4 {
+	margin-top: 20px;
+	color: #f08632;
+}
+
+.products {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 80px 280px 0px 280px;
+}
+
+.product {
+	margin: 10px;
+	cursor: pointer;
+}
+
+.product:hover span {
+	background-color: #f08632;
+	color: white;
+	transition: all, 0.3s;
+}
+
+.product__img {
+	position: relative;
+}
+
+.product span {
+	position: absolute;
+	bottom: -17px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	font-size: 15px;
+	background-color: #ffffff;
+	padding: 5px 15px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 6px;
+}
+
+.product__info {
+	margin-top: 35px;
+}
+.product__info h5 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.instagram {
+	background-color: rgba(240, 135, 50, 0.1);
+	padding: 80px 280px 80px 290px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.instagram__text {
+	margin-right: 100px;
+}
+.instagram__text > * {
+	margin-top: 30px;
+}
+
+.instagram__img > * {
+	margin: 15px;
+}
+
+.instagram__img :nth-child(2) {
+	transform: translateY(-30px);
+}
+.instagram__img :nth-child(5) {
+	transform: translateY(-30px);
+}
