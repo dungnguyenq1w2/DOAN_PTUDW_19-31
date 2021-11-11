@@ -11,16 +11,16 @@
 			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 			crossorigin="anonymous"
 		/>
-		<title>Document</title>
+		<title>Home</title>
 	</head>
 	<body>
 		<header>
 			<div class="header__top">
 				<div class="header__top__left">
-					<span>Sign in</span>
+					<a href="/pages/signIn.html"> Sign in </a>
 				</div>
 				<div class="header__top__mid">
-					<img src="images/logo.png" alt="logo" />
+					<img src="/images/logo.png" alt="logo" />
 				</div>
 				<div class="header__top__right">
 					<img class="" src="images/search.png" alt="search icon" />
@@ -31,10 +31,10 @@
 				</div>
 			</div>
 			<div class="header__bottom">
-				<div class="active">Home</div>
-				<div>Shop</div>
-				<div>About</div>
-				<div>Contact</div>
+				<a href="index.html" class="active"><div>Home</div></a>
+				<a href="pages/shop.html"><div>Shop</div></a>
+				<a href="pages/about.html"><div>About</div></a>
+				<a href="pages/contact.html"><div>Contact</div></a>
 			</div>
 		</header>
 
@@ -281,7 +281,7 @@
 			</div>
 		</section>
 
-		<footer>
+		<footer style="background-image: url(/images/footer-bg.jpg)">
 			<div class="footer__top">
 				<div class="footer__top__left">
 					<h4>Working hours</h4>

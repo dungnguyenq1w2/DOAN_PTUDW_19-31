@@ -7,6 +7,14 @@ body {
 	background-color: rgba(102, 105, 105, 0.062);
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 .signIn {
 	background-color: white;
 	display: flex;

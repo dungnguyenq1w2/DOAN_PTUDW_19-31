@@ -1,0 +1,55 @@
+@import "global.css";
+
+.about {
+	padding: 80px 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about__text {
+	flex: 0.3;
+	padding-right: 60px;
+}
+
+.about__text p {
+	margin-top: 30px;
+}
+
+.about__img {
+	flex: 0.3;
+	display: flex;
+	justify-content: center;
+}
+
+.about__img img {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.testimonial {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(240, 135, 50, 0.1);
+	padding: 40px 300px;
+}
+
+.testimonial__customer {
+	display: flex;
+	margin-top: 50px;
+}
+
+.testimonial__box {
+	margin: 0px 20px;
+}
+
+.testimonial__customer__info {
+	background-color: aliceblue;
+	padding: 10px 20px;
+}
+
+.testimonial__message {
+	background-color: bisque;
+	padding-top: 30px;
+	padding: 20px;
+}
