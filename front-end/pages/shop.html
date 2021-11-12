@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/shop.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<title>Shop</title>
+	</head>
+	<body>
+		<header>
+			<div class="header__top">
+				<div class="header__top__left">
+					<a href="../pages/signIn.html"> Sign in </a>
+				</div>
+				<div class="header__top__mid">
+					<img src="../images/logo.png" alt="logo" />
+				</div>
+				<div class="header__top__right">
+					<img class="" src="../images/search.png" alt="search icon" />
+					<span class="">|</span>
+					<img class="" src="../images/heart.png" alt="heart icon" />
+					<img class="" src="../images/cart.png" alt="cart icon" />
+					<p class="">Cart: $0.00</p>
+				</div>
+			</div>
+			<div class="header__bottom">
+				<a href="../index.html"><div>Home</div></a>
+				<a href="../pages/shop.html" class="active"><div>Shop</div></a>
+				<a href="..//pages/about.html"><div>About</div></a>
+				<a href="../pages/contact.html"><div>Contact</div></a>
+			</div>
+		</header>
+
+		<section class="shop">
+			<div class="shop__header">
+				<h1 class="title__thin">Shop</h1>
+				<div>
+					<a href="../index.html">Home</a>
+					<span>|</span>
+					<span>Shop</span>
+				</div>
+			</div>
+			<div class="shop__features">
+				<div class="shop__features__left">
+					<div class="shop__features__categories">
+						<select class="form-select" aria-label="Default select example">
+							<option selected>Categories</option>
+							<option value="1">Butter</option>
+							<option value="2">Donut</option>
+							<option value="3">Cupcake</option>
+							<option value="4">Red Velvet</option>
+							<option value="5">Biscuit</option>
+						</select>
+					</div>
+					<div class="shop__features__search">
+						<input type="text" placeholder="Search" />
+					</div>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="search__icon"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+						/>
+					</svg>
+				</div>
+				<div class="shop__features__right">
+					<div class="shop__features__sort">
+						<select class="form-select" aria-label="Default select example">
+							<option selected>Default sorting</option>
+							<option value="1">Name</option>
+							<option value="2">Price</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="shop__products">
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-1.jpg" alt="product-1" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Dozen Cupcakes</h5>
+						<h5>$32.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-2.jpg" alt="product-2" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Cookies and cream</h5>
+						<h5>$30.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-3.jpg" alt="product-3" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Gluten free mini dozen</h5>
+						<h5>$31.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-4.jpg" alt="product-4" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>cookie dough</h5>
+						<h5>$25.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-5.jpg" alt="product-5" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Vanilla salted caramel</h5>
+						<h5>$5.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-6.jpg" alt="product-6" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>German chocolate</h5>
+						<h5>$14.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-7.jpg" alt="product-7" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Dulce de leche</h5>
+						<h5>$32.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-8.jpg" alt="product-8" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Mississippi Mud</h5>
+						<h5>$8.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-9.jpg" alt="product-8" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Mississippi Mud</h5>
+						<h5>$8.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-10.jpg" alt="product-8" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Mississippi Mud</h5>
+						<h5>$8.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-11.jpg" alt="product-8" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Mississippi Mud</h5>
+						<h5>$8.00</h5>
+					</div>
+				</div>
+				<div class="product">
+					<div class="product__img">
+						<img src="../images/product-12.jpg" alt="product-8" />
+						<span>Cupccake</span>
+					</div>
+					<div class="product__info">
+						<h5>Mississippi Mud</h5>
+						<h5>$8.00</h5>
+					</div>
+				</div>
+			</div>
+			<div class="shop_pagination">
+				<nav aria-label="Page navigation example">
+					<ul class="pagination">
+						<li class=""><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Next">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="next"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9 5l7 7-7 7"
+									/>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<footer style="background-image: url(../images/footer-bg.jpg)">
+			<div class="footer__top">
+				<div class="footer__top__left">
+					<h4>Working hours</h4>
+					<span>Monday - Friday: 08:00 am - 08:30 pm</span>
+					<span>Saturday: 10:00 am - 16:30 pm</span>
+					<span>Sunday: 10:00 am - 16:30 pm</span>
+				</div>
+				<div class="footer__top__mid">
+					<img src="../images/footer-logo.png" alt="footer-logo" />
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi
+						quasi excepturi obcaecati nobis deserunt. In maxime veritatis vero
+					</p>
+				</div>
+				<div class="footer__top__right">
+					<h4>Subscribe</h4>
+					<p>Get latest updates and offers</p>
+					<input type="text" placeholder="Email" />
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<div class="footer__bottom__left">
+					<span>
+						Copyright ©2021 All rights reserved | This template is made with by
+						Colorlib
+					</span>
+				</div>
+				<div class="footer__bottom__right">
+					<span>Privacy Policy</span>
+					<span>Terms & Conditions</span>
+					<span>Site Map</span>
+				</div>
+			</div>
+		</footer>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
