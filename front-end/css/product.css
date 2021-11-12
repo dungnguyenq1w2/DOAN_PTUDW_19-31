@@ -1,0 +1,151 @@
+@import "global.css";
+
+.prođuct {
+	padding: 20px 330px;
+}
+
+.product__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.product__header a {
+	color: black;
+}
+
+.product__header span {
+	color: gray;
+	margin: 0px 2px;
+}
+
+.product__detail {
+	display: flex;
+	justify-content: center;
+	padding: 100px 100px;
+}
+
+.product__detail__img {
+	flex: 0.5;
+}
+
+.product__detail__info {
+	flex: 0.5;
+}
+.product__detail__info__header {
+	border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+}
+
+.product__detail__info__header span {
+	background-color: #181716;
+	color: white;
+	padding: 3px 10px;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.product__detail__info__header h3 {
+	color: #111;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 25px;
+	margin-bottom: 12px;
+	font-size: 24px;
+	font-family: "Montserrat", sans-serif;
+}
+
+.product__detail__info__header h4 {
+	color: #111;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 25px;
+	margin-bottom: 12px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+}
+
+.product__detail__info__describe p {
+	margin: 20px 0px;
+	font-family: "Montserrat", sans-serif;
+}
+
+.product__detail__info__label {
+	margin-bottom: 50px;
+}
+
+.product__detail__info__label ul {
+	list-style: none;
+}
+
+.product__detail__info__label li {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	color: rgba(128, 128, 128, 0.733);
+	margin: 5px 0px;
+}
+
+.product__detail__info__label li span {
+	color: #111;
+	padding-left: 5px;
+}
+
+.product__detail__option {
+	display: flex;
+	align-items: center;
+}
+
+.quantity {
+	border: 1px solid rgba(128, 128, 128, 0.459);
+}
+
+.qtybtn {
+	display: inline-block;
+	width: 46px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 5px;
+}
+
+.quantity input {
+	border: none;
+	width: 30px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.quantity input:focus-visible {
+	outline-width: 0;
+}
+
+.cart {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 11px 30px;
+	color: #fff;
+	background: #f08632;
+	letter-spacing: 2px;
+	margin-left: 40px;
+	font-size: 18px;
+	font-family: "Montserrat", sans-serif;
+}
+
+.product__detail__tab {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px 200px 100px 200px;
+}
+
+.product__detail__tab span {
+	margin-bottom: 30px;
+}
+
+.tab-content {
+	border-top: 1px solid rgba(128, 128, 128, 0.459);
+	padding: 30px;
+	text-align: center;
+}
