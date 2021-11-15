@@ -15,7 +15,7 @@ a:hover {
 	text-decoration: none;
 }
 
-.signIn {
+.signUp {
 	background-color: white;
 	display: flex;
 	justify-content: center;
@@ -23,50 +23,26 @@ a:hover {
 	border-radius: 10px;
 }
 
-.signIn__left img {
+.signUp__left img {
 	object-fit: cover;
 	height: 75vh;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
 
-.signIn__right {
+.signUp__right {
 	padding: 60px;
 	height: 100%;
-	display: grid;
-	place-content: center;
 	text-align: center;
 }
 
-.signIn__right h3 {
+.signUp__right h3 {
 	margin-bottom: 50px;
 	font-size: 28px;
 	letter-spacing: 5px;
 }
 
-.signIn__right__input {
-	display: flex;
-}
-
-.signIn__right__input input {
-	padding: 15px 10px;
-	font-size: 20px;
-	border: none;
-}
-.signIn__right__input input:focus-visible {
-	outline-width: 0 !important;
-}
-
-.signIn__right__input__username,
-.signIn__right__input__password {
-	border: 1px solid rgba(255, 94, 2, 0.247);
-}
-
-.signIn__right__input__username {
-	border-right: none;
-}
-
-.signIn__right button {
+.signUp__right button {
 	display: block;
 	text-decoration: none;
 	background-color: rgb(240, 134, 50);
@@ -80,7 +56,7 @@ a:hover {
 	cursor: pointer;
 }
 
-.signIn__right a {
+.signUp__right a {
 	margin: 10px 0px;
 	display: inline-block;
 	text-decoration: none;
@@ -88,6 +64,24 @@ a:hover {
 	font-size: 18px;
 }
 
-.signIn__right a:hover {
+.signUp__right a:hover {
 	text-decoration: none;
+}
+
+form label {
+	display: block;
+	margin-top: 10px;
+	text-align: left;
+}
+
+form input {
+	padding: 10px 0px;
+	font-size: 20px;
+	border: none;
+	border-bottom: 1px solid orange;
+
+	width: 100%;
+}
+form input:focus-visible {
+	outline-width: 0 !important;
 }
