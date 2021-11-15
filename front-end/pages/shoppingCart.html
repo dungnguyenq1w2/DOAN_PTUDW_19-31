@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/shoppingCart.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<title>Shopping Cart</title>
+	</head>
+	<body>
+		<header>
+			<div class="header__top">
+				<div class="header__top__left">
+					<a href="./signIn.html"> Sign in </a>
+				</div>
+				<div class="header__top__mid">
+					<img src="../images/logo.png" alt="logo" />
+				</div>
+				<div class="header__top__right">
+					<img src="../images/search.png" alt="search icon" />
+					<span>|</span>
+					<img src="../images/heart.png" alt="heart icon" />
+					<img src="../images/cart.png" alt="cart icon" />
+					<p>Cart: $0.00</p>
+				</div>
+			</div>
+			<div class="header__bottom">
+				<a href="../index.html" class="active"><div>Home</div></a>
+				<a href="./shop.html"><div>Shop</div></a>
+				<a href="./about.html"><div>About</div></a>
+				<a href="./contact.html"><div>Contact</div></a>
+			</div>
+		</header>
+
+        <main>
+            <section class="main__top">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <div class="title__thin">
+                                <h1><b>Shopping cart</b></h1>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="main__top__path">
+                                <a href="../index.html"><span>Home</span></a>
+                                <span>|</span>
+                                <span>Shopping cart</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+			<section class="main__shopping-cart">
+				<div class="container">
+					<div class="row">
+						<div class="col-8">
+							<div class="row">
+								<table class="table">
+									<tr class="table__head">
+										<th><h5>PRODUCT</h5></th>
+										<th><h5>QUANTITY</h5></th>
+										<th><h5>TOTAL</h5></th>
+										<th></th>
+									</tr>
+									<tr>
+										<td class="table__product">
+											<div class="table__product__img">
+												<img src="../images/product-12.jpg" alt="T-SHIRT CONTRAST POCKET">
+											</div>
+											<div class="table__product__details">
+												<h6>T-SHIRT CONTRAST POCKET</h6>
+												<h5>$98.49</h5>
+											</div>
+										</td>
+										<td class="table__quantity">
+											<div class="table__quantity__adjust">
+												<button type="button" class="decrease">-</button>
+												<input type="number" class="quantity-input" value="1">
+												<button type="button" class="increase">+</button>
+											</div>
+										</td>
+										<td class="table__total"><h5>$30.00</h5></td>
+										<td class="table__remove-product">
+											<div class="table__remove-product__img">
+												<img src="../images/close-icon.png" alt="Close icon">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__product">
+											<div class="table__product__img">
+												<img src="../images/product-8.jpg" alt="DIAGONAL TEXTURED CAP">
+											</div>
+											<div class="table__product__details">
+												<h6>T-SHIRT CONTRAST POCKET</h6>
+												<h5>$98.49</h5>
+											</div>
+										</td>
+										<td class="table__quantity">
+											<div class="table__quantity__adjust">
+												<button type="button" class="decrease">-</button>
+												<input type="number" class="quantity-input" value="1">
+												<button type="button" class="increase">+</button>
+											</div>
+										</td>
+										<td class="table__total"><h5>$30.00</h5></td>
+										<td class="table__remove-product">
+											<div class="table__remove-product__img">
+												<img src="../images/close-icon.png" alt="Close icon">
+											</div>
+										</td>
+									</tr>	
+									<tr>
+										<td class="table__product">
+											<div class="table__product__img">
+												<img src="../images/product-2.jpg" alt="BASIC FLOWING SCARF">
+											</div>
+											<div class="table__product__details">
+												<h6>T-SHIRT CONTRAST POCKET</h6>
+												<h5>$98.49</h5>
+											</div>
+										</td>
+										<td class="table__quantity">
+											<div class="table__quantity__adjust">
+												<button type="button" class="decrease">-</button>
+												<input type="number" class="quantity-input" value="1">
+												<button type="button" class="increase">+</button>
+											</div>
+										</td>
+										<td class="table__total"><h5>$30.00</h5></td>
+										<td class="table__remove-product">
+											<div class="table__remove-product__img">
+												<img src="../images/close-icon.png" alt="Close icon">
+											</div>
+										</td>
+									</tr>	
+									<tr>
+										<td class="table__product">
+											<div class="table__product__img">
+												<img src="../images/product-10.jpg" alt="BASIC FLOWING SCARF">
+											</div>
+											<div class="table__product__details">
+												<h6>T-SHIRT CONTRAST POCKET</h6>
+												<h5>$98.49</h5>
+											</div>
+										</td>
+										<td class="table__quantity">
+											<div class="table__quantity__adjust">
+												<button type="button" class="decrease">-</button>
+												<input type="number" class="quantity-input" value="1">
+												<button type="button" class="increase">+</button>
+											</div>
+										</td>
+										<td class="table__total"><h5>$30.00</h5></td>
+										<td class="table__remove-product">
+											<div class="table__remove-product__img">
+												<img src="../images/close-icon.png" alt="Close icon">
+											</div>
+										</td>
+										<td></td>
+									</tr>	
+								</table>
+							</div>
+							<div class="row justify-content-between shopping-choice">
+								<div class="col-4">
+									<div class="shopping-choice__continue">
+										<button type="button" class="btn btn-outline-secondary" onclick="location.href='#'">
+											CONTINUE SHOPPING
+										</button>
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="shopping-choice__update">
+										<button type="button" class="btn btn-secondary" onclick="location.href='#'">
+											<img src="../images/loading-icon.png" alt="Loading icon"> UPDATE CART
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="discount">
+								<h5>DISCOUNT CODES</h5>
+								<form action="#" class="input-group mb-3">
+									<input type="text" class="form-control" placeholder="Coupon code" aria-label="Coupon code" aria-describedby="apply-button">
+									<button class="btn btn-secondary" type="submit" id="apply-button">APPLY</button>
+								</form>
+							</div>
+							<div class="cart-total">
+								<h5>CART TOTAL</h5>
+								<ul>
+									<li>Subtotal<span>$169.50</span></li>
+									<li>Total<span>$169.50</span></li>
+								</ul>
+								<button class="btn btn-secondary" type="submit" style="width:100%;">Proceed to checkout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+        </main>
+        <footer style="background-image: url(../images/footer-bg.jpg)">
+			<div class="footer__top">
+				<div class="footer__top__left">
+					<h4>Working hours</h4>
+					<span>Monday - Friday: 08:00 am - 08:30 pm</span>
+					<span>Saturday: 10:00 am - 16:30 pm</span>
+					<span>Sunday: 10:00 am - 16:30 pm</span>
+				</div>
+				<div class="footer__top__mid">
+					<img src="../images/footer-logo.png" alt="footer-logo" />
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi
+						quasi excepturi obcaecati nobis deserunt. In maxime veritatis vero
+					</p>
+				</div>
+				<div class="footer__top__right">
+					<h4>Subscribe</h4>
+					<p>Get latest updates and offers</p>
+					<input type="text" placeholder="Email" />
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<div class="footer__bottom__left">
+					<span>
+						Copyright ©2021 All rights reserved | This template is made with by
+						Colorlib
+					</span>
+				</div>
+				<div class="footer__bottom__right">
+					<span>Privacy Policy</span>
+					<span>Terms & Conditions</span>
+					<span>Site Map</span>
+				</div>
+			</div>
+		</footer>
+
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
