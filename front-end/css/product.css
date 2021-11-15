@@ -149,3 +149,52 @@
 	padding: 30px;
 	text-align: center;
 }
+
+.review {
+	padding: 40px 500px;
+	background-color: rgba(240, 135, 50, 0.1);
+}
+
+.review__comments {
+	padding: 10px;
+	background-color: #fff;
+}
+
+.testimonial__box {
+	margin: 0px 20px;
+	border-bottom: 1px solid orange;
+}
+
+.testimonial__customer__info {
+	padding: 10px 20px;
+	font-style: bold;
+	letter-spacing: 1px;
+	display: flex;
+	align-items: center;
+}
+.testimonial__customer__info img {
+	height: 70px;
+	border-radius: 100%;
+}
+.testimonial__customer__info div {
+	margin-left: 10px;
+}
+
+.testimonial__customer__info__text > span {
+	display: block;
+}
+
+.testimonial__message {
+	padding: 20px;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+
+.comment__input {
+	margin-top: 20px;
+	width: 100%;
+	padding: 10px 15px;
+	font-size: 18px;
+	background-color: aliceblue;
+	border: none;
+}
