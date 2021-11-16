@@ -92,4 +92,5 @@ main {
 .send-button > button {
     height: 50px;
     letter-spacing: 3px;
+    background-color: black;
 }

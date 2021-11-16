@@ -81,6 +81,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .shopping-choice__update > button {
     height: 50px;
     float: right;
+    background-color: black;
 }
 
 .discount > h5 {
@@ -93,6 +94,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .discount > form > button {
     height: 50px;
+    background-color: black;
 }
 
 .cart-total {
@@ -115,4 +117,5 @@ input[type="number"]::-webkit-outer-spin-button {
 .cart-total > button {
     width: 100%;
     height: 50px;
+    background-color: black;
 }
