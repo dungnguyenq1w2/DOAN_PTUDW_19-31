@@ -3,7 +3,7 @@
 body {
 	display: grid;
 	place-content: center;
-	padding: 100px 0px;
+	/*padding: 100px 0px;*/
 	background-color: rgba(102, 105, 105, 0.062);
 }
 

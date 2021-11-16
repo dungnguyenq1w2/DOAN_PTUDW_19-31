@@ -1,0 +1,168 @@
+<main>
+      <section class="main__top">
+          <div class="container">
+              <div class="row justify-content-between">
+                  <div class="col-auto">
+                      <div class="title__thin">
+                          <h1><b>Shopping cart</b></h1>
+                      </div>
+                  </div>
+                  <div class="col-auto">
+                      <div class="main__top__path">
+                          <a href="/"><span>Home</span></a>
+                          <span>|</span>
+                          <span>Shopping cart</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+<section class="main__shopping-cart">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <table class="table">
+            <tr class="table__head">
+              <th><h5>PRODUCT</h5></th>
+              <th><h5>QUANTITY</h5></th>
+              <th><h5>TOTAL</h5></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td class="table__product">
+                <div class="table__product__img">
+                  <img src="/img/product-12.jpg" alt="T-SHIRT CONTRAST POCKET">
+                </div>
+                <div class="table__product__details">
+                  <h6>T-SHIRT CONTRAST POCKET</h6>
+                  <h5>$98.49</h5>
+                </div>
+              </td>
+              <td class="table__quantity">
+                <div class="table__quantity__adjust">
+                  <button type="button" class="decrease">-</button>
+                  <input type="number" class="quantity-input" value="1">
+                  <button type="button" class="increase">+</button>
+                </div>
+              </td>
+              <td class="table__total"><h5>$30.00</h5></td>
+              <td class="table__remove-product">
+                <div class="table__remove-product__img">
+                  <img src="/img/close-icon.png" alt="Close icon">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="table__product">
+                <div class="table__product__img">
+                  <img src="/img/product-8.jpg" alt="DIAGONAL TEXTURED CAP">
+                </div>
+                <div class="table__product__details">
+                  <h6>T-SHIRT CONTRAST POCKET</h6>
+                  <h5>$98.49</h5>
+                </div>
+              </td>
+              <td class="table__quantity">
+                <div class="table__quantity__adjust">
+                  <button type="button" class="decrease">-</button>
+                  <input type="number" class="quantity-input" value="1">
+                  <button type="button" class="increase">+</button>
+                </div>
+              </td>
+              <td class="table__total"><h5>$30.00</h5></td>
+              <td class="table__remove-product">
+                <div class="table__remove-product__img">
+                  <img src="/img/close-icon.png" alt="Close icon">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="table__product">
+                <div class="table__product__img">
+                  <img src="/img/product-2.jpg" alt="BASIC FLOWING SCARF">
+                </div>
+                <div class="table__product__details">
+                  <h6>T-SHIRT CONTRAST POCKET</h6>
+                  <h5>$98.49</h5>
+                </div>
+              </td>
+              <td class="table__quantity">
+                <div class="table__quantity__adjust">
+                  <button type="button" class="decrease">-</button>
+                  <input type="number" class="quantity-input" value="1">
+                  <button type="button" class="increase">+</button>
+                </div>
+              </td>
+              <td class="table__total"><h5>$30.00</h5></td>
+              <td class="table__remove-product">
+                <div class="table__remove-product__img">
+                  <img src="/img/close-icon.png" alt="Close icon">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="table__product">
+                <div class="table__product__img">
+                  <img src="/img/product-10.jpg" alt="BASIC FLOWING SCARF">
+                </div>
+                <div class="table__product__details">
+                  <h6>T-SHIRT CONTRAST POCKET</h6>
+                  <h5>$98.49</h5>
+                </div>
+              </td>
+              <td class="table__quantity">
+                <div class="table__quantity__adjust">
+                  <button type="button" class="decrease">-</button>
+                  <input type="number" class="quantity-input" value="1">
+                  <button type="button" class="increase">+</button>
+                </div>
+              </td>
+              <td class="table__total"><h5>$30.00</h5></td>
+              <td class="table__remove-product">
+                <div class="table__remove-product__img">
+                  <img src="/img/close-icon.png" alt="Close icon">
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+        <div class="row justify-content-between shopping-choice">
+          <div class="col-4">
+            <div class="shopping-choice__continue">
+              <button type="button" class="btn btn-outline-secondary" onclick="location.href='#'">
+                CONTINUE SHOPPING
+              </button>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="shopping-choice__update">
+              <button type="button" class="btn btn-secondary" onclick="location.href='#'">
+                <img src="/img/loading-icon.png" alt="Loading icon"> UPDATE CART
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="discount">
+          <h5>DISCOUNT CODES</h5>
+          <form action="#" class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Coupon code" aria-label="Coupon code" aria-describedby="apply-button">
+            <button class="btn btn-secondary" type="submit" id="apply-button">APPLY</button>
+          </form>
+        </div>
+        <div class="cart-total">
+          <h5>CART TOTAL</h5>
+          <ul>
+            <li>Subtotal<span>$169.50</span></li>
+            <li>Total<span>$169.50</span></li>
+          </ul>
+          <button class="btn btn-secondary" type="submit" style="width:100%;" onclick="location.href='../xong/checkout.html'">Proceed to checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>

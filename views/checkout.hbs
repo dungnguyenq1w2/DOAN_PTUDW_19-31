@@ -1,0 +1,153 @@
+<main>
+    <section class="main__top">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <div class="title__thin">
+                        <h1><b>Checkout</b></h1>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="main__top__path">
+                        <a href="/l"><span>Home</span></a>
+                        <span>|</span>
+                        <span>Checkout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main__checkout">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="main__checkout__left">
+                        <div class="coupon-link">
+                            <h6 onclick="location.href='#'">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M10.605 0h-10.605v10.609l13.391 13.391 10.609-10.604-13.395-13.396zm-4.191 6.414c-.781.781-2.046.781-2.829.001-.781-.783-.781-2.048 0-2.829.782-.782 2.048-.781 2.829-.001.782.782.781 2.047 0 2.829z"/>
+                                </svg>
+                                <span>&nbsp;Have a coupon? <a href="/shoppingCart">Click here</a> to enter your code.</span>
+                            </h6>
+                        </div>
+                        <div class="bill-details">
+                            <div class="bill-details__title">
+                                <h5>BILLING DETAILS</h5>
+                            </div>
+                            <form class="bill-details__content" action="#">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="first-name" class="form-label">First Name<span>*</span></label>
+                                            <input type="text" class="form-control input-lg" id="first-name">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="last-name" class="form-label">Last Name<span>*</span></label>
+                                            <input type="text" class="form-control input-lg" id="last-name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="country" class="form-label">Country<span>*</span></label>
+                                    <input type="text" class="form-control" id="country">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address<span>*</span></label>
+                                    <input type="text" class="form-control street-address" id="address" placeholder="Street Address">
+                                    <input type="text" class="form-control optional-address" id="address" placeholder="Apartment, suite, unite ect (optional)">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="city" class="form-label">Town/City<span>*</span></label>
+                                    <input type="text" class="form-control" id="city">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="state" class="form-label">Country/State<span>*</span></label>
+                                    <input type="text" class="form-control" id="state">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="post-code" class="form-label">Postcode/ZIP<span>*</span></label>
+                                    <input type="text" class="form-control" id="post-code">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label">Phone<span>*</span></label>
+                                            <input type="tel" class="form-control" id="phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email<span>*</span></label>
+                                            <input type="email" class="form-control" id="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="checkbox" class="form-check-input" id="create-account">
+                                    <label for="create-account" class="form-check-label">Create an account?</label>
+                                </div>
+                                <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page</p>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Account Password<span>*</span></label>
+                                    <input type="password" class="form-control" id="password">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="checkbox" class="form-check-input" id="create-note">
+                                    <label for="create-note" class="form-check-label">Note about your order, e.g, special notes for delivery</label>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="note" class="form-label">Order notes<span>*</span></label>
+                                    <input type="text" class="form-control" id="note" placeholder="Note about your order, e.g, special notes for delivery">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="main__checkout__right">
+                        <div class="your-order">
+                            <div class="your-order__title">
+                                <h5>YOUR ORDER</h5>
+                            </div>
+                            <div class="your-order__product">
+                                <h6>Product<span>Total</span></h6>
+                                <ol>
+                                    <li>Vanilla salted caramel<span>$300.0</span></li>
+                                    <li>German chocolate<span>$170.0</span></li>
+                                    <li>Sweet autumn<span>$170.0</span></li>
+                                    <li>Cluten free mini dozen<span>$170.0</span></li>
+                                </ol>
+                            </div>
+                            <ul class="your-order__total">
+                                <li><h6>Subtotal<span>$750.99</span></h6></li>
+                                <li><h6>Total<span>$750.99</span></h6></li>
+                            </ul>
+                            <div class="some-checkbox">
+                                <div class="mb-3">
+                                    <input type="checkbox" class="form-check-input" id="create-account2">
+                                    <label for="create-account2" class="form-check-label">Create an account?</label>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div class="mb-3">
+                                    <input type="checkbox" class="form-check-input" id="check-payment">
+                                    <label for="check-payment" class="form-check-label">Check Payment</label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="checkbox" class="form-check-input" id="paypal">
+                                    <label for="paypal" class="form-check-label">Paypal</label>
+                                </div>
+                            </div>
+                            <div class="place-order-button">
+                                <button type="button" class="btn btn-secondary" onclick="location.href='#'">
+                                    PLACE ORDER
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
