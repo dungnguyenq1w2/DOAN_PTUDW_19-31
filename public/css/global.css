@@ -155,9 +155,10 @@ header {
   color: white;
 }
 
-/* .active {
+.active {
   background-color: black;
-} */
+}
+
 .title {
   font-size: 46px;
   color: #111111;
