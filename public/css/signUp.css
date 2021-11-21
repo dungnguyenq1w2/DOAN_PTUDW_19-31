@@ -1,87 +1,70 @@
-@import "global.css";
-
-body {
-	display: grid;
-	place-content: center;
-	/*padding: 100px 0px;*/
-	background-color: rgba(102, 105, 105, 0.062);
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
 .signUp {
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-	border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
 }
 
 .signUp__left img {
-	object-fit: cover;
-	height: 75vh;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+  object-fit: cover;
+  height: 75vh;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .signUp__right {
-	padding: 60px;
-	height: 100%;
-	text-align: center;
+  padding: 60px;
+  height: 100%;
+  text-align: center;
 }
 
 .signUp__right h3 {
-	margin-bottom: 50px;
-	font-size: 28px;
-	letter-spacing: 5px;
+  margin-bottom: 50px;
+  font-size: 28px;
+  letter-spacing: 5px;
 }
 
 .signUp__right button {
-	display: block;
-	text-decoration: none;
-	background-color: rgb(240, 134, 50);
-	color: white;
-	padding: 12px 0px;
-	width: 100%;
-	font-size: 18px;
-	font-weight: bold;
-	border: none;
-	margin-top: 20px;
-	cursor: pointer;
+  display: block;
+  text-decoration: none;
+  background-color: rgb(240, 134, 50);
+  color: white;
+  padding: 12px 0px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 .signUp__right a {
-	margin: 10px 0px;
-	display: inline-block;
-	text-decoration: none;
-	color: rgb(240, 134, 50);
-	font-size: 18px;
+  margin: 10px 0px;
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(240, 134, 50);
+  font-size: 18px;
 }
 
 .signUp__right a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 form label {
-	display: block;
-	margin-top: 10px;
-	text-align: left;
+  display: block;
+  margin-top: 10px;
+  text-align: left;
 }
 
 form input {
-	padding: 10px 0px;
-	font-size: 20px;
-	border: none;
-	border-bottom: 1px solid orange;
+  padding: 10px 0px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid orange;
 
-	width: 100%;
+  width: 100%;
 }
 form input:focus-visible {
-	outline-width: 0 !important;
+  outline-width: 0 !important;
 }

@@ -1,201 +1,213 @@
-@import "global.css";
-
-.prođuct {
-	padding: 20px 330px;
+#product {
+  padding: 20px 330px;
 }
 
 .product__header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .product__header a {
-	color: black;
+  color: black;
 }
 
 .product__header span {
-	color: gray;
-	margin: 0px 2px;
+  color: gray;
+  margin: 0px 2px;
 }
 
 .product__detail {
-	display: flex;
-	justify-content: center;
-	padding: 100px 100px;
+  display: flex;
+  justify-content: center;
+  padding: 100px 100px;
 }
 
 .product__detail__img {
-	flex: 0.5;
+  flex: 0.5;
 }
 
 .product__detail__info {
-	flex: 0.5;
+  flex: 0.5;
 }
 .product__detail__info__header {
-	border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.356);
 }
 
 .product__detail__info__header span {
-	background-color: #181716;
-	color: white;
-	padding: 3px 10px;
-	border-radius: 5px;
-	display: inline-block;
+  background-color: #181716;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .product__detail__info__header h3 {
-	color: #111;
-	font-weight: 600;
-	text-transform: uppercase;
-	margin-top: 25px;
-	margin-bottom: 12px;
-	font-size: 24px;
-	font-family: "Montserrat", sans-serif;
+  color: #111;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .product__detail__info__header h4 {
-	color: #111;
-	font-weight: 600;
-	text-transform: uppercase;
-	margin-top: 25px;
-	margin-bottom: 12px;
-	font-family: "Montserrat", sans-serif;
-	font-size: 20px;
+  color: #111;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
 }
 
 .product__detail__info__describe p {
-	margin: 20px 0px;
-	font-family: "Montserrat", sans-serif;
+  margin: 20px 0px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .product__detail__info__label {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .product__detail__info__label ul {
-	list-style: none;
+  list-style: none;
 }
 
 .product__detail__info__label li {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 600;
-	color: rgba(128, 128, 128, 0.733);
-	margin: 5px 0px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: rgba(128, 128, 128, 0.733);
+  margin: 5px 0px;
 }
 
 .product__detail__info__label li span {
-	color: #111;
-	padding-left: 5px;
+  color: #111;
+  padding-left: 5px;
 }
 
 .product__detail__option {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .quantity {
-	border: 1px solid rgba(128, 128, 128, 0.459);
+  border: 1px solid rgba(128, 128, 128, 0.459);
 }
 
 .qtybtn {
-	display: inline-block;
-	width: 46px;
-	text-align: center;
-	font-size: 24px;
-	font-weight: 600;
-	padding: 5px;
-	cursor: pointer;
+  display: inline-block;
+  width: 46px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .quantity input {
-	border: none;
-	width: 30px;
-	text-align: center;
-	font-size: 24px;
-	font-weight: 600;
+  border: none;
+  width: 30px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .quantity input:focus-visible {
-	outline-width: 0;
+  outline-width: 0;
 }
 
 .cart {
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 600;
-	text-transform: uppercase;
-	padding: 11px 30px;
-	color: #fff;
-	background: #f08632;
-	letter-spacing: 2px;
-	margin-left: 40px;
-	font-size: 18px;
-	font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 11px 30px;
+  color: #fff !important;
+  background: #f08632;
+  letter-spacing: 2px;
+  margin-left: 40px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .product__detail__tab {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 0px 200px 100px 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 200px 100px 200px;
 }
 
 .product__detail__tab span {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .tab-content {
-	border-top: 1px solid rgba(128, 128, 128, 0.459);
-	padding: 30px;
-	text-align: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.459);
+  padding: 30px;
+  text-align: center;
 }
 
 .review {
-	padding: 40px 500px;
-	background-color: rgba(240, 135, 50, 0.1);
+  padding: 40px 500px;
+  background-color: rgba(240, 135, 50, 0.1);
 }
 
 .review__comments {
-	padding: 10px;
-	background-color: #fff;
+  padding: 10px;
+  background-color: #fff;
 }
 
-.testimonial__box {
-	margin: 0px 20px;
-	border-bottom: 1px solid orange;
+.comment__box {
+  margin: 0px 20px;
+  border-bottom: 1px solid orange;
 }
 
-.testimonial__customer__info {
-	padding: 10px 20px;
-	font-style: bold;
-	letter-spacing: 1px;
-	display: flex;
-	align-items: center;
+.comment__customer__info {
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
 }
-.testimonial__customer__info img {
-	height: 70px;
-	border-radius: 100%;
+.comment__customer__info img {
+  height: 70px;
+  border-radius: 100%;
 }
-.testimonial__customer__info div {
-	margin-left: 10px;
-}
-
-.testimonial__customer__info__text > span {
-	display: block;
+.comment__customer__info div {
+  margin-left: 10px;
 }
 
-.testimonial__message {
-	padding: 20px;
-	font-style: italic;
-	letter-spacing: 1px;
+.comment__customer__info > h4 {
+  font-size: 1rem;
+}
+
+.comment__customer__info > span {
+  display: block;
+}
+
+.comment__message {
+  padding: 20px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+.sendComment {
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    margin-top: 20px;
 }
 
 .comment__input {
-	margin-top: 20px;
-	width: 100%;
-	padding: 10px 15px;
-	font-size: 18px;
-	background-color: aliceblue;
-	border: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+}
+
+.send__btn {
+    border: none;
+    padding: 10px;
+    background-color: transparent;
 }

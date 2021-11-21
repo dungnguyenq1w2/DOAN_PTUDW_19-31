@@ -1,37 +1,37 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Cake" });
 });
 
-router.get('/signIn', function(req, res, next) {
-  res.render('signIn', { title: 'Express' });
+router.get("/signIn", function (req, res, next) {
+  res.render("signIn", { title: "Sign In" });
 });
 
-router.get('/about', (req, res, next) => {
-  res.render('about');
+router.get("/about", (req, res, next) => {
+  res.render("about", { title: "About", path: "about" });
 });
 
-router.get('/contact',(req, res, next) => {
-  res.render('contact');
+router.get("/contact", (req, res, next) => {
+  res.render("contact", { title: "Contact" });
 });
 
-router.get('/shop',(req, res, next) => {
-  res.render('shop');
+router.get("/shop", (req, res, next) => {
+  res.render("shop", { title: "Shop" });
 });
 
-router.get('/checkout',(req, res, next) => {
-  res.render('checkout');
+router.get("/checkout", (req, res, next) => {
+  res.render("checkout", { title: "Checkout" });
 });
 
-router.get('/shoppingCart',(req, res, next) => {
-  res.render('shoppingCart');
+router.get("/shoppingCart", (req, res, next) => {
+  res.render("shoppingCart", { title: "Shopping Cart" });
 });
 
-router.get('/product',(req, res, next) => {
-  res.render('product');
+router.get("/product", (req, res, next) => {
+  res.render("product", { title: "Product" });
 });
 
 module.exports = router;

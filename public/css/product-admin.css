@@ -1,40 +1,38 @@
-@import "global.css";
-
 .main__top {
-    padding: 50px 100px;
+  padding: 50px 100px;
 }
 
 .main__top__path > a,
 .main__top__path > span {
-    color:rgb(63, 62, 62);
-    font-size: 110%;
+  color: rgb(63, 62, 62);
+  font-size: 110%;
 }
 
 .product-big {
-    display: block;
-    margin-left: 100px;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 10px;
+  display: block;
+  margin-left: 100px;
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 10px;
 }
 
 .product-big > img {
-    height: 420px;
-    width: 420px;
+  height: 420px;
+  width: 420px;
 }
 
 .main__product {
-    padding: 30px 0px;
+  padding: 30px 0px;
 }
 
 .product-detail {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .product-detail button {
-    height: 40px;
+  height: 40px;
 }
 
 .main__product button {
-    background-color: black;
+  background-color: black;
 }

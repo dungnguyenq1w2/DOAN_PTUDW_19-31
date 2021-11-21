@@ -1,121 +1,118 @@
-@import "global.css";
-
 .main__top {
-    padding: 40px 330px;
+  padding: 40px 330px;
 }
 
 .main__top__path {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 .main__top__path > a > span {
-    color:rgb(63, 62, 62);
+  color: rgb(63, 62, 62);
 }
 
 .main__top__path span {
-    font-size: 110%;
+  font-size: 110%;
 }
 
-
 /* style o cho the td html moi anh huong */
-/* td.table__product { 
+/* td.table__product {
     padding: 20px 5px;
 } */
 
 .table__product__img {
-    float: left;
+  float: left;
 }
 
 .table__product__img > img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .table__product__details {
-    float: left;
-    padding-left: 20px;
-    padding-top:25px;
+  float: left;
+  padding-left: 20px;
+  padding-top: 25px;
 }
 
 .table__quantity__adjust {
-    padding-top: 35px;
-    padding-left: 10px;
+  padding-top: 35px;
+  padding-left: 10px;
 }
 
 .table__quantity__adjust .increase,
 .table__quantity__adjust .decrease {
-    border: none;
-    background-color: white;
+  border: none;
+  background-color: white;
 }
 
 .table__quantity__adjust .quantity-input {
-    border: none;
-    background-color: white;
-    width: 50px;
-    text-align: center;
+  border: none;
+  background-color: white;
+  width: 50px;
+  text-align: center;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .table__total {
-    /* style ngay trong the td moi anh huong */
-    /* padding: 58px 0px;*/
-    vertical-align: middle;
+  /* style ngay trong the td moi anh huong */
+  /* padding: 58px 0px;*/
+  vertical-align: middle;
 }
 
 .table__remove-product__img {
-    padding-top: 32px;
+  padding-top: 32px;
 }
 
 .shopping-choice {
-    padding: 20px 0px 30px;
+  padding: 20px 0px 30px;
 }
 
 .shopping-choice__continue > button {
-    height: 50px;
+  height: 50px;
 }
 .shopping-choice__update > button {
-    height: 50px;
-    float: right;
-    background-color: black;
+  height: 50px;
+  float: right;
+  background-color: black;
 }
 
 .discount > h5 {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .discount > form {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .discount > form > button {
-    height: 50px;
-    background-color: black;
+  height: 50px;
+  background-color: black;
 }
 
 .cart-total {
-    margin-top: 50px;
-    padding: 40px;
-    background-color: #fdf3ea;
+  margin-top: 50px;
+  padding: 40px;
+  background-color: #fdf3ea;
 }
 
 .cart-total > ul {
-    list-style-type: none;
-    padding: 20px 0px;
+  list-style-type: none;
+  padding: 20px 0px;
 }
 
 .cart-total > ul > li > span {
-    font-weight: bold;
-    color: #e36d0c;
-    float: right;
+  font-weight: bold;
+  color: #e36d0c;
+  float: right;
 }
 
 .cart-total > button {
-    width: 100%;
-    height: 50px;
-    background-color: black;
+  width: 100%;
+  height: 50px;
+  background-color: black;
 }

@@ -1,132 +1,130 @@
-@import "global.css";
-
 .about {
-	padding: 80px 100px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  padding: 80px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about__text {
-	flex: 0.3;
-	padding-right: 60px;
+  flex: 0.3;
+  padding-right: 60px;
 }
 
 .about__text p {
-	margin-top: 30px;
+  margin-top: 30px;
 }
 
 .about__img {
-	flex: 0.3;
-	display: flex;
-	justify-content: center;
+  flex: 0.3;
+  display: flex;
+  justify-content: center;
 }
 
 .about__img img {
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .testimonial {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: rgba(240, 135, 50, 0.1);
-	padding: 40px 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(240, 135, 50, 0.1);
+  padding: 40px 300px;
 }
 
 .testimonial__customer {
-	display: flex;
-	margin-top: 50px;
+  display: flex;
+  margin-top: 50px;
 }
 
 .testimonial__box {
-	margin: 0px 20px;
-	box-shadow: 2px 3px 7px gray;
+  margin: 0px 20px;
+  box-shadow: 2px 3px 7px gray;
 }
 
 .testimonial__customer__info {
-	background-color: aliceblue;
-	padding: 10px 20px;
-	font-style: bold;
-	letter-spacing: 1px;
-	display: flex;
-	align-items: center;
+  background-color: aliceblue;
+  padding: 10px 20px;
+  font-style: bold;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
 }
 .testimonial__customer__info img {
-	height: 70px;
-	border-radius: 100%;
+  height: 70px;
+  border-radius: 100%;
 }
 .testimonial__customer__info div {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 .testimonial__customer__info__text > span {
-	display: block;
+  display: block;
 }
 
 .testimonial__message {
-	background-color: bisque;
-	padding-top: 30px;
-	padding: 20px;
-	font-style: italic;
-	letter-spacing: 1px;
+  background-color: bisque;
+  padding-top: 30px;
+  padding: 20px;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 .team {
-	padding: 40px 350px;
+  padding: 40px 350px;
 }
 
 .team__header {
-	padding: 0 30px;
+  padding: 0 30px;
 }
 
 .team__header__top {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .team__header__top h4 {
-	cursor: pointer;
-	padding: 10px 30px;
-	border: 2px solid rgba(128, 128, 128, 0.336);
+  cursor: pointer;
+  padding: 10px 30px;
+  border: 2px solid rgba(128, 128, 128, 0.336);
 }
 
 .team__img {
-	display: flex;
-	justify-content: center;
-	margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .team__img * {
-	margin: 0px 10px;
+  margin: 0px 10px;
 }
 
 .team__info {
-	position: relative;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .team__info__text {
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: rgb(255, 255, 255, 0.8);
-	padding: 25px 0px;
-	bottom: -100px;
-	width: calc(100% - 10px);
-	opacity: 0;
-	visibility: hidden;
-	transition: all, 0.3s;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 25px 0px;
+  bottom: -100px;
+  width: calc(100% - 10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all, 0.3s;
 }
 
 .team__info__text h3 {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .team__info:hover .team__info__text {
-	bottom: 0px;
-	visibility: visible;
-	opacity: 1;
+  bottom: 0px;
+  visibility: visible;
+  opacity: 1;
 }
