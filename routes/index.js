@@ -23,15 +23,15 @@ router.get("/shop", (req, res, next) => {
 });
 
 router.get("/checkout", (req, res, next) => {
-  res.render("checkout", { title: "Checkout", checkout: "true" });
+  res.render("checkout", { title: "Checkout", shop: "true" });
 });
 
 router.get("/shoppingCart", (req, res, next) => {
-  res.render("shoppingCart", { title: "Shopping Cart" });
+  res.render("shoppingCart", { title: "Shopping Cart", shop: "true" });
 });
 
 router.get("/product", (req, res, next) => {
-  res.render("product", { title: "Product" });
+  res.render("product", { title: "Product", shop: "true" });
 });
 
 module.exports = router;
