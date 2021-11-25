@@ -1,0 +1,77 @@
+@import "shop.css";
+
+.main__top {
+    padding: 40px 330px;
+}
+
+.add-product {
+    text-align: center;
+    padding: 0px 0px 40px;
+}
+
+.add-product > button {
+    height: 60px;
+    width: 350px;
+    background-color: black;
+    font-size: 20px;
+}
+
+.product:hover:not(.buttons) {
+    cursor: default;
+}
+
+.product:hover .product__info h5 {
+    color: rgb(50, 30, 223);
+}
+
+.product .buttons {
+    opacity: 0;
+}
+
+.product:hover .buttons {
+    opacity: 1;
+}
+
+.buttons__edit-product,
+.buttons__remove-product {
+    cursor: pointer;
+    margin-bottom: 8px;
+    color: rgb(250, 105, 8);
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 50px;
+}
+
+.pagination-bar {
+    display: inline-block;
+    padding: 40px 0px;
+}
+  
+.pagination-bar a {
+    color: black;
+    float: left;
+    padding: 8px 15px;
+    text-decoration: none;
+    border: 1px solid #dddddd;
+}
+  
+.pagination-bar > a.active {
+    background-color: rgb(124, 18, 129);
+    color: white;
+}
+
+.pagination-bar > a > svg {
+    padding-bottom: 4px;
+}
+
+.pagination-bar > a.previous-button {
+    border-radius: 50px 0px 0px 50px;
+}
+
+.pagination-bar > a.next-button {
+    border-radius: 0px 50px 50px 0px;
+}
+
+.pagination-bar > a:hover:not(.active) {
+    background-color: rgb(172, 227, 248);
+}

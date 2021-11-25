@@ -2,7 +2,6 @@
 
 .main__top {
     padding: 40px 330px;
-
 }
 
 .main__top__path > a,
@@ -11,7 +10,7 @@
     font-size: 110%;
 }
 
-.product-big {
+.user-big {
     display: block;
     margin-left: 100px;
     width: 100%;
@@ -19,33 +18,29 @@
     margin-bottom: 10px;
 }
 
-.product-big > img {
+.user-big > img {
     height: 420px;
     width: 420px;
 }
 
-.main__product {
+.main__user {
     padding: 30px 0px;
 }
 
-.product-detail {
-    margin-left: 10px;
+.user-detail button {
+    background-color: rgb(124, 18, 129);
 }
 
 .mb-3 > label {
     font-weight: bold;
 }
 
-.input-img button {
-    background-color: rgb(124, 18, 129);
-}
-
-.save-product {
+.save-user {
     text-align: center;
     padding: 30px 0px 20px;
 }
 
-.save-product > button {
+.save-user > button {
     height: 60px;
     width: 350px;
     background-color: black;
