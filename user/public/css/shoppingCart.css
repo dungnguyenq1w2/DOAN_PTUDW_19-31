@@ -34,9 +34,14 @@
   padding-top: 25px;
 }
 
+.table__product__details h5 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .table__quantity__adjust {
   padding-top: 35px;
   padding-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .table__quantity__adjust .increase,
@@ -61,6 +66,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .table__total {
   /* style ngay trong the td moi anh huong */
   /* padding: 58px 0px;*/
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   vertical-align: middle;
 }
 
@@ -98,6 +104,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-top: 50px;
   padding: 40px;
   background-color: #fdf3ea;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .cart-total > ul {
