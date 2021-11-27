@@ -1,11 +1,14 @@
+require('dotenv').config();
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
-const indexRouter = require('./routes/index');
-const userRouter = require('./routes/user');
+const indexRouter = require('./routes/index.route');
+const userRouter = require('./routes/user.route');
 
 const app = express();
 
@@ -39,5 +42,17 @@ app.use(function (err, req, res, next) {
 });
 
 app.use(express.static(__dirname + '/public'));
+
+(async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_ATLAS_CONNECTION, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    console.log('Connect to MongoDB successfully');
+  } catch (error) {
+    console.log(error);
+  }
+})();
 
 module.exports = app;
