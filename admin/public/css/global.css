@@ -4,12 +4,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box !important;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Montserrat", sans-serif !important;
-  font-family: "Playfair Display", serif !important;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Playfair Display", serif;
   min-width: 1820px;
 }
 
@@ -68,65 +68,6 @@ header {
   margin: 0;
 }
 
-.header__search {
-  padding: 7px 7px;
-  background-color: rgb(240, 134, 50, 0.3);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header__search input {
-  border: none;
-  background-color: transparent;
-  display: inline-block;
-  width: 0px;
-  color: rgb(49, 49, 49);
-  font-weight: 600;
-  transition: 0.5s;
-}
-
-.header__search input:focus-visible {
-  outline-width: 0;
-}
-
-.header__search:hover {
-  padding: 7px 15px;
-  transition: 0.5s;
-}
-
-.header__search:hover input {
-  display: inline-block;
-  width: 200px;
-}
-
-.header__cart__icon {
-  position: relative;
-  padding: 7px 9px;
-  border-radius: 100%;
-  transition: all, 0.2s;
-}
-
-.header__cart__icon:hover {
-  background-color: rgb(240, 134, 50, 0.3);
-}
-
-.header__cart__amount {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: rgb(253 166 91);
-  color: white;
-  font-weight: bold;
-  position: absolute;
-  top: -15%;
-  right: -10%;
-}
-
 .header__bottom {
   display: flex;
   justify-content: center;
@@ -158,7 +99,6 @@ header {
 .active {
   background-color: black;
 }
-
 .title {
   font-size: 46px;
   color: #111111;
