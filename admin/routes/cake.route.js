@@ -10,11 +10,10 @@ router.get('/create', cakeController.getCreateCake);
 
 router.post('/create', uploadFileMiddleware.single('figure'), cakeController.postCreateCake);
 
-router.get('/:id/update', cakeController.getUpdateCake);
+router.get('/:cakeId/update', cakeController.getUpdateCake);
 
-router.put('/:id/update', cakeController.putUpdateCake);
+router.post('/:cakeId/update', uploadFileMiddleware.single('figure'), cakeController.putUpdateCake);
 
-router.delete('/:id/delete', cakeController.deleteCake);
+router.get('/:cakeId/delete', cakeController.deleteCake);
 
 module.exports = router;
-

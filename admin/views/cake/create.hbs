@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-6">
           <div class="product-big">
-            <img src="/images/product-2.jpg" alt="Product Big Image" />
+            <img src="" alt="Product Big Image" />
           </div>
           <div class="input-group input-img">
             <input
@@ -25,6 +25,7 @@
               name="figure"
               aria-describedby="inputGroupFileAddon04"
               aria-label="Upload"
+              required
             />
             <button
               class="btn btn-secondary"
@@ -37,8 +38,9 @@
             <textarea
               class="form-control"
               id="introduction"
+              name="introduction"
               style="height:150px"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint perspiciatis laudantium corporis.</textarea>
+            ></textarea>
           </div>
         </div>
         <div class="col-6">
@@ -50,7 +52,6 @@
                 class="form-control"
                 id="name"
                 name="name"
-                value="Sweet autumn leaves"
               />
             </div>
             <div class="mb-3">
@@ -60,12 +61,11 @@
                 class="form-control"
                 id="price"
                 name="price"
-                value="26.41"
               />
             </div>
             <div class="mb-3">
               <label for="sku" class="form-label">SKU:</label>
-              <input type="number" class="form-control" id="sku" value="17" />
+              <input type="number" class="form-control" id="sku" />
             </div>
             <div class="mb-3">
               <label for="category" class="form-label">Category:</label>
@@ -75,12 +75,11 @@
                 name="category"
                 aria-label="Default select example"
               >
-                <option selected>Cupcake</option>
-                <option value="1">Butter</option>
-                <option value="2">Donut</option>
-                <option value="3">Cupcake</option>
-                <option value="4">Red Velvet</option>
-                <option value="5">Biscuit</option>
+                <option value="Butter">Butter</option>
+                <option value="Donut">Donut</option>
+                <option value="Cupcake">Cupcake</option>
+                <option value="Red Velvet">Red Velvet</option>
+                <option value="Biscuit">Biscuit</option>
               </select>
             </div>
             <div class="mb-3">
@@ -90,14 +89,12 @@
                   type="checkbox"
                   class="form-check-input"
                   id="tag1"
-                  checked
                 />
                 <label for="tag1" class="form-check-label">Gadget</label><br />
                 <input
                   type="checkbox"
                   class="form-check-input"
                   id="tag2"
-                  checked
                 />
                 <label
                   for="tag2"
@@ -114,8 +111,9 @@
               <textarea
                 class="form-control"
                 id="description"
+                name="description"
                 style="height:150px"
-              >This delectable Strawberry Pie is an extraordinary treat filled with sweet and tasty chunks of delicious strawberries. Made with the freshest ingredients, one bite will send you to summertime. Each gift arrives in an elegant gift box and arrives with a greeting card of your choice that you can personalize online!</textarea>
+              ></textarea>
             </div>
           </div>
         </div>

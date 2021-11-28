@@ -1,5 +1,4 @@
 const cakeService = require('../services/cake.service');
-const cakeModel = require('../models/cake.model');
 
 const getRetrieveCakes = async (req, res, next) => {
   let { page } = req.query;
@@ -7,32 +6,41 @@ const getRetrieveCakes = async (req, res, next) => {
   if (typeof page == 'undefined') {
     page = 1;
   }
+  const { cakes, pages } = await cakeService.getRetrieveCakes(page);
 
-  const cakes = await cakeService.getRetrieveCakes(page);
-
-  console.log(cakes);
-
-  res.render('product/productList_admin', { title: "Product List - Admin", productList: true, cakes });
+  res.render('cake/index', { title: "Product list", productList: true, cakes, pages, page });
 }
 
 const getCreateCake = async (req, res, next) => {
-  res.render('product/product_admin', { title: "Product - Admin", product: true });
+  res.render('cake/create', { title: "Product - Admin", product: true });
 }
 
 const postCreateCake = async (req, res, next) => {
-  res.redirect('/productList');
+  await cakeService.postCreateCake(req);
+
+  res.redirect('/cakes');
 };
 
 const getUpdateCake = async (req, res, next) => {
-  res.render('product/product_admin', { title: "Product - Admin", product: true });
+  const { cakeId } = req.params;
+
+  const cake = await cakeService.getUpdateCake(cakeId);
+
+  res.render('cake/update', { title: "Product - Admin", product: true, cake });
 }
 
 const putUpdateCake = async (req, res, next) => {
+  await cakeService.postUpdateCake(req);
 
+  res.redirect('/cakes');
 }
 
 const deleteCake = async (req, res, next) => {
+  const { cakeId } = req.params;
 
+  await cakeService.deleteCake(cakeId);
+
+  res.redirect('/cakes');
 }
 
 module.exports = {

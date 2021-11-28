@@ -1,0 +1,150 @@
+<main>
+  <section class="main__top">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <div class="title__thin">
+            <h1><b>Product detail</b></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <form class="main__product" method="post" enctype="multipart/form-data">
+    <div class="container">
+    {{#with cake}}
+      <div class="row">
+        <div class="col-6">
+          <div class="product-big">
+            <img src="{{figure}}" alt="Product Big Image" />
+          </div>
+          <div class="input-group input-img">
+            <input
+              type="file"
+              class="form-control"
+              id="inputGroupFile04"
+              name="figure"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+            />
+            <button
+              class="btn btn-secondary"
+              type="button"
+              id="inputGroupFileAddon04"
+            >Upload</button>
+          </div>
+          <div class="mb-3" style="margin-top:20px">
+            <label for="introduction" class="form-label">Introduction:</label>
+            <textarea
+              class="form-control"
+              id="introduction"
+              name="introduction"
+              style="height:150px"
+            >{{introduction}}</textarea>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="product-detail">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                value="{{name}}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price:</label>
+              <input
+                type="number"
+                class="form-control"
+                id="price"
+                name="price"
+                value="{{price}}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="sku" class="form-label">SKU:</label>
+              <input type="number" class="form-control" id="sku" value="17" />
+            </div>
+            <div class="mb-3">
+              <label for="category" class="form-label">Category:</label>
+              <select
+                class="form-select"
+                id="category"
+                name="category"
+                aria-label="Default select example"
+              >
+                <option value="Butter"
+                {{#ifCond category '==' 'Butter' }} selected {{/ifCond}}>Butter</option>
+                <option value="Donut"
+                {{#ifCond category '==' 'Donut' }} selected {{/ifCond}}>Donut</option>
+                <option value="Cupcake"
+                {{#ifCond category '==' 'Cupcake' }} selected {{/ifCond}}>Cupcake</option>
+                <option value="Red Velvet"
+                {{#ifCond category '==' 'Red Velvet' }} selected {{/ifCond}}>Red Velvet</option>
+                <option value="Biscuit"
+                {{#ifCond category '==' 'Biscuit' }} selected {{/ifCond}}>Biscuit</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="tags" class="form-label">Tags:</label>
+              <div id="tags">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="tag1"
+                  checked
+                />
+                <label for="tag1" class="form-check-label">Gadget</label><br />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="tag2"
+                  checked
+                />
+                <label
+                  for="tag2"
+                  class="form-check-label"
+                >Minimalistic</label><br />
+                <input type="checkbox" class="form-check-input" id="tag3" />
+                <label for="tag3" class="form-check-label">Sweet</label><br />
+                <input type="checkbox" class="form-check-input" id="tag4" />
+                <label for="tag4" class="form-check-label">Delicious</label>
+              </div>
+            </div>
+            <div class="mb-3" style="margin-top: 10px;">
+              <label for="description" class="form-label">Description:</label>
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                style="height:150px"
+              >{{description}}</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="save-product">
+            <button
+              type="submit"
+              class="btn btn-secondary"
+            >
+              <img
+                src="/images/save-icon.png"
+                alt="Save icon"
+                style="width:30px;height:30px"
+              />
+              <span>&nbsp;Save product</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    {{/with}}
+    </div>
+  </form>
+</main>
