@@ -1,15 +1,17 @@
+require('dotenv').config();
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
+const firebaseAdmin = require('firebase-admin');
 
-// const accountRouter = require('./routes/account');
 const productRouter = require('./routes/product');
-// const shopRouter = require('./routes/shop');
-
+const cakeRouter = require('./routes/cake.route');
 const userRouter = require('./routes/user');
-
 
 const app = express();
 
@@ -21,13 +23,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/account', accountRouter);
+app.use('/cakes', cakeRouter);
 app.use('/', userRouter);
 app.use('/', productRouter);
-
-// app.use('/shop', shopRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,5 +46,35 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// connect to mongodb via mongoose
+(async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_ATLAS_CONNECTION, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+
+    console.log('Connect to MongoDB successfully');
+  } catch (error) {
+    console.log(error);
+  }
+})();
+
+// connect to firebase admin
+const serviceAccount = require('./cake-8819c-firebase-adminsdk-r5f1z-7b3e253890.json');
+
+(async () => {
+  try {
+    await firebaseAdmin.initializeApp({
+      credential: firebaseAdmin.credential.cert(serviceAccount),
+      storageBucket: 'cake-8819c.appspot.com'
+    });
+
+    console.log('Connect to Firebase Admin successfully');
+  } catch (error) {
+    console.log(error);
+  }
+})();
 
 module.exports = app;

@@ -7,14 +7,18 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
     "express-handlebars": "^6.0.1",
+    "firebase-admin": "^10.0.0",
     "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "mongoose": "^6.0.13",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

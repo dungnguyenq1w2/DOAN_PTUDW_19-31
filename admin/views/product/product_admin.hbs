@@ -10,7 +10,7 @@
       </div>
     </div>
   </section>
-  <section class="main__product">
+  <form class="main__product" method="post" enctype="multipart/form-data">
     <div class="container">
       <div class="row">
         <div class="col-6">
@@ -22,6 +22,7 @@
               type="file"
               class="form-control"
               id="inputGroupFile04"
+              name="figure"
               aria-describedby="inputGroupFileAddon04"
               aria-label="Upload"
             />
@@ -48,6 +49,7 @@
                 type="text"
                 class="form-control"
                 id="name"
+                name="name"
                 value="Sweet autumn leaves"
               />
             </div>
@@ -57,6 +59,7 @@
                 type="number"
                 class="form-control"
                 id="price"
+                name="price"
                 value="26.41"
               />
             </div>
@@ -69,6 +72,7 @@
               <select
                 class="form-select"
                 id="category"
+                name="category"
                 aria-label="Default select example"
               >
                 <option selected>Cupcake</option>
@@ -120,9 +124,8 @@
         <div class="col">
           <div class="save-product">
             <button
-              type="button"
+              type="submit"
               class="btn btn-secondary"
-              onclick="location.href='#'"
             >
               <img
                 src="/images/save-icon.png"
@@ -135,5 +138,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </form>
 </main>
