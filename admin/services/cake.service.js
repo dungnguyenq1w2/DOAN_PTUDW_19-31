@@ -2,14 +2,19 @@ const cakeModel = require('../models/cake.model');
 const uploadFileHelper = require('../helpers/uploadFile.helper');
 const { ITEM_PER_PAGE } = require('../bin/const');
 
-const getRetrieveCakes = async (page) => {
+const getRetrieveCakes = async (page, search) => {
+  const filter = { page, isArchived: false };
+  if (search !== undefined) {
+    filter.$text = { $search: search };
+  }
+
   const cakes = await cakeModel
-    .find({ isArchived: false })
+    .find(filter)
     .skip((page - 1) * ITEM_PER_PAGE)
     .limit(ITEM_PER_PAGE);
 
   const numCakes = await cakeModel
-    .find({})
+    .find(filter)
     .count();
 
   const numPages = Math.ceil(numCakes / ITEM_PER_PAGE);

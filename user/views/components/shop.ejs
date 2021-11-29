@@ -14,7 +14,7 @@
           id="select-category"
           class="form-select"
           aria-label="Default select example"
-          onchange="location.href=`/shop?category=${this.value}`">
+          name="category">
           <option value="Butter" <% if (category == 'Butter') { %> selected <% } %>>Butter</option>
           <option value="Donut" <% if (category == 'Donut') { %> selected <% } %>>Donut</option>
           <option value="Cupcake" <% if (category == 'Cupcake') { %> selected <% } %>>Cupcake</option>
@@ -22,9 +22,14 @@
           <option value="Biscuit" <% if (category == 'Biscuit') { %> selected <% } %>>Biscuit</option>
         </select>
       </div>
-      <div class="shop__features__search">
-        <input type="text" placeholder="Search" />
-      </div>
+      <form class="shop__features__search">
+        <input
+          id="input-search"
+          type="text"
+          placeholder="Search"
+          name="search"
+          <% if (search !== undefined) { %><%= `value=${search} ` %><% } %>/>
+      </form>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="search__icon"
@@ -42,10 +47,14 @@
     </div>
     <div class="shop__features__right">
       <div class="shop__features__sort">
-        <select class="form-select" aria-label="Default select example">
+        <select
+          id="select-sort"
+          class="form-select"
+          aria-label="Default select example"
+          name="sort">
           <option selected>Default sorting</option>
-          <option value="1">Name</option>
-          <option value="2">Price</option>
+          <option value="name" <% if (sort === 'name') { %>selected<% } %>>Name</option>
+          <option value="price" <% if (sort === 'price') { %>selected<% } %>>Price</option>
         </select>
       </div>
     </div>
@@ -77,7 +86,7 @@
         <li class="page-item">
           <a
             class="page-link"
-            href="/shop?<% if (category !== undefined) { %>category=<%= category + '&' %><% } %>page=<%= i %>"><%= i %>
+            href="<%= url %><% if (category !== undefined) { %>category=<%= category + '&' %><% } %>page=<%= i %>"><%= i %>
           </a>
         </li>
         <% } %>

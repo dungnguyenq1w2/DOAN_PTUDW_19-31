@@ -1,14 +1,16 @@
 const cakeService = require('../services/cake.service');
 
 const getRetrieveCakes = async (req, res, next) => {
-  let { page } = req.query;
+  let { page, search } = req.query;
 
   if (typeof page == 'undefined') {
     page = 1;
   }
-  const { cakes, numPages } = await cakeService.getRetrieveCakes(page);
+  const { cakes, numPages } = await cakeService.getRetrieveCakes(page, search);
 
-  res.render('cake/index', { title: "Product list", which: 'product', cakes, numPages, page });
+  console.log(req.url);
+
+  res.render('cake/index', { title: "Product list", which: 'product', cakes, numPages, page, search });
 }
 
 const getCreateCake = async (req, res, next) => {

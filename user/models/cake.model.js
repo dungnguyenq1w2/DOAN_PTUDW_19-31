@@ -34,6 +34,8 @@ const cakeSchema = new Schema({
   }
 });
 
+cakeSchema.index({ name: 'text' });
+
 const cakeModel = mongoose.model('Cake', cakeSchema, 'cakes');
 
 module.exports = cakeModel;
