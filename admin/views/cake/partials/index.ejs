@@ -61,20 +61,20 @@
       </div>
       <div class="row">
         <div class="shop__products">
-        {{#each cakes}}
+        <% cakes.forEach((cake) => { %>
           <div class="product">
             <div class="product__img">
-              <img src="{{this.figure}}" alt="product-1" />
-              <span>{{this.category}}</span>
+              <img src="<%= cake.figure %>" alt="product-1" />
+              <span><%= cake.category %></span>
             </div>
             <div class="product__info">
-              <h5>{{this.name}}</h5>
-              <h5>${{this.price}}</h5>
+              <h5><%= cake.name %></h5>
+              <h5><%= cake.price %></h5>
             </div>
             <div class="buttons">
               <div
                 class="buttons__edit-product"
-                onclick="location.href='/cakes/{{this._id}}/update'"
+                onclick="location.href='/cakes/<%= cake._id %>/update'"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,8 +90,8 @@
               </div>
               <div
                 class="buttons__remove-product"
-                      onclick="location.href='/cakes/{{this._id}}/delete'"
-{{!--                 onclick="return confirm('Are you sure you want to delete this product?');" --}}
+                      onclick="location.href='/cakes/<%= cake._id %>/delete'"
+                      //onclick="return confirm('Are you sure you want to delete this product?');"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@
               </div>
             </div>
           </div>
-        {{/each}}
+        <% }); %>
       </div>
 
       <div class="row">
@@ -123,14 +123,13 @@
                 <path d="M3 12l18-12v24z"></path>
               </svg>
             </a>
-            {{#each pages}}
-            <a href="/cakes?page={{../page}}"
-              {{#ifCond this '===' ../page}}
+            <% for (let i = 1; i <= numPages; i++) { %>
+            <a href="/cakes?page=<%= i %>"
+              <% if (i == page) { %>
               class="active"
-              {{/ifCond}}
-              >{{this}}</a>
-              {{title}}
-            {{/each}}
+              <% } %>
+              ><%= i %></a>
+            <% } %>
             <a href="#" class="next-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

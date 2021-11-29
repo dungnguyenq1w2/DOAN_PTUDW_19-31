@@ -6,13 +6,13 @@ const getRetrieveCakes = async (req, res, next) => {
   if (typeof page == 'undefined') {
     page = 1;
   }
-  const { cakes, pages } = await cakeService.getRetrieveCakes(page);
+  const { cakes, numPages } = await cakeService.getRetrieveCakes(page);
 
-  res.render('cake/index', { title: "Product list", productList: true, cakes, pages, page });
+  res.render('cake/index', { title: "Product list", which: 'product', cakes, numPages, page });
 }
 
 const getCreateCake = async (req, res, next) => {
-  res.render('cake/create', { title: "Product - Admin", product: true });
+  res.render('cake/create', { title: "Product - Admin", which: 'product' });
 }
 
 const postCreateCake = async (req, res, next) => {
@@ -26,7 +26,7 @@ const getUpdateCake = async (req, res, next) => {
 
   const cake = await cakeService.getUpdateCake(cakeId);
 
-  res.render('cake/update', { title: "Product - Admin", product: true, cake });
+  res.render('cake/update', { title: "Product - Admin", which: 'product', cake });
 }
 
 const putUpdateCake = async (req, res, next) => {

@@ -9,15 +9,15 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const firebaseAdmin = require('firebase-admin');
 
-const productRouter = require('./routes/product');
+const indexRouter = require('./routes/index.route');
 const cakeRouter = require('./routes/cake.route');
-const userRouter = require('./routes/user');
+const userRouter = require('./routes/user.route');
 
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -27,9 +27,9 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', indexRouter);
 app.use('/cakes', cakeRouter);
-app.use('/', userRouter);
-app.use('/', productRouter);
+app.use('/users', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -76,34 +76,5 @@ const serviceAccount = require('./cake-8819c-firebase-adminsdk-r5f1z-7b3e253890.
     console.log(error);
   }
 })();
-
-const Handlebars = require('hbs');
-
-Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
-  switch (operator) {
-    case '==':
-      return (v1 == v2) ? options.fn(this) : options.inverse(this);
-    case '===':
-      return (v1 === v2) ? options.fn(this) : options.inverse(this);
-    case '!=':
-      return (v1 != v2) ? options.fn(this) : options.inverse(this);
-    case '!==':
-      return (v1 !== v2) ? options.fn(this) : options.inverse(this);
-    case '<':
-      return (v1 < v2) ? options.fn(this) : options.inverse(this);
-    case '<=':
-      return (v1 <= v2) ? options.fn(this) : options.inverse(this);
-    case '>':
-      return (v1 > v2) ? options.fn(this) : options.inverse(this);
-    case '>=':
-      return (v1 >= v2) ? options.fn(this) : options.inverse(this);
-    case '&&':
-      return (v1 && v2) ? options.fn(this) : options.inverse(this);
-    case '||':
-      return (v1 || v2) ? options.fn(this) : options.inverse(this);
-    default:
-      return options.inverse(this);
-  }
-});
 
 module.exports = app;

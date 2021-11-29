@@ -13,9 +13,8 @@ const getRetrieveCakes = async (page) => {
     .count();
 
   const numPages = Math.ceil(numCakes / ITEM_PER_PAGE);
-  const pages = Array.from({ length: numPages }, (_, i) => i + 1);
 
-  return { cakes, pages };
+  return { cakes, numPages };
 }
 
 const postCreateCake = async (req) => {
