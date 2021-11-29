@@ -10,23 +10,20 @@
   </div>
   <div class="product__detail">
     <div class="product__detail__img">
-      <img src="/img/product-big-1.jpg" alt="" />
+      <img src="<%= cake.figure %>" alt="" />
     </div>
     <div class="product__detail__info">
       <div class="product__detail__info__header">
-        <span>Cupcake</span>
-        <h3>Sweet autumn leaves</h3>
-        <h4>$26.41</h4>
+        <span><%= cake.category %></span>
+        <h3><%= cake.name %></h3>
+        <h4><%= cake.price %></h4>
       </div>
       <div class="product__detail__info__describe">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-          perspiciatis laudantium corporis.
-        </p>
+        <p><%= cake.introduction %></p>
         <div class="product__detail__info__label">
           <ul>
             <li>SKU: <span>17</span></li>
-            <li>Category: <span>Biscuit cake</span></li>
+            <li>Category: <span><%= cake.category %></span></li>
             <li>Tags: <span>Gadgets, minimalisstic</span></li>
           </ul>
         </div>
@@ -45,15 +42,8 @@
   </div>
   <div class="product__detail__tab">
     <span>Description</span>
-
     <div class="tab-content">
-      <p>
-        This delectable Strawberry Pie is an extraordinary treat filled with
-        sweet and tasty chunks of delicious strawberries. Made with the freshest
-        ingredients, one bite will send you to summertime. Each gift arrives in
-        an elegant gift box and arrives with a greeting card of your choice that
-        you can personalize online!
-      </p>
+      <p><%= cake.description %></p>
     </div>
   </div>
 </section>

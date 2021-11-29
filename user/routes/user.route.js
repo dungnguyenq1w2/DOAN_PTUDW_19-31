@@ -1,13 +1,11 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 
-/* GET users listing. */
 router.get("/signIn", function (req, res, next) {
-  res.render("user/signIn", { title: "Sign In", home: "true" });
+  res.render("signIn", { title: "Sign In", which: 'home' });
 });
 
 router.get("/signUp", (req, res, next) => {
-  res.render("user/signUp", { title: "Sign Up", home: "true" });
+  res.render("signUp", { title: "Sign Up", which: 'home' });
 });
 
 module.exports = router;

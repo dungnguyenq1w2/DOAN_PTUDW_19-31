@@ -1,25 +1,27 @@
 const firebaseAdmin = require('firebase-admin');
 
-const uploadFile = (req) => {
+const uploadFile = async (req) => {
   const blob = firebaseAdmin.storage().bucket().file(req.file.originalname);
 
-  console.log('Here');
-
-  const blobWriter = blob.createWriteStream({
+  blob.createWriteStream({
     metadata: {
       contentType: req.file.mimeType
     }
   })
+    .on('error', (error) => {
+      console.log(error);
+    })
+    .on('finish', () => {
+      console.log('Success');
+    })
+    .end(req.file.buffer);
 
-  blobWriter.on('error', (error) => {
-    console.log('Error');
-  })
+  const [signedUrl] = await blob.getSignedUrl({
+    action: 'read',
+    expires: '01-01-2100'
+  });
 
-  blobWriter.on('finish', () => {
-    console.log('Success');
-  })
-
-  blobWriter.end(req.file.buffer);
+  return signedUrl;
 }
 
 module.exports = uploadFile;

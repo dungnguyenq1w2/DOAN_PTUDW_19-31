@@ -1,28 +1,23 @@
 const router = require("express").Router();
 
-/* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Cake", home: "true" });
-});
-
-router.get("/signIn", function (req, res, next) {
-  res.render("signIn", { title: "Sign In", signIn: "true" });
+  res.render("index", { title: "Cake", which: 'home' });
 });
 
 router.get("/about", (req, res, next) => {
-  res.render("about", { title: "About", about: "true" });
+  res.render("about", { title: "About", which: 'about' });
 });
 
 router.get("/contact", (req, res, next) => {
-  res.render("contact", { title: "Contact", contact: "true" });
+  res.render("contact", { title: "Contact", which: 'contact' });
 });
 
 router.get("/checkout", (req, res, next) => {
-  res.render("checkout", { title: "Checkout", shop: "true" });
+  res.render("checkout", { title: "Checkout", which: 'shop' });
 });
 
 router.get("/shoppingCart", (req, res, next) => {
-  res.render("shoppingCart", { title: "Shopping Cart", shop: "true" });
+  res.render("shoppingCart", { title: "Shopping Cart", which: 'shop' });
 });
 
 module.exports = router;

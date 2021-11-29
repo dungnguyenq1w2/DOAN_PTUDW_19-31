@@ -1,0 +1,30 @@
+<header>
+  <div class="header__top">
+    <div class="header__top__left">
+      <a href="/signIn"> Sign in </a>
+    </div>
+    <div class="header__top__mid">
+      <img src="/img/logo.png" alt="logo" />
+    </div>
+    <div class="header__top__right">
+      <div class="header__search">
+        <input type="text" />
+        <img src="/img/search.png" alt="search icon" />
+      </div>
+
+      <span>|</span>
+      <img src="/img/heart.png" alt="heart icon" />
+      <a href="/shoppingCart" class="header__cart__icon">
+        <img src="/img/cart.png" alt="cart icon" />
+        <span class="header__cart__amount">2</span>
+      </a>
+      <p>Cart: $0.00</p>
+    </div>
+  </div>
+  <div class="header__bottom">
+      <a href="/" <% if (which == 'home') { %> class="active" <% } %>>Home</a>
+      <a href="/shop" <% if (which == 'shop') { %> class="active" <% } %>>Shop</a>
+      <a href="/about" <% if (which == 'about') { %> class="active" <% } %>>About</a>
+      <a href="/contact" <% if (which == 'contact') { %> class="active" <% } %>>Contact</a>
+  </div>
+</header>
