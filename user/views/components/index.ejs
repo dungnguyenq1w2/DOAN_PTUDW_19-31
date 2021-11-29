@@ -137,111 +137,21 @@
 </section>
 
 <section class="products">
-  <div class="product">
-    <div class="product__img">
-      <img src="/img/product-1.jpg" alt="product-1" />
-      <span class="product__category">Cupccake</span>
+  <% cakes.forEach((cake) => { %>
+    <div class="product">
+      <div class="product__img">
+        <a href="/cakes/<%= cake._id %>"><img src="<%= cake.figure %>" alt="<%= cake.name %>" /></a>
+        <span class="product__category"><%= cake.category %></span>
+      </div>
+      <div class="product__info">
+        <h5><%= cake.name %></h5>
+        <h5><%= cake.price %></h5>
+      </div>
+      <div class="product__cart">
+        <button class="product__cart__btn">ADD TO CART</button>
+      </div>
     </div>
-    <div class="product__info">
-      <h5>Dozen Cupcakes</h5>
-      <h5>$32.00</h5>
-    </div>
-    <div class="product__cart">
-      <button class="product__cart__btn">ADD TO CART</button>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product__img">
-      <img src="/img/product-2.jpg" alt="product-2" />
-      <span class="product__category">Cupccake</span>
-    </div>
-    <div class="product__info">
-      <h5>Cookies and cream</h5>
-      <h5>$30.00</h5>
-    </div>
-    <div class="product__cart">
-      <button class="product__cart__btn">ADD TO CART</button>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product__img">
-      <img src="/img/product-3.jpg" alt="product-3" />
-      <span class="product__category">Cupccake</span>
-    </div>
-    <div class="product__info">
-      <h5>Gluten free mini dozen</h5>
-      <h5>$31.00</h5>
-    </div>
-    <div class="product__cart">
-      <button class="product__cart__btn">ADD TO CART</button>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product__img">
-      <img src="/img/product-4.jpg" alt="product-4" />
-      <span class="product__category">Cupccake</span>
-    </div>
-    <div class="product__info">
-      <h5>cookie dough</h5>
-      <h5>$25.00</h5>
-    </div>
-    <div class="product__cart">
-      <button class="product__cart__btn">ADD TO CART</button>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product__img">
-      <img src="/img/product-5.jpg" alt="product-5" />
-      <span class="product__category">Cupccake</span>
-    </div>
-    <div class="product__info">
-      <h5>Vanilla salted caramel</h5>
-      <h5>$5.00</h5>
-    </div>
-    <div class="product__cart">
-      <button class="product__cart__btn">ADD TO CART</button>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product__img">
-      <img src="/img/product-6.jpg" alt="product-6" />
-      <span class="product__category">Cupccake</span>
-    </div>
-    <div class="product__info">
-      <h5>German chocolate</h5>
-      <h5>$14.00</h5>
-    </div>
-    <div class="product__cart">
-      <button class="product__cart__btn">ADD TO CART</button>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product__img">
-      <img src="/img/product-7.jpg" alt="product-7" />
-      <span class="product__category">Cupccake</span>
-    </div>
-    <div class="product__info">
-      <h5>Dulce de leche</h5>
-      <h5>$32.00</h5>
-    </div>
-    <div class="product__cart">
-      <button class="product__cart__btn">ADD TO CART</button>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product__img">
-      <img src="/img/product-8.jpg" alt="product-8" />
-      <span class="product__category">Cupccake</span>
-    </div>
-    <div class="product__info">
-      <h5>Mississippi Mud</h5>
-      <h5>$8.00</h5>
-    </div>
-    <div class="product__cart">
-      <button class="product__cart__btn">ADD TO CART</button>
-    </div>
-  </div>
-
+  <% }); %>
 </section>
 
 <section class="instagram">

@@ -18,6 +18,10 @@ const cakeSchema = new Schema({
   category: {
     type: String
   },
+  sku: {
+    type: Number,
+    default: 1
+  },
   tags: {
     type: [String]
   },
@@ -29,6 +33,8 @@ const cakeSchema = new Schema({
     default: false
   }
 });
+
+cakeSchema.index({ name: 'text' });
 
 const cakeModel = mongoose.model('Cake', cakeSchema, 'cakes');
 

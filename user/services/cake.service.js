@@ -1,13 +1,24 @@
 const cakeModel = require('../models/cake.model');
 const { ITEM_PER_PAGE } = require('../bin/const');
 
-const getRetrieveCakes = async (page) => {
+const getRetrieveCakes = async (page, category) => {
+  const filter = { page, isArchived: false };
+  if (category !== undefined) {
+    filter.category = category;
+  }
+
   const cakes = await cakeModel
-    .find({ isArchived: false })
+    .find(filter)
     .skip((page - 1) * ITEM_PER_PAGE)
     .limit(ITEM_PER_PAGE);
 
-  return cakes;
+  const numCakes = await cakeModel
+    .find(filter)
+    .count();
+
+  const numPages = Math.ceil(numCakes / ITEM_PER_PAGE);
+
+  return { cakes, numPages };
 }
 
 const getRetrieveCake = async (cakeId) => {

@@ -1,22 +1,21 @@
 const cakeService = require('../services/cake.service');
 
 const getRetrieveCakes = async (req, res, next) => {
-  let { page } = req.query;
+  let { page, category } = req.query;
 
-  if (typeof page == 'undefined') {
+  if (page === undefined) {
     page = 1;
   }
 
-  const cakes = await cakeService.getRetrieveCakes(page);
+  const { cakes, numPages } = await cakeService.getRetrieveCakes(page, category);
 
-  res.render('shop', { title: 'Shop', which: 'shop', cakes });
+  res.render('shop', { title: 'Shop', which: 'shop', cakes, numPages, page, category });
 };
 
 const getRetrieveCake = async (req, res, next) => {
   const { cakeId } = req.params;
 
   const cake = await cakeService.getRetrieveCake(cakeId);
-
 
   res.render('viewCake', { title: 'Cakes', which: 'shop', cake });
 }

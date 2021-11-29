@@ -10,13 +10,16 @@
   <div class="shop__features">
     <div class="shop__features__left">
       <div class="shop__features__categories">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Categories</option>
-          <option value="1">Butter</option>
-          <option value="2">Donut</option>
-          <option value="3">Cupcake</option>
-          <option value="4">Red Velvet</option>
-          <option value="5">Biscuit</option>
+        <select
+          id="select-category"
+          class="form-select"
+          aria-label="Default select example"
+          onchange="location.href=`/shop?category=${this.value}`">
+          <option value="Butter" <% if (category == 'Butter') { %> selected <% } %>>Butter</option>
+          <option value="Donut" <% if (category == 'Donut') { %> selected <% } %>>Donut</option>
+          <option value="Cupcake" <% if (category == 'Cupcake') { %> selected <% } %>>Cupcake</option>
+          <option value="Red Velvet" <% if (category == 'Red Velvet') { %> selected <% } %>>Red Velvet</option>
+          <option value="Biscuit" <% if (category == 'Biscuit') { %> selected <% } %>>Biscuit</option>
         </select>
       </div>
       <div class="shop__features__search">
@@ -70,9 +73,14 @@
   <div class="shop_pagination">
     <nav aria-label="Page navigation example">
       <ul class="pagination">
-        <li class=""><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <% for (let i = 1; i <= numPages; i++) { %>
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="/shop?<% if (category !== undefined) { %>category=<%= category + '&' %><% } %>page=<%= i %>"><%= i %>
+          </a>
+        </li>
+        <% } %>
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Next">
             <svg

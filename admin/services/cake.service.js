@@ -18,9 +18,10 @@ const getRetrieveCakes = async (page) => {
 }
 
 const postCreateCake = async (req) => {
-  const { name, introduction, description, price, category, figure } = req.body;
+  const { name, introduction, description, price, category, tags } = req.body;
 
   const signedUrl = await uploadFileHelper(req);
+  const cleanedTag = tags.filter(tag => tag);
 
   const cake = new cakeModel({
     name,
@@ -28,7 +29,8 @@ const postCreateCake = async (req) => {
     description,
     price,
     category,
-    figure: signedUrl
+    figure: signedUrl,
+    tags: cleanedTag
   });
 
   await cake.save();
@@ -42,9 +44,19 @@ const getUpdateCake = async (cakeId) => {
 
 const postUpdateCake = async (req) => {
   const { cakeId } = req.params;
-  const { name, introduction, description, price, category, figure } = req.body;
+  const { name, introduction, description, price, category, figure, tags } = req.body;
 
-  await cakeModel.findByIdAndUpdate(cakeId, { name, introduction, description, price, category, figure });
+  const cleanedTags = tags.filter(tag => tag);
+
+  await cakeModel.findByIdAndUpdate(cakeId, {
+    name,
+    introduction,
+    description,
+    price,
+    category,
+    figure,
+    tags: cleanedTags
+  });
 
   if (req.file) {
     const signedUrl = await uploadFileHelper(req);

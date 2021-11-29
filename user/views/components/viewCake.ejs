@@ -5,7 +5,7 @@
       <a href="/"> <span>Home</span> </a>
       <span>|</span>
       <a href="/shop"><span>Shop</span> </a><span>|</span>
-      <span>Sweet autumn leaves</span>
+      <span><%= cake.name %></span>
     </div>
   </div>
   <div class="product__detail">
@@ -22,9 +22,9 @@
         <p><%= cake.introduction %></p>
         <div class="product__detail__info__label">
           <ul>
-            <li>SKU: <span>17</span></li>
+            <li>SKU: <span><%= cake.sku %></span></li>
             <li>Category: <span><%= cake.category %></span></li>
-            <li>Tags: <span>Gadgets, minimalisstic</span></li>
+            <li>Tags: <span><%= cake.tags.join(', ') %></span></li>
           </ul>
         </div>
         <div class="product__detail__option">

@@ -18,6 +18,10 @@ const cakeSchema = new Schema({
   category: {
     type: String
   },
+  sku: {
+    type: Number,
+    default: 1
+  },
   tags: {
     type: [String]
   },
