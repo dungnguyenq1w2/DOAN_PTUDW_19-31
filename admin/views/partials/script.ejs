@@ -13,3 +13,19 @@
   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
   crossorigin="anonymous"
 ></script>
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $("#product-big-image")
+          .attr("src", e.target.result)
+          .width(420)
+          .height(420);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
