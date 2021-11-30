@@ -1,16 +1,28 @@
 const cakeService = require('../services/cake.service');
 
 const getRetrieveCakes = async (req, res, next) => {
-  let { page, search } = req.query;
+  const { originalUrl } = req;
+  let url = originalUrl;
+  let { page, search, sort } = req.query;
 
   if (typeof page == 'undefined') {
     page = 1;
   }
-  const { cakes, numPages } = await cakeService.getRetrieveCakes(page, search);
 
-  console.log(req.url);
+  url = url.split('page=')[0];
+  if (url[url.length - 1] !== '?' && url[url.length - 1] !== '&') {
+    if (url.includes('?')) {
+      url += '&';
+    } else {
+      url += '?';
+    }
+  }
 
-  res.render('cake/index', { title: "Product list", which: 'product', cakes, numPages, page, search });
+  const { cakes, pagination } = await cakeService.getRetrieveCakes(page, search, sort);
+
+  console.log(pagination);
+
+  res.render('cake/index', { title: "Product list", which: 'product', cakes, pagination, search, sort, url });
 }
 
 const getCreateCake = async (req, res, next) => {

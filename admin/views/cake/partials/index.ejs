@@ -17,6 +17,7 @@
           <form class="shop__features__left">
             <div class="shop__features__search">
               <input
+                id="input-search"
                 type="text"
                 placeholder="Search by product's name"
                 name="search"
@@ -40,10 +41,10 @@
           <div class="shop__features__right">
             <span>Sort by:</span>
             <div class="shop__features__sort">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Default</option>
-                <option value="1">Name</option>
-                <option value="2">Price</option>
+              <select id="select-sort" class="form-select" aria-label="Default select example" name="sort">
+                <option>Default</option>
+                <option value="name" <% if (sort === 'name') { %>selected<% } %>>Name</option>
+                <option value="price" <% if (sort === 'price') { %>selected<% } %>>Price</option>
               </select>
             </div>
           </div>
@@ -117,33 +118,38 @@
       <div class="row">
         <div class="col text-center">
           <div class="pagination-bar">
-            <a href="#" class="previous-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="25.5"
-                viewBox="0 0 24 24"
-              >
-                <path d="M3 12l18-12v24z"></path>
-              </svg>
-            </a>
-            <% for (let i = 1; i <= numPages; i++) { %>
-            <a href="/cakes?page=<%= i %>"
-              <% if (i == page) { %>
-              class="active"
-              <% } %>
-              ><%= i %></a>
+            <% if (pagination.order > 1) { %>
+              <a href="<%= url %>page=<%= pagination.unit %>" class="previous-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="25.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M3 12l18-12v24z"></path>
+                </svg>
+              </a>
             <% } %>
-            <a href="#" class="next-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="25.5"
-                viewBox="0 0 24 24"
-              >
-                <path d="M21 12l-18 12v-24z"></path>
-              </svg>
-            </a>
+            <% for (let i = 0; i < pagination.end; i++) { %>
+              <a href="<%= url %>page=<%= i + pagination.unit + 1 %>"
+                <% if (i + pagination.unit + 1 == pagination.curr) { %>
+                class="active"
+                <% } %>
+                ><%= i + pagination.unit + 1 %>
+              </a>
+              <% } %>
+            <% if (pagination.num > pagination.max) { %>
+              <a href="<%= url %>page=<%= 1 + pagination.max %>" class="next-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="25.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 12l-18 12v-24z"></path>
+                </svg>
+              </a>
+            <% } %>
           </div>
         </div>
       </div>

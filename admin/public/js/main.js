@@ -1,4 +1,3 @@
-const selectCategory = document.getElementById('select-category');
 const selectSort = document.getElementById('select-sort');
 const inputSearch = document.getElementById('input-search');
 
@@ -28,8 +27,6 @@ const handleQuery = (event) => {
 
   location.href = url;
 }
-
-selectCategory.addEventListener('change', handleQuery);
 
 selectSort.addEventListener('change', handleQuery);
 

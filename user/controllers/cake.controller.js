@@ -1,4 +1,5 @@
 const cakeService = require('../services/cake.service');
+const { PAGE_PER_PAGINATION } = require('../bin/const');
 
 const getRetrieveCakes = async (req, res, next) => {
   let { page, category, search, sort } = req.query;
@@ -7,15 +8,28 @@ const getRetrieveCakes = async (req, res, next) => {
   if (page === undefined) {
     page = 1;
   }
-  if (url.includes('?')) {
-    url += '&';
-  } else {
-    url += '?';
+
+  url = url.split('page=')[0];
+  if (url[url.length - 1] !== '?' && url[url.length - 1] !== '&') {
+    if (url.includes('?')) {
+      url += '&';
+    } else {
+      url += '?';
+    }
   }
 
-  const { cakes, numPages } = await cakeService.getRetrieveCakes(page, category, search, sort);
+  const { cakes, pagination } = await cakeService.getRetrieveCakes(page, category, search, sort);
 
-  res.render('shop', { title: 'Shop', which: 'shop', cakes, numPages, page, category, search, sort, url });
+  res.render('shop', {
+    title: 'Shop',
+    which: 'shop',
+    cakes,
+    pagination,
+    category,
+    search,
+    sort,
+    url
+  });
 };
 
 const getRetrieveCake = async (req, res, next) => {
