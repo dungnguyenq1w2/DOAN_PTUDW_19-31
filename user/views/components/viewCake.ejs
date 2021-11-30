@@ -16,7 +16,7 @@
       <div class="product__detail__info__header">
         <span><%= cake.category %></span>
         <h3><%= cake.name %></h3>
-        <h4><%= cake.price %></h4>
+        <h4>$ <%= cake.price %></h4>
       </div>
       <div class="product__detail__info__describe">
         <p><%= cake.introduction %></p>
@@ -96,10 +96,12 @@
       </div>
     </div>
     <form>
-        <div class="sendComment">
-            <input class="comment__input" type="text" placeholder="Your comment" />
-            <button type="submit" class="send__btn"><img src="/img/send.png" alt="send-icon"></button>
-        </div>
+      <div class="sendComment">
+        <input class="comment__input" type="text" placeholder="Your comment" />
+        <button type="submit" class="send__btn">
+          <img src="/img/send.png" alt="send-icon" />
+        </button>
+      </div>
     </form>
   </div>
 </section>

@@ -29,21 +29,23 @@
           placeholder="Search"
           name="search"
           <% if (search !== undefined) { %><%= `value=${search} ` %><% } %>/>
-      </form>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="search__icon"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-        ></path>
-      </svg>
+          <button type="submit" class="search__icon">
+            <svg
+       xmlns="http://www.w3.org/2000/svg"
+
+       fill="none"
+       viewBox="0 0 24 24"
+       stroke="currentColor"
+     >
+       <path
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+       ></path>
+     </svg>
+       </button>
+        </form>
     </div>
     <div class="shop__features__right">
       <div class="shop__features__sort">
@@ -64,12 +66,13 @@
     <div class="product">
       <a href="/cakes/<%= cake._id %>">
         <div class="product__img">
-          <img src="<%= cake.figure %>" alt="product-1" />
+            <img src="<%= cake.figure %>" alt="product" style="width: 250px; height: 250px;"/>
           <span class="product__category"><%= cake.category %></span>
         </div>
         <div class="product__info">
           <h5><%= cake.name %></h5>
-          <h5><%= cake.price %></h5>
+          <h5 style="font-size:large; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">$ <%= cake.price %></h5>
+
         </div>
       </a>
       <div class="product__cart">
@@ -79,65 +82,42 @@
     <% }); %>
   </div>
 
-  <div class="shop_pagination">
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
+  <div class="row">
+    <div class="col text-center">
+      <div class="pagination-bar">
         <% if (pagination.order > 1) { %>
-          <li class="page-item">
-            <a
-              class="page-link"
-              aria-label="Next"
-              href="<%= url %>page=<%= pagination.unit %>">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="next"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 19l-7-7 7-7"
-                ></path>
-              </svg>
-            </a>
-          </li>
+          <a href="<%= url %>page=<%= pagination.unit %>" class="previous-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="25.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M3 12l18-12v24z"></path>
+            </svg>
+          </a>
         <% } %>
         <% for (let i = 0; i < pagination.end; i++) { %>
-        <li class="page-item">
-          <a
-            class="page-link"
-            href="<%= url %>page=<%= i + pagination.unit + 1 %>">
-            <%= i + pagination.unit + 1 %>
+          <a href="<%= url %>page=<%= i + pagination.unit + 1 %>"
+            <% if (i + pagination.unit + 1 == pagination.curr) { %>
+            class="active"
+            <% } %>
+            ><%= i + pagination.unit + 1 %>
           </a>
-        </li>
-        <% } %>
+          <% } %>
         <% if (pagination.num > pagination.max) { %>
-          <li class="page-item">
-            <a
-              class="page-link"
-              aria-label="Next"
-              href="<%= url %>page=<%= 1 + pagination.max %>">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="next"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                ></path>
-              </svg>
-            </a>
-          </li>
+          <a href="<%= url %>page=<%= 1 + pagination.max %>" class="next-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="25.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21 12l-18 12v-24z"></path>
+            </svg>
+          </a>
         <% } %>
-      </ul>
-    </nav>
+      </div>
+    </div>
   </div>
 </section>
