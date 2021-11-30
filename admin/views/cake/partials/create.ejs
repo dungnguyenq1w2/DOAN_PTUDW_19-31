@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-6">
           <div class="product-big">
-            <img src="" alt="Product Big Image" />
+            <img src="" alt="Product Big Image" id="product-big-image" />
           </div>
           <div class="input-group input-img">
             <input
@@ -26,20 +26,16 @@
               aria-describedby="inputGroupFileAddon04"
               aria-label="Upload"
               required
+              onchange="readURL(this)"
             />
-            <button
-              class="btn btn-secondary"
-              type="button"
-              id="inputGroupFileAddon04"
-            >Upload</button>
           </div>
-          <div class="mb-3" style="margin-top:20px">
+          <div class="mb-3" style="margin-top: 20px">
             <label for="introduction" class="form-label">Introduction:</label>
             <textarea
               class="form-control"
               id="introduction"
               name="introduction"
-              style="height:150px"
+              style="height: 150px"
             ></textarea>
           </div>
         </div>
@@ -47,12 +43,7 @@
           <div class="product-detail">
             <div class="mb-3">
               <label for="name" class="form-label">Name:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="name"
-                name="name"
-              />
+              <input type="text" class="form-control" id="name" name="name" />
             </div>
             <div class="mb-3">
               <label for="price" class="form-label">Price:</label>
@@ -85,23 +76,48 @@
             <div class="mb-3">
               <label for="tags" class="form-label">Tags:</label>
               <div id="tags">
-                <input type="checkbox" class="form-check-input" id="tag1" name="tags[0]" value="Gadget" />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="tag1"
+                  name="tags[0]"
+                  value="Gadget"
+                />
                 <label for="tag1" class="form-check-label">Gadget</label><br />
-                <input type="checkbox" class="form-check-input" id="tag2" name="tags[1]" value="Minimalistic" />
-                <label for="tag2" class="form-check-label">Minimalistic</label><br />
-                <input type="checkbox" class="form-check-input" id="tag3" name="tags[2]" value="Sweet" />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="tag2"
+                  name="tags[1]"
+                  value="Minimalistic"
+                />
+                <label for="tag2" class="form-check-label">Minimalistic</label
+                ><br />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="tag3"
+                  name="tags[2]"
+                  value="Sweet"
+                />
                 <label for="tag3" class="form-check-label">Sweet</label><br />
-                <input type="checkbox" class="form-check-input" id="tag4" name="tags[3]" value="Delicious" />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="tag4"
+                  name="tags[3]"
+                  value="Delicious"
+                />
                 <label for="tag4" class="form-check-label">Delicious</label>
               </div>
             </div>
-            <div class="mb-3" style="margin-top: 10px;">
+            <div class="mb-3" style="margin-top: 10px">
               <label for="description" class="form-label">Description:</label>
               <textarea
                 class="form-control"
                 id="description"
                 name="description"
-                style="height:150px"
+                style="height: 150px"
               ></textarea>
             </div>
           </div>
@@ -110,14 +126,11 @@
       <div class="row">
         <div class="col">
           <div class="save-product">
-            <button
-              type="submit"
-              class="btn btn-secondary"
-            >
+            <button type="submit" class="btn btn-secondary">
               <img
                 src="/images/save-icon.png"
                 alt="Save icon"
-                style="width:30px;height:30px"
+                style="width: 30px; height: 30px"
               />
               <span>&nbsp;Save product</span>
             </button>
