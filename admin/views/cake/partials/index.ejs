@@ -69,12 +69,12 @@
         <% cakes.forEach((cake) => { %>
           <div class="product">
             <div class="product__img">
-              <img src="<%= cake.figure %>" alt="product-1" />
+                <img src="<%= cake.figure %>" alt="product" style="width: 250px; height: 250px;"/>
               <span><%= cake.category %></span>
             </div>
             <div class="product__info">
               <h5><%= cake.name %></h5>
-              <h5><%= cake.price %></h5>
+              <h5 style="font-size:large; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">$ <%= cake.price %></h5>
             </div>
             <div class="buttons">
               <div
