@@ -4,7 +4,7 @@ router.get('/', (req, res, next) => {
   res.render('user/index', { title: 'Users List - Admin', which: 'user' });
 });
 
-router.get('/:id/update', (req, res, next) => {
+router.get('/create', (req, res, next) => {
   res.render('user/update', { title: 'User - Admin', which: 'user' });
 });
 
