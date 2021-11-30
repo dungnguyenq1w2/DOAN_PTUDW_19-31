@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-6">
           <div class="product-big">
-            <img src="<%= cake.figure %>" alt="Product Big Image" />
+            <img src="<%= cake.figure %>" alt="Product Big Image" id="product-big-image"/>
           </div>
           <div class="input-group input-img">
             <input
@@ -25,12 +25,8 @@
               name="figure"
               aria-describedby="inputGroupFileAddon04"
               aria-label="Upload"
+              onchange="readURL(this)"
             />
-            <button
-              class="btn btn-secondary"
-              type="button"
-              id="inputGroupFileAddon04"
-            >Upload</button>
           </div>
           <div class="mb-3" style="margin-top:20px">
             <label for="introduction" class="form-label">Introduction:</label>
