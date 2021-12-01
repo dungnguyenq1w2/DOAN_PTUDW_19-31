@@ -1,5 +1,4 @@
 const cakeService = require('../services/cake.service');
-const { PAGE_PER_PAGINATION } = require('../bin/const');
 
 const getRetrieveCakes = async (req, res, next) => {
   let { page, category, search, sort } = req.query;

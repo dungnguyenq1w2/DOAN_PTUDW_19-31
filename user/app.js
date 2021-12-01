@@ -8,9 +8,11 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const firebaseAdmin = require('firebase-admin');
+const passport = require('passport');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index.route');
-const userRouter = require('./routes/user.route');
+const authRouter = require('./routes/auth.route');
 const cakeRouter = require('./routes/cake.route');
 
 const app = express();
@@ -27,9 +29,25 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// session and passport config
+app.use(session({
+  secret: process.env.SECRET_SESSION,
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// router
 app.use('/', indexRouter);
 app.use('/', cakeRouter);
-app.use('/', userRouter);
+app.use('/', authRouter);
+
+// for passport
+app.use((req, res, next) => {
+  res.locals.user = req.user;
+  next();
+})
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
