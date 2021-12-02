@@ -7,67 +7,69 @@
       <span>Shop</span>
     </div>
   </div>
-  <div class="shop__features">
+  <form id="form-query" class="shop__features">
     <div class="shop__features__left">
       <div class="shop__features__categories">
         <select
           id="select-category"
-          class="form-select"
+          class="form-select query-control"
           aria-label="Default select example"
           name="category">
-          <option value="Butter" <% if (category == 'Butter') { %> selected <% } %>>Butter</option>
-          <option value="Donut" <% if (category == 'Donut') { %> selected <% } %>>Donut</option>
-          <option value="Cupcake" <% if (category == 'Cupcake') { %> selected <% } %>>Cupcake</option>
-          <option value="Red Velvet" <% if (category == 'Red Velvet') { %> selected <% } %>>Red Velvet</option>
-          <option value="Biscuit" <% if (category == 'Biscuit') { %> selected <% } %>>Biscuit</option>
+            <option>Category</option>
+            <% categories.forEach(categoryItem => { %>
+              <option
+                value="<%= categoryItem.name %>"
+                <% if (category == categoryItem.name) { %> selected <% } %>
+              ><%= categoryItem.name %></option>
+            <% }); %>
         </select>
       </div>
-      <form class="shop__features__search">
+      <div class="shop__features__search">
         <input
           id="input-search"
+          class="query-control"
           type="text"
           placeholder="Search"
           name="search"
           <% if (search !== undefined) { %><%= `value=${search} ` %><% } %>/>
-          <button type="submit" class="search__icon">
+          <button id="btn-submit" type="submit" class="search__icon">
             <svg
-       xmlns="http://www.w3.org/2000/svg"
-
-       fill="none"
-       viewBox="0 0 24 24"
-       stroke="currentColor"
-     >
-       <path
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="2"
-         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-       ></path>
-     </svg>
-       </button>
-        </form>
+             xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor"
+            >
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+             ></path>
+            </svg>
+          </button>
+      </div>
     </div>
     <div class="shop__features__right">
       <div class="shop__features__sort">
         <select
           id="select-sort"
-          class="form-select"
+          class="form-select query-control"
           aria-label="Default select example"
           name="sort">
-          <option selected>Default sorting</option>
+          <option>Default sorting</option>
           <option value="name" <% if (sort === 'name') { %>selected<% } %>>Name</option>
           <option value="price" <% if (sort === 'price') { %>selected<% } %>>Price</option>
         </select>
       </div>
     </div>
-  </div>
+  </form>
   <div class="shop__products">
-    <% cakes.forEach((cake) => { %>
+    <% cakes.forEach(cake => { %>
     <div class="product">
       <a href="/cakes/<%= cake._id %>">
         <div class="product__img">
             <img src="<%= cake.figure %>" alt="product" style="width: 250px; height: 250px;"/>
-          <span class="product__category"><%= cake.category %></span>
+          <span class="product__category"><%= cake.category.name %></span>
         </div>
         <div class="product__info">
           <h5><%= cake.name %></h5>

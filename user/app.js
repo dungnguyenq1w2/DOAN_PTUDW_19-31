@@ -38,16 +38,16 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// router
-app.use('/', indexRouter);
-app.use('/', cakeRouter);
-app.use('/', authRouter);
-
 // for passport
 app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
-})
+});
+
+// router
+app.use('/', indexRouter);
+app.use('/', cakeRouter);
+app.use('/', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

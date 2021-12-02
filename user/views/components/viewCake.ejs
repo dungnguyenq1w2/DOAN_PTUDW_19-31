@@ -14,7 +14,7 @@
     </div>
     <div class="product__detail__info">
       <div class="product__detail__info__header">
-        <span><%= cake.category %></span>
+        <span><%= cake.category.name %></span>
         <h3><%= cake.name %></h3>
         <h4>$ <%= cake.price %></h4>
       </div>
@@ -23,7 +23,7 @@
         <div class="product__detail__info__label">
           <ul>
             <li>SKU: <span><%= cake.sku %></span></li>
-            <li>Category: <span><%= cake.category %></span></li>
+            <li>Category: <span><%= cake.category.name %></span></li>
             <li>Tags: <span><%= cake.tags.join(', ') %></span></li>
           </ul>
         </div>
