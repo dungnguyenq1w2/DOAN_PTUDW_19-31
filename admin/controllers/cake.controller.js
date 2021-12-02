@@ -20,8 +20,6 @@ const getRetrieveCakes = async (req, res, next) => {
 
   const { cakes, pagination } = await cakeService.getRetrieveCakes(page, search, sort);
 
-  console.log(pagination);
-
   res.render('cake/index', { title: "Product list", which: 'product', cakes, pagination, search, sort, url });
 }
 

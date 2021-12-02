@@ -13,8 +13,8 @@
   <section class="main__product-list">
     <div class="container">
       <div class="row">
-        <div class="shop__features">
-          <form class="shop__features__left">
+        <form class="shop__features" id="form-query">
+          <div class="shop__features__left">
             <div class="shop__features__search">
               <input
                 id="input-search"
@@ -23,15 +23,14 @@
                 name="search"
                 <% if (search !== undefined) { %><%= `value=${search} ` %><% } %>/>
             </div>
-            <button type="submit" class="search__icon">
-                <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="search__icon"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-
-            >
+            <button type="submit" class="search__icon" id="btn-submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="search__icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -40,19 +39,18 @@
               ></path>
             </svg>
             </button>
-
-          </form>
+          </div>
           <div class="shop__features__right">
             <span>Sort by:</span>
             <div class="shop__features__sort">
               <select id="select-sort" class="form-select" aria-label="Default select example" name="sort">
-                <option>Default</option>
+                <option>Default sorting</option>
                 <option value="name" <% if (sort === 'name') { %>selected<% } %>>Name</option>
                 <option value="price" <% if (sort === 'price') { %>selected<% } %>>Price</option>
               </select>
             </div>
           </div>
-        </div>
+        </form>
       </div>
       <div class="row">
         <div class="col">
@@ -73,8 +71,8 @@
         <% cakes.forEach((cake) => { %>
           <div class="product">
             <div class="product__img">
-                <img src="<%= cake.figure %>" alt="product" style="width: 250px; height: 250px;"/>
-              <span><%= cake.category %></span>
+              <img src="<%= cake.figure %>" alt="product" style="width: 250px; height: 250px;"/>
+              <span><%= cake.category.name %></span>
             </div>
             <div class="product__info">
               <h5><%= cake.name %></h5>
@@ -100,7 +98,6 @@
               <div
                 class="buttons__remove-product"
                       onclick="location.href='/cakes/<%= cake._id %>/delete'"
-                      //onclick="return confirm('Are you sure you want to delete this product?');"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

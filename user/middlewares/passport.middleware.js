@@ -1,8 +1,6 @@
 const passport = require('passport');
 const { Strategy } = require('passport-local');
 
-const bcrypt = require('bcrypt');
-
 const authService = require('../services/auth.service');
 
 passport.use(new Strategy({
@@ -17,7 +15,7 @@ passport.use(new Strategy({
         return done(null, false, { message: 'Incorrect email' });
       }
 
-      const passwordMatch = await validPassword(user, password);
+      const passwordMatch = await user.comparePassword(password);
       if (!passwordMatch) {
         return done(null, false, { message: 'Incorrect password' });
       }
@@ -42,9 +40,5 @@ passport.deserializeUser(async (id, done) => {
     done(error, null);
   }
 });
-
-const validPassword = async (user, password) => {
-  return await bcrypt.compare(password, user.password);
-}
 
 module.exports = passport;

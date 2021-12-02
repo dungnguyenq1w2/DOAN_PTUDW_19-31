@@ -108,26 +108,15 @@
 </section>
 
 <section class="categories">
-  <div class="category">
-    <img src="/img/buttercake.jpg" alt="Butter" />
-    <h4 class="category__name">Butter</h4>
-  </div>
-  <div class="category">
-    <img src="/img/donut.jpg" alt="Donut" />
-    <h4 class="category__name">Donut</h4>
-  </div>
-  <div class="category">
-    <img src="/img/cupcake.jpg" alt="Cupcake" />
-    <h4 class="category__name">Cupcake</h4>
-  </div>
-  <div class="category">
-    <img src="/img/redvelvetcake.jpg" alt="Red Velvet" />
-    <h4 class="category__name">Red Velvet</h4>
-  </div>
-  <div class="category">
-    <img src="/img/biscuit.jpg" alt="Biscuit" />
-    <h4 class="category__name">Biscuit</h4>
-  </div>
+  <% categories.forEach(category => { %>
+    <div class="category">
+      <img
+        src="<%= category.figure %>"
+        alt="<%= category.name %>"
+        onclick="location.href='/shop?category=<%= category.name %>'"/>
+      <h4 class="category__name"><%= category.name %></h4>
+    </div>
+  <% }); %>
 </section>
 
 <section class="products">
@@ -137,7 +126,7 @@
       <a href="/cakes/<%= cake._id %>"
         ><img src="<%= cake.figure %>" alt="<%= cake.name %>"
       /></a>
-      <span class="product__category"><%= cake.category %></span>
+      <span class="product__category"><%= cake.category.name %></span>
     </div>
     <div class="product__info">
       <h5><%= cake.name %></h5>
