@@ -2,7 +2,7 @@
   <div class="header__top">
     <div class="header__top__left">
       <% if (user) { %>
-        <img src="/img/team-1.jpg" alt="avatar" class="rounded-circle" style="height:40px; width:40px; object-fit: contain;">
+        <img src="<%= user.avatar %>" alt="avatar" class="rounded-circle" style="height:40px; width:40px; object-fit: contain;">
         <a href="/users/<%= user._id %>" class="mx-3"><%= user.name %></a>
         <a href="/signOut" class=" rounded border border-warning p-2">Sign out</a>
       <% } else { %>
