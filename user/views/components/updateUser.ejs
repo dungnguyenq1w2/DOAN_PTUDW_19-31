@@ -1,10 +1,10 @@
 <div class="container rounded bg-white mt-5 mb-5">
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     <div class="row border">
       <div class="col-md-4 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
           <img
-            src=""
+            src="<%= user.avatar %>"
             alt="Avatar"
             id="avatar"
             style="height: 300px; object-fit: contain"
@@ -14,10 +14,9 @@
             type="file"
             class="form-control"
             id="inputGroupFile04"
-            name="figure"
+            name="avatar"
             aria-describedby="inputGroupFileAddon04"
             aria-label="Upload"
-            required
             onchange="readURL(this)"
           />
         </div>
@@ -57,7 +56,6 @@
               ><input
                 type="text"
                 class="form-control"
-                name="email"
                 placeholder="Enter email"
                 value="<%= user.email %>"
                 disabled

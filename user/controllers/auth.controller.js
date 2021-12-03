@@ -19,19 +19,27 @@ const getSignUp = async (req, res, next) => {
 const postSignUp = async (req, res, next) => {
   const { name, phone, email, password, confirmPassword } = req.body;
 
-  const createdUser = await authService.postSignUp(name, phone, email, password);
+  try {
+    if (password !== confirmPassword) {
+      res.redirect('/signUp?passwordsNotMatch');
+    }
 
-  if (createdUser) {
-    req.login(createdUser, error => {
-      if (error) {
-        return error;
-      }
-      res.locals.user = req.user;
-    });
-    res.redirect('/');
-  }
-  else {
-    req.redirect('/signUp');
+    const createdUser = await authService.postSignUp(name, phone, email, password);
+
+    if (createdUser) {
+      req.login(createdUser, error => {
+        if (error) {
+          return error;
+        }
+        res.locals.user = req.user;
+      });
+      res.redirect('/');
+    } else {
+      res.redirect('/signUp');
+    }
+  } catch (error) {
+    console.log(error);
+    return error;
   }
 };
 

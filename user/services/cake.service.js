@@ -82,8 +82,6 @@ const getRetrieveCake = async (cakeId) => {
     .findOne({ _id: cakeId, isArchived: false })
     .populate('category', 'name');
 
-  console.log(cake);
-
   return cake;
 }
 

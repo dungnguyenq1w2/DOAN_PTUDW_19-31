@@ -21,8 +21,6 @@ const getRetrieveCakes = async (req, res, next) => {
   const { cakes, pagination } = await cakeService.getRetrieveCakes(page, category, search, sort);
   const categories = await categoryService.getCategories();
 
-  console.log(req.user);
-
   res.render('shop', {
     title: 'Shop',
     which: 'shop',

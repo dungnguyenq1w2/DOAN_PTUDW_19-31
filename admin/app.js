@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const firebaseAdmin = require('firebase-admin');
+const passport = require('passport');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index.route');
 const cakeRouter = require('./routes/cake.route');

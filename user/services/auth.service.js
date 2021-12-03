@@ -38,12 +38,11 @@ const postSignUp = async (name, phone, email, password) => {
 
 const putUpdateUser = async (req) => {
   const { userId } = req.params;
-  const { name, phone, email } = req.body;
+  const { name, phone } = req.body;
 
   try {
-    let user = await userModel.findByIdAndUpdate(userId, { name, phone, email });
+    let user = await userModel.findByIdAndUpdate(userId, { name, phone });
 
-    console.log(req.file);
     if (req.file) {
       const signedUrl = await uploadFileHelper(req);
 
@@ -51,6 +50,7 @@ const putUpdateUser = async (req) => {
     }
     return user;
   } catch (error) {
+    console.log(error);
     return error;
   }
 }

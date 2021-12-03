@@ -13,13 +13,15 @@ const userSchema = new mongoose.Schema({
     unique: true
   },
   avatar: {
-    type: String
+    type: String,
+    default: '/img/user.png'
   },
   password: {
     type: String
   },
-  role: {
-    type: [String]
+  roles: {
+    type: [String],
+    default: ['buyer']
   },
   state: {
     value: {
