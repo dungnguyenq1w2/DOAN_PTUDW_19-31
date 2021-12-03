@@ -1,35 +1,36 @@
 <div class="container rounded bg-white mt-5 mb-5">
-  <div class="row border">
-    <div class="col-md-4 border-right">
-      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-        <img
-          src=""
-          alt="Avatar"
-          id="avatar"
-          style="height: 300px; object-fit: contain"
-        />
-        <input
-          type="file"
-          class="form-control"
-          id="inputGroupFile04"
-          name="figure"
-          aria-describedby="inputGroupFileAddon04"
-          aria-label="Upload"
-          required
-          onchange="readURL(this)"
-        />
+  <form method="post">
+    <div class="row border">
+      <div class="col-md-4 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <img
+            src=""
+            alt="Avatar"
+            id="avatar"
+            style="height: 300px; object-fit: contain"
+            class="mb-3"
+          />
+          <input
+            type="file"
+            class="form-control"
+            id="inputGroupFile04"
+            name="figure"
+            aria-describedby="inputGroupFileAddon04"
+            aria-label="Upload"
+            required
+            onchange="readURL(this)"
+          />
+        </div>
       </div>
-    </div>
-    <div class="col-md-6 border-right">
-      <form method="post">
+      <div class="col-md-6 border-right">
         <div class="p-3 py-5">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="text-right">Profile Settings</h4>
           </div>
           <div class="row mt-2">
             <div class="col-md-12">
-              <label class="labels">Name</label
-              ><input
+              <label class="labels">Name</label>
+              <input
                 type="text"
                 class="form-control"
                 name="name"
@@ -69,7 +70,7 @@
             </button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
-  </div>
+  </form>
 </div>
