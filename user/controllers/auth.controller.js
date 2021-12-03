@@ -50,9 +50,7 @@ const getUpdateUser = async (req, res, next) => {
 
 const putUpdateUser = async (req, res, next) => {
   const { userId } = req.params;
-  const { name, phone, email } = req.body;
-
-  const user = await authService.putUpdateUser(userId, name, phone, email);
+  const user = await authService.putUpdateUser(req);
 
   if (user) {
     res.redirect(`/users/${userId}`);

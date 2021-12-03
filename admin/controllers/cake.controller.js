@@ -1,4 +1,5 @@
 const cakeService = require('../services/cake.service');
+const categoryService = require('../services/category.service');
 
 const getRetrieveCakes = async (req, res, next) => {
   const { originalUrl } = req;
@@ -24,7 +25,9 @@ const getRetrieveCakes = async (req, res, next) => {
 }
 
 const getCreateCake = async (req, res, next) => {
-  res.render('cake/create', { title: "Product - Admin", which: 'product' });
+  const categories = await categoryService.getCategories();
+
+  res.render('cake/create', { title: "Product - Admin", which: 'product', categories });
 }
 
 const postCreateCake = async (req, res, next) => {
@@ -37,12 +40,13 @@ const getUpdateCake = async (req, res, next) => {
   const { cakeId } = req.params;
 
   const cake = await cakeService.getUpdateCake(cakeId);
+  const categories = await categoryService.getCategories();
 
-  res.render('cake/update', { title: "Product - Admin", which: 'product', cake });
+  res.render('cake/update', { title: "Product - Admin", which: 'product', cake, categories });
 }
 
 const putUpdateCake = async (req, res, next) => {
-  await cakeService.postUpdateCake(req);
+  await cakeService.putUpdateCake(req);
 
   res.redirect('/cakes');
 }

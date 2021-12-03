@@ -66,11 +66,9 @@
                 name="category"
                 aria-label="Default select example"
               >
-                <option value="Butter">Butter</option>
-                <option value="Donut">Donut</option>
-                <option value="Cupcake">Cupcake</option>
-                <option value="Red Velvet">Red Velvet</option>
-                <option value="Biscuit">Biscuit</option>
+                <% categories.forEach(categoryItem => { %>
+                  <option value="<%= categoryItem.name %>"><%= categoryItem.name %></option>
+                <% }); %>
               </select>
             </div>
             <div class="mb-3">

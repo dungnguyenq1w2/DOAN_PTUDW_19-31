@@ -1,5 +1,7 @@
 const userModel = require('../models/user.model');
 
+const uploadFileHelper = require('../helpers/uploadFile.helper');
+
 const getRetrieveUserById = async (userId) => {
   const user = await userModel.findById(userId).lean();
 
@@ -34,10 +36,19 @@ const postSignUp = async (name, phone, email, password) => {
   }
 };
 
-const putUpdateUser = async (userId, name, phone, email) => {
-  try {
-    const user = await userModel.findByIdAndUpdate(userId, { name, phone, email });
+const putUpdateUser = async (req) => {
+  const { userId } = req.params;
+  const { name, phone, email } = req.body;
 
+  try {
+    let user = await userModel.findByIdAndUpdate(userId, { name, phone, email });
+
+    console.log(req.file);
+    if (req.file) {
+      const signedUrl = await uploadFileHelper(req);
+
+      user = await userModel.findByIdAndUpdate(userId, { avatar: signedUrl });
+    }
     return user;
   } catch (error) {
     return error;

@@ -69,11 +69,12 @@ const getRetrieveCakes = async (page, search, sort) => {
   };
 
   return { cakes, pagination };
-}
+};
 
 const postCreateCake = async (req) => {
   const { name, introduction, description, price, category, tags } = req.body;
 
+  const { _id: categoryId } = await categoryModel.findOne({ name: category });
   const signedUrl = await uploadFileHelper(req);
   const cleanedTag = tags.filter(tag => tag);
 
@@ -82,24 +83,31 @@ const postCreateCake = async (req) => {
     introduction,
     description,
     price,
-    category,
+    category: categoryId,
     figure: signedUrl,
     tags: cleanedTag
   });
 
-  await cake.save();
-}
+  try {
+    await cake.save();
+  } catch (error) {
+    return error;
+  }
+};
 
 const getUpdateCake = async (cakeId) => {
-  const cake = await cakeModel.findById(cakeId);
+  const cake = await cakeModel
+    .findById(cakeId)
+    .populate('category', 'name');
 
   return cake;
-}
+};
 
-const postUpdateCake = async (req) => {
+const putUpdateCake = async (req) => {
   const { cakeId } = req.params;
   const { name, introduction, description, price, category, figure, tags } = req.body;
 
+  const { _id: categoryId } = await categoryModel.findOne({ name: category });
   const cleanedTags = tags.filter(tag => tag);
 
   await cakeModel.findByIdAndUpdate(cakeId, {
@@ -107,7 +115,7 @@ const postUpdateCake = async (req) => {
     introduction,
     description,
     price,
-    category,
+    category: categoryId,
     figure,
     tags: cleanedTags
   });
@@ -115,18 +123,18 @@ const postUpdateCake = async (req) => {
   if (req.file) {
     const signedUrl = await uploadFileHelper(req);
 
-    await  cakeModel.findByIdAndUpdate(cakeId, { figure: signedUrl })
+    await  cakeModel.findByIdAndUpdate(cakeId, { figure: signedUrl });
   }
-}
+};
 
 const deleteCake = async (cakeId) => {
   await cakeModel.findByIdAndUpdate(cakeId, { isArchived: true });
-}
+};
 
 module.exports = {
   getRetrieveCakes,
   postCreateCake,
   getUpdateCake,
-  postUpdateCake,
+  putUpdateCake,
   deleteCake
-}
+};

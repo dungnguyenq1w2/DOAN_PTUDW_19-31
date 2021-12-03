@@ -3,6 +3,7 @@ const router = require('express').Router();
 const authController = require('../controllers/auth.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
 const passportMiddleware = require('../middlewares/passport.middleware');
+const uploadFileMiddleware = require('../middlewares/uploadFile.middleware');
 
 router.get('/signIn', authController.getSignIn);
 
@@ -25,6 +26,11 @@ router.get('/users/:userId', authMiddleware.authMiddleware, authController.getRe
 
 router.get('/users/:userId/update', authMiddleware.authMiddleware, authController.getUpdateUser);
 
-router.post('/users/:userId/update', authMiddleware.authMiddleware, authController.putUpdateUser);
+router.post(
+  '/users/:userId/update',
+  authMiddleware.authMiddleware,
+  uploadFileMiddleware.single('avatar'),
+  authController.putUpdateUser
+);
 
 module.exports = router;

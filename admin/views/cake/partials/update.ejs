@@ -72,16 +72,10 @@
                 name="category"
                 aria-label="Default select example"
               >
-                <option value="Butter"
-                <% if (cake.category == 'Butter') { %> selected <% } %>>Butter</option>
-                <option value="Donut"
-                <% if (cake.category == 'Donut') { %> selected <% } %>>Donut</option>
-                <option value="Cupcake"
-                <% if (cake.category == 'Cupcake') { %> selected <% } %>>Cupcake</option>
-                <option value="Red Velvet"
-                <% if (cake.category == 'Red Velvet') { %> selected <% } %>>Red Velvet</option>
-                <option value="Biscuit"
-                <% if (cake.category == 'Biscuit') { %> selected <% } %>>Biscuit</option>
+                <% categories.forEach(categoryItem => { %>
+                  <option value="<%= categoryItem.name %>"
+                  <% if (cake.category.name == categoryItem.name) { %> selected <% } %>><%= categoryItem.name %></option>
+                <% }); %>
               </select>
             </div>
             <div class="mb-3">
