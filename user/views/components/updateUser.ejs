@@ -3,11 +3,21 @@
     <div class="col-md-4 border-right">
       <div class="d-flex flex-column align-items-center text-center p-3 py-5">
         <img
-          class="rounded-circle mt-5 border"
-          width="150px"
-          src="https://thumbs.dreamstime.com/b/eating-hungry-simple-emoji-face-concept-delicious-good-yummy-food-yum-yum-smile-tongue-glutton-flat-cartoon-138831849.jpg"
-        /><span class="font-weight-bold mt-3"><%= user.name %></span
-        ><span class="text-black-50"><%= user.email %></span><span> </span>
+          src=""
+          alt="Avatar"
+          id="avatar"
+          style="height: 300px; object-fit: contain"
+        />
+        <input
+          type="file"
+          class="form-control"
+          id="inputGroupFile04"
+          name="figure"
+          aria-describedby="inputGroupFileAddon04"
+          aria-label="Upload"
+          required
+          onchange="readURL(this)"
+        />
       </div>
     </div>
     <div class="col-md-6 border-right">
@@ -49,6 +59,7 @@
                 name="email"
                 placeholder="Enter email"
                 value="<%= user.email %>"
+                disabled
               />
             </div>
           </div>

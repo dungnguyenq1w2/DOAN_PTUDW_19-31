@@ -1,13 +1,8 @@
 <div class="container rounded bg-white mt-5 mb-5" style="width: 50%">
-  <div class="row border">
+  <div class="row align-items-center border">
     <div class="col-md-6 border-right">
       <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-        <img
-          class="rounded-circle mt-5 border"
-          width="150px"
-          src="<%= user.avatar %>"
-        /><span class="font-weight-bold mt-3"><%= user.name %></span
-        ><span class="text-black-50"><%= user.email %></span><span> </span>
+        <img class="border" width="400px" src="<%= user.avatar %>" />
       </div>
     </div>
     <div class="col-md-6 border-right">
@@ -21,7 +16,12 @@
             <h5 class="d-inline"><%= user.name %></h5>
           </div>
         </div>
-
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <span class="labels">Email: </span>
+            <h5 class="d-inline"><%= user.email %></h5>
+          </div>
+        </div>
         <div class="row mt-3">
           <div class="col-md-12">
             <span class="labels">Phone: </span>
@@ -34,12 +34,6 @@
             >
               <%= user.phone %>
             </h5>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-md-12">
-            <span class="labels">Email: </span>
-            <h5 class="d-inline"><%= user.email %></h5>
           </div>
         </div>
       </div>
