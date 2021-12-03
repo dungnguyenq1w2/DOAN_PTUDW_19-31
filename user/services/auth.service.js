@@ -34,8 +34,19 @@ const postSignUp = async (name, phone, email, password) => {
   }
 };
 
+const putUpdateUser = async (userId, name, phone, email) => {
+  try {
+    const user = await userModel.findByIdAndUpdate(userId, { name, phone, email });
+
+    return user;
+  } catch (error) {
+    return error;
+  }
+}
+
 module.exports = {
   getRetrieveUserById,
   getRetrieveUserByEmail,
-  postSignUp
+  postSignUp,
+  putUpdateUser
 };

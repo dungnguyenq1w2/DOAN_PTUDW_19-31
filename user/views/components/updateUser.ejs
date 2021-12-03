@@ -6,12 +6,12 @@
           class="rounded-circle mt-5 border"
           width="150px"
           src="https://thumbs.dreamstime.com/b/eating-hungry-simple-emoji-face-concept-delicious-good-yummy-food-yum-yum-smile-tongue-glutton-flat-cartoon-138831849.jpg"
-        /><span class="font-weight-bold mt-3">Edogaru</span
-        ><span class="text-black-50">edogaru@mail.com</span><span> </span>
+        /><span class="font-weight-bold mt-3"><%= user.name %></span
+        ><span class="text-black-50"><%= user.email %></span><span> </span>
       </div>
     </div>
     <div class="col-md-6 border-right">
-      <form method="get">
+      <form method="post">
         <div class="p-3 py-5">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="text-right">Profile Settings</h4>
@@ -24,7 +24,7 @@
                 class="form-control"
                 name="name"
                 placeholder="Name"
-                value="Edogaru"
+                value="<%= user.name %>"
               />
             </div>
           </div>
@@ -36,7 +36,7 @@
                 class="form-control"
                 name="phone"
                 placeholder="Enter phone number"
-                value="098765432"
+                value="<%= user.phone %>"
               />
             </div>
           </div>
@@ -48,7 +48,7 @@
                 class="form-control"
                 name="email"
                 placeholder="Enter email"
-                value="edogaru@mail.com"
+                value="<%= user.email %>"
               />
             </div>
           </div>

@@ -1,22 +1,30 @@
 const router = require('express').Router();
 
 const authController = require('../controllers/auth.controller');
+const authMiddleware = require('../middlewares/auth.middleware');
 const passportMiddleware = require('../middlewares/passport.middleware');
 
 router.get('/signIn', authController.getSignIn);
 
 router.post(
   '/signIn',
+  authMiddleware.guestMiddleware,
   passportMiddleware.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/signIn',
   })
 );
 
-router.get('/signUp', authController.getSignUp);
+router.get('/signUp', authMiddleware.guestMiddleware, authController.getSignUp);
 
-router.post('/signUp', authController.postSignUp);
+router.post('/signUp', authMiddleware.guestMiddleware, authController.postSignUp);
 
-router.get('/signOut', authController.getSignOut);
+router.get('/signOut', authMiddleware.authMiddleware, authController.getSignOut);
+
+router.get('/users/:userId', authMiddleware.authMiddleware, authController.getRetrieveUser);
+
+router.get('/users/:userId/update', authMiddleware.authMiddleware, authController.getUpdateUser);
+
+router.post('/users/:userId/update', authMiddleware.authMiddleware, authController.putUpdateUser);
 
 module.exports = router;

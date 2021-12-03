@@ -2,7 +2,7 @@
   <div class="header__top">
     <div class="header__top__left">
       <% if (user) { %>
-        <a href="/"><%= user.name %></a>
+        <a href="/users/<%= user._id %>"><%= user.name %></a>
         <a href="/signOut">Sign out</a>
       <% } else { %>
         <a href="/signIn">Sign in</a>

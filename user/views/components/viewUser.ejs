@@ -5,9 +5,9 @@
         <img
           class="rounded-circle mt-5 border"
           width="150px"
-          src="https://thumbs.dreamstime.com/b/eating-hungry-simple-emoji-face-concept-delicious-good-yummy-food-yum-yum-smile-tongue-glutton-flat-cartoon-138831849.jpg"
-        /><span class="font-weight-bold mt-3">Edogaru</span
-        ><span class="text-black-50">edogaru@mail.com</span><span> </span>
+          src="<%= user.avatar %>"
+        /><span class="font-weight-bold mt-3"><%= user.name %></span
+        ><span class="text-black-50"><%= user.email %></span><span> </span>
       </div>
     </div>
     <div class="col-md-6 border-right">
@@ -18,7 +18,7 @@
         <div class="row mt-2">
           <div class="col-md-12">
             <span class="labels">Name: </span>
-            <h5 class="d-inline">Edogaru</h5>
+            <h5 class="d-inline"><%= user.name %></h5>
           </div>
         </div>
 
@@ -32,17 +32,18 @@
                   serif;
               "
             >
-              098745632
+              <%= user.phone %>
             </h5>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col-md-12">
             <span class="labels">Email: </span>
-            <h5 class="d-inline">edogaru@mail.com</h5>
+            <h5 class="d-inline"><%= user.email %></h5>
           </div>
         </div>
       </div>
+      <a href="/users/<%= user._id %>/update">UPDATE</a>
     </div>
   </div>
 </div>

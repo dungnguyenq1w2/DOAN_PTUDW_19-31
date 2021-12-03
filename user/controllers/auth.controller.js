@@ -1,13 +1,19 @@
 const authService = require('../services/auth.service');
 
 const getSignIn = async (req, res, next) => {
-  const { wrongPassword } = req.query;
-
-  res.render("signIn", { title: "Sign In", which: 'home', wrongPassword });
+  if (req.user) {
+    res.redirect('/');
+  }
+  else {
+    res.render('signIn', {
+      title: 'Sign In',
+      which: 'home'
+    });
+  }
 };
 
 const getSignUp = async (req, res, next) => {
-  res.render("signUp", { title: "Sign Up", which: 'home' });
+  res.render('signUp', { title: 'Sign Up', which: 'home' });
 };
 
 const postSignUp = async (req, res, next) => {
@@ -32,11 +38,36 @@ const postSignUp = async (req, res, next) => {
 const getSignOut = async (req, res, next) => {
   req.logout();
   res.redirect('/');
+};
+
+const getRetrieveUser = async (req, res, next) => {
+  res.render('viewUser', { title: req.user.name, which: 'contact' });
+};
+
+const getUpdateUser = async (req, res, next) => {
+  res.render('updateUser', { title: req.user.name, which: 'contact' });
+}
+
+const putUpdateUser = async (req, res, next) => {
+  const { userId } = req.params;
+  const { name, phone, email } = req.body;
+
+  const user = await authService.putUpdateUser(userId, name, phone, email);
+
+  if (user) {
+    res.redirect(`/users/${userId}`);
+  }
+  else {
+    res.redirect(`/users/${userId}/update`);
+  }
 }
 
 module.exports = {
   getSignIn,
   getSignUp,
   postSignUp,
-  getSignOut
+  getSignOut,
+  getRetrieveUser,
+  getUpdateUser,
+  putUpdateUser
 };
