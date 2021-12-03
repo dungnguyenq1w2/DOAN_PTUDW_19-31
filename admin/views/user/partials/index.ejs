@@ -16,7 +16,12 @@
         <form class="shop__features" id="form-query">
           <div class="shop__features__left">
             <div class="shop__features__search">
-              <input type="text" placeholder="Search" class="query-control" name="search" />
+              <input
+                type="text"
+                placeholder="Search"
+                class="query-control"
+                name="search"
+                <% if (search !== undefined) { %>value=<%= search %><% } %>/>
             </div>
             <button type="submit" class="search__icon" id="btn-submit">
               <svg
@@ -45,8 +50,14 @@
                 aria-label="Default select example"
               >
                 <option>Default sorting</option>
-                <option value="username">Username</option>
-                <option value="name">Name</option>
+                <option
+                  value="name"
+                  <% if (sort === 'name') { %>selected<% } %>
+                >Name</option>
+                <option
+                  value="email"
+                  <% if (sort === 'email') { %>selected<% } %>
+                >Email</option>
               </select>
             </div>
           </div>
@@ -134,31 +145,38 @@
       <div class="row">
         <div class="col text-center">
           <div class="pagination-bar">
-            <a href="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="25"
-                viewBox="0 0 24 24"
-              >
-                <path d="M3 12l18-12v24z"></path>
-              </svg>
-            </a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="25"
-                viewBox="0 0 24 24"
-              >
-                <path d="M21 12l-18 12v-24z"></path>
-              </svg>
-            </a>
+            <% if (pagination.order > 1) { %>
+              <a href="<%= url %>page=<%= pagination.unit %>" class="previous-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="25.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M3 12l18-12v24z"></path>
+                </svg>
+              </a>
+            <% } %>
+            <% for (let i = 0; i < pagination.end; i++) { %>
+              <a href="<%= url %>page=<%= i + pagination.unit + 1 %>"
+                <% if (i + pagination.unit + 1 == pagination.curr) { %>
+                class="active"
+                <% } %>
+                ><%= i + pagination.unit + 1 %>
+              </a>
+              <% } %>
+            <% if (pagination.num > pagination.max) { %>
+              <a href="<%= url %>page=<%= 1 + pagination.max %>" class="next-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="25.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 12l-18 12v-24z"></path>
+                </svg>
+              </a>
+            <% } %>
           </div>
         </div>
       </div>

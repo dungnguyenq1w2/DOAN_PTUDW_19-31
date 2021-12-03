@@ -40,7 +40,11 @@ const postCreateUser = async (req, res, next) => {
 };
 
 const getUpdateUser = async (req, res, next) => {
-  res.render('user/update', { title: 'User - Admin', which: 'user' });
+  const { userId } = req.params;
+
+  const user = await userService.getRetrieveUserById(userId);
+
+  res.render('user/update', { title: 'User - Admin', which: 'user', user });
 };
 
 const putUpdateUser = async (req, res, next) => {
@@ -48,7 +52,11 @@ const putUpdateUser = async (req, res, next) => {
 };
 
 const deleteUser = async (req, res, next) => {
+  const { userId } = req.params;
 
+  await userService.deleteUser(userId);
+
+  res.redirect('/users');
 };
 
 module.exports = {

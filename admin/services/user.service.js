@@ -51,6 +51,28 @@ const getRetrieveUsers = async (page, search, sort) => {
   return { users, pagination };
 };
 
+const getRetrieveUserById = async (userId) => {
+  try {
+    const user = await userModel.findById(userId);
+
+    return user;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+const deleteUser = async (userId) => {
+  try {
+    await userModel.findByIdAndUpdate(userId, { 'state.value': 'deleted' });
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
 module.exports = {
   getRetrieveUsers,
+  getRetrieveUserById,
+  deleteUser
 }
