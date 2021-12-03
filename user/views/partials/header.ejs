@@ -2,10 +2,11 @@
   <div class="header__top">
     <div class="header__top__left">
       <% if (user) { %>
-        <a href="/users/<%= user._id %>"><%= user.name %></a>
-        <a href="/signOut">Sign out</a>
+        <img src="/img/team-1.jpg" alt="avatar" class="rounded-circle" style="height:40px; width:40px; object-fit: contain;">
+        <a href="/users/<%= user._id %>" class="mx-3"><%= user.name %></a>
+        <a href="/signOut" class=" rounded border border-warning p-2">Sign out</a>
       <% } else { %>
-        <a href="/signIn">Sign in</a>
+        <a href="/signIn" class=" rounded border border-warning p-2" >Sign in</a>
       <% } %>
     </div>
     <div class="header__top__mid">
