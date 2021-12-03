@@ -36,12 +36,12 @@
   width: 100px;
   text-align: center;
 }
-.user__username,
+.user__phone,
 .user__name {
   width: 250px;
 }
 
-.user__city,
+.user__state,
 .user__options {
   width: 200px;
 }
@@ -61,7 +61,7 @@ li:not(.user-header) .user__email {
   height: 80px;
 }
 
-.user__username {
+.user__phone {
   margin-left: 20px;
 }
 

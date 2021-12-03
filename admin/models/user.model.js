@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -68,6 +69,8 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
     return error;
   }
 };
+
+userSchema.index({ name: 'text' });
 
 const userModel = mongoose.model('User', userSchema, 'users');
 

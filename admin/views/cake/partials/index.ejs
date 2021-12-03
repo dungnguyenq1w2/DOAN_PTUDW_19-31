@@ -18,6 +18,7 @@
             <div class="shop__features__search">
               <input
                 id="input-search"
+                class="query-control"
                 type="text"
                 placeholder="Search by product's name"
                 name="search"
@@ -43,7 +44,7 @@
           <div class="shop__features__right">
             <span>Sort by:</span>
             <div class="shop__features__sort">
-              <select id="select-sort" class="form-select" aria-label="Default select example" name="sort">
+              <select id="select-sort" class="form-select query-control" aria-label="Default select example" name="sort">
                 <option>Default sorting</option>
                 <option value="name" <% if (sort === 'name') { %>selected<% } %>>Name</option>
                 <option value="price" <% if (sort === 'price') { %>selected<% } %>>Price</option>

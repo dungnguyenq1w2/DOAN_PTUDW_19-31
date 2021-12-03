@@ -6,7 +6,7 @@ const getRetrieveCakes = async (req, res, next) => {
   let url = originalUrl;
   let { page, search, sort } = req.query;
 
-  if (typeof page == 'undefined') {
+  if (page === undefined) {
     page = 1;
   }
 
