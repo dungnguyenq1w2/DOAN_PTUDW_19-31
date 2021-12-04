@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const hashPasswordHelper = require('../helpers/hashPassword.helper');
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String
@@ -43,16 +45,14 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-userSchema.pre('save', async function(next) {
+userSchema.pre('save', async function (next) {
   const user = this;
 
   if (!user.isModified('password'))
     return next();
 
   try {
-    const salt = await bcrypt.genSalt(parseInt(process.env.SALT_ROUNDS));
-    const hash = await bcrypt.hash(user.password, salt);
-
+    const hash = await hashPasswordHelper(user.password);
     user.password = hash;
 
     next();

@@ -11,18 +11,46 @@
     </div>
   </section>
   <section class="main__user">
-    <form class="container" method="post" enctype='multipart/form-data'>
+    <form class="container" method="post" enctype="multipart/form-data">
       <div class="row justify-content-center">
         <div class="user-detail" style="width:60%">
           <div class="mb-3">
+            <label for="inputGroupFile04" class="form-label">Avatar:</label>
+            <input
+              type="file"
+              class="form-control"
+              id="inputGroupFile04"
+              name="avatar"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="readURL(this)">
+          </div>
+          <div class="mb-3">
             <label for="phone" class="form-label">Phone:</label>
             <input
-              type="text"
+              type="tel"
               class="form-control"
               id="phone"
               name="phone"
               value="<%= user.phone %>"
+              required
             />
+          </div>
+          <div class="mb-3">
+            <label for="user-password" class="form-label">Password:</label>
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control"
+                id="user-password"
+                name="password"
+              />
+              <button
+                class="btn btn-secondary"
+                type="button"
+                onclick="document.getElementById('user-password').type=document.getElementById('user-password').type==='password'?'text':'password';"
+              >Show/Hide</button>
+            </div>
           </div>
           <div class="mb-3">
             <label for="first-name" class="form-label">Name:</label>
@@ -32,7 +60,33 @@
               id="first-name"
               name="name"
               value="<%= user.name %>"
+              required
             />
+          </div>
+          <div class="mb-3">
+            <label for="state" class="form-label">State:</label>
+            <select
+              class="form-select"
+              id="state"
+              name="state"
+              aria-label="Default select example"
+              required>
+              <option value="active" <% if (user.state.value === 'active') { %>selected<% } %>>Active</option>
+              <option value="inactive"  <% if (user.state.value === 'inactive') { %>selected<% } %>>Inactive</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Role:</label>
+            <select
+              class="form-select"
+              id="role"
+              name="role"
+              aria-label="Default select example"
+              required>
+              <option value="admin" <% if (user.roles.includes('admin')) { %>selected<% } %>>Admin</option>
+              <option value="buyer" <% if (user.roles.includes('buyer')) { %>selected<% } %>>Buyer</option>
+              <option value="shipper" <% if (user.roles.includes('shipper')) { %>selected<% } %>>Shipper</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
@@ -42,17 +96,14 @@
               id="email"
               name="email"
               value="<%= user.email %>"
-            />
+              required/>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <div class="save-user">
-            <button
-              type="submit"
-              class="btn btn-secondary"
-            >
+            <button type="submit" class="btn btn-secondary">
               <img
                 src="/images/save-icon.png"
                 alt="Save icon"

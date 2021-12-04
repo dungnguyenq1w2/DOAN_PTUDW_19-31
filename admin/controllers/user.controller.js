@@ -32,7 +32,7 @@ const getRetrieveUsers = async (req, res, next) => {
 };
 
 const getCreateUser = async (req, res, next) => {
-  res.render('user/create', { title: 'User - Admin', which: 'user' });
+  res.render('user/create', { title: 'User', which: 'user' });
 };
 
 const postCreateUser = async (req, res, next) => {
@@ -46,10 +46,13 @@ const getUpdateUser = async (req, res, next) => {
 
   const user = await userService.getRetrieveUserById(userId);
 
-  res.render('user/update', { title: 'User - Admin', which: 'user', user });
+  res.render('user/update', { title: 'User', which: 'user', user });
 };
 
 const putUpdateUser = async (req, res, next) => {
+  await userService.putUpdateUser(req);
+
+  res.redirect('/users');
 };
 
 const deleteUser = async (req, res, next) => {
