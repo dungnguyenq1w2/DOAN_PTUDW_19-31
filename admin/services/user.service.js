@@ -1,5 +1,6 @@
 const userModel = require('../models/user.model');
 
+const uploadFileHelper = require('../helpers/uploadFile.helper');
 const paginationHelper = require('../helpers/pagination.helper');
 
 const { ITEM_PER_PAGE } = require('../bin/const');
@@ -62,6 +63,32 @@ const getRetrieveUserById = async (userId) => {
   }
 };
 
+const postCreateUser = async (req) => {
+  const { phone, password, name, state, role, email } = req.body;
+
+  try {
+    const { _id: userId } = await userModel.create({
+      name,
+      phone,
+      email,
+      password,
+      roles: [role],
+      'state.value': state,
+    });
+
+    if (req.file) {
+      const signedUrl = await uploadFileHelper(req);
+
+      await userModel.findByIdAndUpdate(userId, { avatar: signedUrl });
+    }
+
+    return userId;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
 const deleteUser = async (userId) => {
   try {
     await userModel.findByIdAndUpdate(userId, { 'state.value': 'deleted' });
@@ -74,5 +101,6 @@ const deleteUser = async (userId) => {
 module.exports = {
   getRetrieveUsers,
   getRetrieveUserById,
+  postCreateUser,
   deleteUser
 }

@@ -11,16 +11,28 @@
     </div>
   </section>
   <section class="main__user">
-    <div class="container">
+    <form class="container" method="post" enctype="multipart/form-data">
       <div class="row justify-content-center">
         <div class="user-detail" style="width:60%">
+          <div class="mb-3">
+            <label for="inputGroupFile04" class="form-label">Avatar:</label>
+            <input
+              type="file"
+              class="form-control"
+              id="inputGroupFile04"
+              name="avatar"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              onchange="readURL(this)">
+          </div>
           <div class="mb-3">
             <label for="phone" class="form-label">Phone:</label>
             <input
               type="tel"
               class="form-control"
               id="phone"
-              name="Phone"
+              name="phone"
+              required
             />
           </div>
           <div class="mb-3">
@@ -30,12 +42,13 @@
                 type="password"
                 class="form-control"
                 id="user-password"
-                value="0123456789"
+                name="password"
+                required
               />
               <button
                 class="btn btn-secondary"
                 type="button"
-                onclick="document.getElementById('user-password').type=document.getElementById('user-password').type==='password'?'text':'password';console.log('clickk');"
+                onclick="document.getElementById('user-password').type=document.getElementById('user-password').type==='password'?'text':'password';"
               >Show/Hide</button>
             </div>
           </div>
@@ -46,26 +59,33 @@
               class="form-control"
               id="first-name"
               name="name"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="city" class="form-label">City:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="city"
-              value="New York"
+              required
             />
           </div>
           <div class="mb-3">
-            <label for="address" class="form-label">Address:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="address"
-              value="104 Town View Dr, Wappingers Falls"
-            />
+            <label for="state" class="form-label">State:</label>
+            <select
+              class="form-select"
+              id="state"
+              name="state"
+              aria-label="Default select example"
+              required>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Role:</label>
+            <select
+              class="form-select"
+              id="role"
+              name="role"
+              aria-label="Default select example"
+              required>
+              <option value="admin">Admin</option>
+              <option value="buyer">Buyer</option>
+              <option value="shipper">Shipper</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
@@ -73,29 +93,15 @@
               type="email"
               class="form-control"
               id="email"
-              value="kerrydsilva2021@gmail.com"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="birthday" class="form-label">Birthday:</label>
-            <input
-              type="date"
-              class="form-control"
-              placeholder="mm-dd-yyyy"
-              id="birthday"
-              value="2001-08-25"
-            />
+              name="email"
+              required/>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <div class="save-user">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onclick="location.href='#'"
-            >
+            <button type="submit" class="btn btn-secondary">
               <img
                 src="/images/save-icon.png"
                 alt="Save icon"
@@ -106,6 +112,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </section>
 </main>

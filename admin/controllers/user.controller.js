@@ -36,7 +36,9 @@ const getCreateUser = async (req, res, next) => {
 };
 
 const postCreateUser = async (req, res, next) => {
+  await userService.postCreateUser(req);
 
+  res.redirect('/users');
 };
 
 const getUpdateUser = async (req, res, next) => {
@@ -48,7 +50,6 @@ const getUpdateUser = async (req, res, next) => {
 };
 
 const putUpdateUser = async (req, res, next) => {
-
 };
 
 const deleteUser = async (req, res, next) => {
