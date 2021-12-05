@@ -1,0 +1,44 @@
+body {
+    background: #ebe9e9;
+}
+.profile-admin {
+    padding: 100px 330px;
+    /* background: #ebe9e9; */
+}
+
+.profile-admin .profile {
+    display: flex;
+    justify-content: center;
+    width: 660px;
+    height: 350px;
+    background: #fff;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+.profile-admin .profile-image {
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.profile-admin .profile-image img {
+    border-radius: 50%;
+}
+.profile-admin .info {
+    padding-top: 20px;
+}
+.profile-admin .field-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.profile-admin .field-value {
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.profile-admin .update button {
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
