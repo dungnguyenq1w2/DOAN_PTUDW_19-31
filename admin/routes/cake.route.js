@@ -1,18 +1,39 @@
 const router = require('express').Router();
 
 const cakeController = require('../controllers/cake.controller');
+const authMiddleware = require('../middlewares/auth.middleware');
 const uploadFileMiddleware = require('../middlewares/uploadFile.middleware');
 
-router.get('/', cakeController.getRetrieveCakes);
+router.get('/',
+  authMiddleware.adminMiddleware,
+  cakeController.getRetrieveCakes
+);
 
-router.get('/create', cakeController.getCreateCake);
+router.get('/create',
+  authMiddleware.adminMiddleware,
+  cakeController.getCreateCake
+);
 
-router.post('/create', uploadFileMiddleware.single('figure'), cakeController.postCreateCake);
+router.post('/create',
+  authMiddleware.adminMiddleware,
+  uploadFileMiddleware.single('figure'),
+  cakeController.postCreateCake
+);
 
-router.get('/:cakeId/update', cakeController.getUpdateCake);
+router.get('/:cakeId/update',
+  authMiddleware.adminMiddleware,
+  cakeController.getUpdateCake
+);
 
-router.post('/:cakeId/update', uploadFileMiddleware.single('figure'), cakeController.putUpdateCake);
+router.post('/:cakeId/update',
+  authMiddleware.adminMiddleware,
+  uploadFileMiddleware.single('figure'),
+  cakeController.putUpdateCake
+);
 
-router.get('/:cakeId/delete', cakeController.deleteCake);
+router.get('/:cakeId/delete',
+  authMiddleware.adminMiddleware,
+  cakeController.deleteCake
+);
 
 module.exports = router;

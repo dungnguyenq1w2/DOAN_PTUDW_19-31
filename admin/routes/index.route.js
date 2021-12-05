@@ -1,9 +1,30 @@
 const router = require('express').Router();
 
-const cakeController = require('../controllers/cake.controller');
+const authController = require('../controllers/auth.controller');
+const authMiddleware = require('../middlewares/auth.middleware');
+const passportMiddleware = require('../middlewares/passport.middleware');
 
-router.get('/', (req, res, next) => {
-  res.redirect('/cakes');
-});
+router.get('/',
+  authMiddleware.guestMiddleware,
+  authController.getIndex
+);
+
+router.get('/signIn',
+  authMiddleware.guestMiddleware,
+  authController.getSignIn
+);
+
+router.post('/signIn',
+  authMiddleware.guestMiddleware,
+  passportMiddleware.authenticate('local', {
+    successRedirect: '/cakes',
+    failureRedirect: '/signIn',
+  })
+);
+
+router.get('/signOut',
+  authMiddleware.adminMiddleware,
+  authController.getSignOut
+);
 
 module.exports = router;

@@ -12,20 +12,27 @@ passport.use(new Strategy({
       const user = await authService.getRetrieveUserByEmail(username);
 
       if (!user) {
-        return done(null, false, { message: 'Incorrect email' });
+        const result = { message: 'Incorrect email' };
+        console.log(result.message);
+        return done(null, false, result);
       }
 
       if (!user.roles.includes('admin')) {
-        return done(null, false, { message: 'No privilege' });
+        const result = { message: 'No privilege' };
+        console.log(result.message);
+        return done(null, false, result);
       }
 
       const passwordMatch = await user.comparePassword(password);
       if (!passwordMatch) {
-        return done(null, false, { message: 'Incorrect password' });
+        const result = { message: 'Incorrect password' };
+        console.log(result);
+        return done(null, false, result);
       }
 
       return done(null, user);
     } catch (error) {
+      console.log(error);
       return done(error);
     }
   }

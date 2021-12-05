@@ -6,12 +6,14 @@
       <img src="/images/logo.png" alt="logo" />
     </div>
     <div class="header__top__right">
-      <a href="#">Log out</a>
-      <a href="#">User</a>
+      <% if (user) { %>
+        <a href="/signOut">Sign out</a>
+        <a href="#"><%= user.name %></a>
+      <% } %>
     </div>
   </div>
   <div class="header__bottom">
-      <a href="/cakes" <% if (which == 'product') { %> class="active" <% } %>><div>Products List</div></a>
-      <a href="/users" <% if (which == 'user') { %> class="active" <% } %>><div>Users List</div></a>
+    <a href="/cakes" <% if (which == 'product') { %> class="active" <% } %>><div>Products List</div></a>
+    <a href="/users" <% if (which == 'user') { %> class="active" <% } %>><div>Users List</div></a>
   </div>
 </header>
