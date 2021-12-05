@@ -12,7 +12,7 @@ const getSignOut = async (req, res, next) => {
 };
 
 const getRetrieveUser = async (req, res, next) => {
-  res.render('user/view', { });
+  res.render('viewProfile', { title: 'Profile', which: 'home' });
 }
 
 module.exports = {

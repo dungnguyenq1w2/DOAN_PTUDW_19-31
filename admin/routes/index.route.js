@@ -27,7 +27,7 @@ router.get('/signOut',
   authController.getSignOut
 );
 
-router.get('/users/view',
+router.get('/view',
   authMiddleware.adminMiddleware,
   authController.getRetrieveUser
 );

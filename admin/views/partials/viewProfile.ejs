@@ -1,0 +1,46 @@
+<main class="profile-admin">
+  <section>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="profile">
+          <div class="profile-image">
+            <img
+              height="200"
+              width="200"
+              src="<%= user.avatar %>"
+              alt="PROFILE IMAGE" />
+          </div>
+          <div class="info">
+            <div class="name">
+              <span class="field-title">Name:</span>
+              <span class="field-value"><%= user.name %></span>
+            </div>
+            <div class="role">
+              <span class="field-title">Role:</span>
+              <span class="field-value"><%= user.roles.map(role => role.charAt(0).toUpperCase() + role.slice(1)).join(', ') %></span>
+            </div>
+            <div class="phone">
+              <span class="field-title">Phone:</span>
+              <span class="field-value"><%= user.phone %></span>
+            </div>
+            <div class="email">
+              <span class="field-title">Email:</span>
+              <span class="field-value"><%= user.email %></span>
+            </div>
+            <div class="date-create">
+              <span class="field-title">Created at:</span>
+              <span class="field-value"><%= user.createdAt.toLocaleString() %></span>
+            </div>
+            <div class="update">
+              <button
+                class="btn btn-primary"
+                onclick="location.href='/users/<%= user._id %>/update'"
+              > EDIT PROFILE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
