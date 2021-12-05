@@ -1,6 +1,6 @@
-body {
+/* body {
     background: #ebe9e9;
-}
+} */
 .profile-admin {
     padding: 100px 330px;
 }
@@ -8,7 +8,7 @@ body {
 .profile-admin .profile {
     display: flex;
     justify-content: center;
-    width: 680px;
+    width: 800px;
     height: 350px;
     background: #fff;
     border-radius: 25px;
@@ -32,7 +32,7 @@ body {
     font-weight: bold;
     font-size: 20px;
     display: inline-block;
-    width: 90px;
+    width: 120px;
 }
 
 .profile-admin .field-value {
