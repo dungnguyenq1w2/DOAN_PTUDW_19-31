@@ -3,13 +3,12 @@ body {
 }
 .profile-admin {
     padding: 100px 330px;
-    /* background: #ebe9e9; */
 }
 
 .profile-admin .profile {
     display: flex;
     justify-content: center;
-    width: 660px;
+    width: 680px;
     height: 350px;
     background: #fff;
     border-radius: 25px;
@@ -23,13 +22,17 @@ body {
 
 .profile-admin .profile-image img {
     border-radius: 50%;
+    margin-right: 45px;
 }
 .profile-admin .info {
     padding-top: 20px;
+    margin-left: -20px;
 }
 .profile-admin .field-title {
     font-weight: bold;
     font-size: 20px;
+    display: inline-block;
+    width: 90px;
 }
 
 .profile-admin .field-value {
