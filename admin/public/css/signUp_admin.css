@@ -1,0 +1,114 @@
+.signUp-admin {
+    /* background: #f6f6f6; */
+    background: #ebe9e9;
+}
+
+.signUp-admin button {
+    outline: none !important;
+    border: none;
+}
+
+.signUp-admin .txt1,
+.signUp-admin .txt2 {
+    font-family: Poppins-Regular;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.signUp-admin .container1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.signUp-admin .sign-up {
+    width: 600px;
+    height: 820px;
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 50px 50px;
+    margin: 50px 0px;
+    font-weight: bold;
+}
+
+.signUp-admin .sign-up__form {
+    /* width: 450px; */
+    width: 100%;
+}
+
+.signUp-admin .sign-up__form__title {
+    font-family: Poppins-Bold;
+    font-size: 30px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding-bottom: 30px;
+}
+
+.signUp-admin .wrap-input {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+.signUp-admin .wrap-input select {
+    height: 45px;
+}
+.signUp-admin .wrap-input input {
+    font-size: 20px;
+}
+
+.signUp-admin .sign-up-button {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.signUp-admin .button-sign-up {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background: #f08632;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.signUp-admin .button-sign-up:hover {
+    background: #333333;
+}
+
+.signUp-admin .forgot-password {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.signUp-admin .sign-up__form label span {
+    color: red;
+    font-weight: bold;
+}
