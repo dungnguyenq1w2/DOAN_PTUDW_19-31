@@ -11,8 +11,13 @@ const getSignOut = async (req, res, next) => {
   res.redirect('/');
 };
 
+const getRetrieveUser = async (req, res, next) => {
+  res.render('user/view', { });
+}
+
 module.exports = {
   getIndex,
   getSignIn,
-  getSignOut
+  getSignOut,
+  getRetrieveUser
 };
