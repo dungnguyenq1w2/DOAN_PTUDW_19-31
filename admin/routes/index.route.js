@@ -5,7 +5,6 @@ const authMiddleware = require('../middlewares/auth.middleware');
 const passportMiddleware = require('../middlewares/passport.middleware');
 
 router.get('/',
-  authMiddleware.guestMiddleware,
   authController.getIndex
 );
 

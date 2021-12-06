@@ -9,7 +9,7 @@ const adminMiddleware = async (req, res, next) => {
 
 const guestMiddleware = async (req, res, next) => {
   if (req.user) {
-    res.redirect('/');
+    res.redirect('/signIn');
   }
   else {
     next();

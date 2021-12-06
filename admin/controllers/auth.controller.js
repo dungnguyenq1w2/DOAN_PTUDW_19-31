@@ -1,5 +1,10 @@
 const getIndex = async (req, res, next) => {
-  res.redirect('/signIn');
+  if (req.user) {
+    res.redirect('/cakes');
+  }
+  else {
+    res.redirect('/signIn');
+  }
 }
 
 const getSignIn = async (req, res, next) => {
