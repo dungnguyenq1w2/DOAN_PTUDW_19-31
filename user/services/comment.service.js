@@ -63,6 +63,19 @@ const getRetrieveComments = async (cakeId, page) => {
   return { comments, pagination };
 };
 
+const postCreateComment = async (userId, cakeId, content) => {
+  const comment = await commentModel.create({
+    commentator: userId,
+    cake: cakeId,
+    content
+  });
+
+  const { comments, pagination } = await getRetrieveComments(cakeId, 1);
+
+  return { comments, pagination };
+}
+
 module.exports = {
-  getRetrieveComments
+  getRetrieveComments,
+  postCreateComment
 };

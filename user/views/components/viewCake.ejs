@@ -95,9 +95,9 @@
         </p>
       </div>
     </div>
-    <form>
+    <form method='post' action='/comments?cake=<%= cake._id %>'>
       <div class="sendComment">
-        <input class="comment__input" type="text" placeholder="Your comment" />
+        <input class="comment__input" type="text" placeholder="Your comment" name="content" />
         <button type="submit" class="send__btn">
           <img src="/img/send.png" alt="send-icon" />
         </button>
