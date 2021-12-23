@@ -89,3 +89,8 @@ a:hover {
 .signIn__right a:hover {
   text-decoration: none;
 }
+
+.forgetAccount__email {
+    border: 1px solid rgba(255, 94, 2, 0.247);
+    width: 100%;
+}

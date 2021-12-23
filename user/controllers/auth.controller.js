@@ -43,6 +43,10 @@ const postSignUp = async (req, res, next) => {
   }
 };
 
+const getForgetAccount = async (req, res, next) => {
+  res.render('forgetAccount', { title: 'Forget Account', which: 'home' });
+}
+
 const getSignOut = async (req, res, next) => {
   req.logout();
   res.redirect('/');
@@ -72,6 +76,7 @@ module.exports = {
   getSignIn,
   getSignUp,
   postSignUp,
+  getForgetAccount,
   getSignOut,
   getRetrieveUser,
   getUpdateUser,
