@@ -1,21 +1,46 @@
 <div class="body">
-    <div class="signIn">
-      <div class="signIn__left">
-        <img src="/img/signin.jpg" alt="sign in picture" />
-      </div>
-      <div class="signIn__right">
-        <h3>FORGET ACCOUNT</h3>
-        <form method="post">
-          <div class="signIn__right__input">
-            <div class="forgetAccount__email" >
-              <input type="text" placeholder="Email" name="email" />
-            </div>
-          </div>
-          <button>GET PASSWORD</button>
-          <a href="signIn"> SIGN IN</a>
-          <span> || </span>
-          <a href="signUp"> SIGN UP</a>
-        </form>
-      </div>
+  <div class="signIn">
+    <div class="signIn__left">
+      <img src="/img/signin.jpg" alt="sign in picture" />
+    </div>
+    <div class="signIn__right">
+      <h3>FORGET ACCOUNT</h3>
+      <form method="post">
+        <label for="username">Email</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="securityQuestion"
+          >Security question
+          <select id="securityQuestion" name="securityQuestion">
+            <option value="securityQuestion1">
+              Where did you spend your childhood summers?
+            </option>
+            <option value="securityQuestion2">
+              What was the last name of your favorite teacher?
+            </option>
+            <option value="securityQuestion3">
+              What was the last name of your best childhood friend?
+            </option>
+            <option value="securityQuestion4">
+              What was your favorite food as a child?
+            </option>
+            <option value="securityQuestion5">
+              What is the name of your favorite sports?
+            </option>
+            <option value="securityQuestion6">
+              What is the name of your favorite sports team?
+            </option>
+          </select>
+        </label>
+
+        <label for="securityAnswer">Your answer</label>
+        <input type="text" name="securityAnswer" />
+
+        <button type="submit">GET PASSWORD</button>
+        <a href="signIn"> SIGN IN</a>
+        <span> || </span>
+        <a href="signUp"> SIGN UP</a>
+      </form>
     </div>
   </div>
+</div>

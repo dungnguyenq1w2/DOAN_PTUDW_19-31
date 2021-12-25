@@ -8,14 +8,50 @@
       <form method="post">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required />
-        <label for="phone">Phone number</label>
-        <input type="number" name="phone" id="phone" required />
+
         <label for="username">Email</label>
         <input type="email" name="email" id="email" required />
+
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required />
+
         <label for="confirmPassword">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" required />
+        <input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          required
+        />
+
+        <label for="phone">Phone number</label>
+        <input type="number" name="phone" id="phone" required />
+
+        <label for="securityQuestion"
+          >Security question
+          <select id="securityQuestion" name="securityQuestion">
+            <option value="securityQuestion1">
+              Where did you spend your childhood summers?
+            </option>
+            <option value="securityQuestion2">
+              What was the last name of your favorite teacher?
+            </option>
+            <option value="securityQuestion3">
+              What was the last name of your best childhood friend?
+            </option>
+            <option value="securityQuestion4">
+              What was your favorite food as a child?
+            </option>
+            <option value="securityQuestion5">
+              What is the name of your favorite sports?
+            </option>
+            <option value="securityQuestion6">
+              What is the name of your favorite sports team?
+            </option>
+          </select>
+        </label>
+
+        <label for="securityAnswer">Your answer</label>
+        <input type="text" name="securityAnswer" />
 
         <button type="submit">SIGN UP</button>
       </form>
