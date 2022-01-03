@@ -1,145 +1,217 @@
 <section class="stat">
-  <div class="limiter">
-    <div class="container-table100">
-      <div class="wrap-table100">
-        <div>
-          <h3>Statistics By Period</h3>
-          <div class="input__date">
-            <form action="">
-              <label for="start">Start date:</label>
-              <input
-                type="date"
-                id="start"
-                name="trip-start"
-                format="yyyy-MM-dd"
-                min="2022-01-01"
-                max="2023-01-01"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35px"
-                height="35px"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-              <label for="end">End date:</label>
-              <input
-                type="date"
-                id="end"
-                name="trip-end"
-                format="yyyy-MM-dd"
-                min="2022-01-01"
-                max="2023-01-01"
-              />
-              <button class="btn__period" type="submit">Statistic</button>
-            </form>
-          </div>
-          <div class="table100 ver2">
-            <div class="table100-head">
-              <table>
-                <thead>
-                  <tr class="row100">
-                    <th class="column1">Product</th>
-                    <th class="column2">Category</th>
-                    <th class="column5">Quantity</th>
-                    <th class="column3">Total</th>
-                  </tr>
-                </thead>
-              </table>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div>
+                    <h3>Statistics By Period</h3>
+                    <div class="input__date">
+                        <form action="">
+                            <label for="start">Start date:</label>
+                            <input
+                                type="date"
+                                id="start"
+                                name="trip-start"
+                                format="yyyy-MM-dd"
+                                min="2022-01-01"
+                                max="2023-01-01"
+                            />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="35px"
+                                height="35px"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                            <label for="end">End date:</label>
+                            <input
+                                type="date"
+                                id="end"
+                                name="trip-end"
+                                format="yyyy-MM-dd"
+                                min="2022-01-01"
+                                max="2023-01-01"
+                            />
+                            <button class="btn__period" type="submit">
+                                Statistic
+                            </button>
+                        </form>
+                    </div>
+                    <div class="table100 ver2">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                    <tr class="row100">
+                                        <th class="column1">Product</th>
+                                        <th class="column2">Category</th>
+                                        <th class="column5">Quantity</th>
+                                        <th class="column3">Total</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="table100-body">
+                            <table>
+                                <tbody>
+                                    <tr class="row100">
+                                        <td class="column1">
+                                            Cupcake Strawberry
+                                        </td>
+                                        <td class="column2">Cupcake</td>
+                                        <td class="column5">120</td>
+                                        <td class="column3">$1600</td>
+                                    </tr>
+
+                                    <tr class="row100">
+                                        <td class="column1">Biscuit Milk</td>
+                                        <td class="column2">Biscuit</td>
+                                        <td class="column5">52</td>
+                                        <td class="column3">$350</td>
+                                    </tr>
+                                    <!-- ......................... -->
+                                    <tr class="row100">
+                                        <td class="column1"></td>
+                                        <td class="column2"></td>
+                                        <td class="column5"></td>
+                                        <td class="column3">Total: $1950</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h5 style="margin-top: 20px; margin-left: 30px">Details</h5>
+                    <div class="table100 ver2">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                    <tr class="row100">
+                                        <th class="column3">Product</th>
+                                        <th class="column4">Category</th>
+                                        <th class="column3">Datetime</th>
+                                        <th class="column3">Customer</th>
+                                        <th class="column5">Quantity</th>
+                                        <th class="column4">Total</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="table100-body">
+                            <table>
+                                <tbody>
+                                    <tr class="row100">
+                                        <td class="column3">
+                                            Cupcake Strawberry
+                                        </td>
+                                        <td class="column4">Cupcake</td>
+                                        <td class="column3">
+                                            2022-01-01 12:20:30
+                                        </td>
+                                        <td class="column3">Tấn Dũng</td>
+                                        <td class="column5">2</td>
+                                        <td class="column4">$30</td>
+                                    </tr>
+
+                                    <tr class="row100">
+                                        <td class="column3">Biscuit Milk</td>
+                                        <td class="column4">Biscuit</td>
+                                        <td class="column3">
+                                            2022-01-01 12:20:30
+                                        </td>
+                                        <td class="column3">Ngọc Du</td>
+                                        <td class="column5">3</td>
+                                        <td class="column4">$50</td>
+                                    </tr>
+                                    <tr class="row100">
+                                        <td class="column3">
+                                            Cupcake Strawberry
+                                        </td>
+                                        <td class="column4">Cupcake</td>
+                                        <td class="column3">
+                                            2022-01-01 12:20:30
+                                        </td>
+                                        <td class="column3">Hải Dương</td>
+                                        <td class="column5">4</td>
+                                        <td class="column4">$70</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 60px 0px" />
+
+                <div>
+                    <h3>Statistics By Product</h3>
+                    <div class="category">
+                        <form action="">
+                            <select
+                                id="select-category"
+                                class="select__category"
+                                aria-label="Default select example"
+                                name="category"
+                            >
+                                <option>Category</option>
+                                <option value="Cupcake">Cupcake</option>
+                            </select>
+                            <button class="btn__product" type="submit">
+                                Statistic
+                            </button>
+                        </form>
+                    </div>
+                    <div class="table100 ver3">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                    <tr class="row100">
+                                        <th class="column5">Top</th>
+                                        <th class="column1">Product</th>
+                                        <th class="column2">Category</th>
+                                        <th class="column5">Quantity</th>
+                                        <th class="column3">Total</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="table100-body">
+                            <table>
+                                <tbody>
+                                    <tr class="row100">
+                                        <td class="column5">1</td>
+                                        <td class="column1">
+                                            Cupcake Strawberry
+                                        </td>
+                                        <td class="column2">Cupcake</td>
+                                        <td class="column5">120</td>
+                                        <td class="column3">$1600</td>
+                                    </tr>
+
+                                    <tr class="row100">
+                                        <td class="column5">2</td>
+                                        <td class="column1">
+                                            Cupcake Chocolate
+                                        </td>
+                                        <td class="column2">Cupcake</td>
+                                        <td class="column5">300</td>
+                                        <td class="column3">$1235</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="table100-body">
-              <table>
-                <tbody>
-                  <tr class="row100">
-                    <td class="column1">Cupcake Strawberry</td>
-                    <td class="column2">Cupcake</td>
-                    <td class="column5">120</td>
-                    <td class="column3">$1600</td>
-                  </tr>
-
-                  <tr class="row100">
-                    <td class="column1">Biscuit Milk</td>
-                    <td class="column2">Biscuit</td>
-                    <td class="column5">52</td>
-                    <td class="column3">$350</td>
-                  </tr>
-                  <!-- ......................... -->
-                  <tr class="row100">
-                    <td class="column1"></td>
-                    <td class="column2"></td>
-                    <td class="column5"></td>
-                    <td class="column3">Total: $1950</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <h5 style="margin-top: 20px; margin-left: 30px">Details</h5>
-          <div class="table100 ver2">
-            <div class="table100-head">
-              <table>
-                <thead>
-                  <tr class="row100">
-                    <th class="column3">Product</th>
-                    <th class="column4">Category</th>
-                    <th class="column3">Datetime</th>
-                    <th class="column3">Customer</th>
-                    <th class="column5">Quantity</th>
-                    <th class="column4">Total</th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-
-            <div class="table100-body">
-              <table>
-                <tbody>
-                  <tr class="row100">
-                    <td class="column3">Cupcake Strawberry</td>
-                    <td class="column4">Cupcake</td>
-                    <td class="column3">2022-01-01 12:20:30</td>
-                    <td class="column3">Tấn Dũng</td>
-                    <td class="column5">2</td>
-                    <td class="column4">$30</td>
-                  </tr>
-
-                  <tr class="row100">
-                    <td class="column3">Biscuit Milk</td>
-                    <td class="column4">Biscuit</td>
-                    <td class="column3">2022-01-01 12:20:30</td>
-                    <td class="column3">Ngọc Du</td>
-                    <td class="column5">3</td>
-                    <td class="column4">$50</td>
-                  </tr>
-                  <tr class="row100">
-                    <td class="column3">Cupcake Strawberry</td>
-                    <td class="column4">Cupcake</td>
-                    <td class="column3">2022-01-01 12:20:30</td>
-                    <td class="column3">Hải Dương</td>
-                    <td class="column5">4</td>
-                    <td class="column4">$70</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
-
-        <hr style="margin: 60px 0px" />
-
-        <!-- Paste here -->
-
-
     </div>
-  </div>
 </section>
