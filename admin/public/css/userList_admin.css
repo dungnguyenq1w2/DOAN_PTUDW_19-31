@@ -66,13 +66,15 @@ li:not(.user-header) .user__email {
 }
 
 .user__options__edit,
-.user__options__remove {
+.user__options__remove,
+.user__options__block {
   cursor: pointer;
   margin-bottom: 8px;
 }
 
 .user__options__edit > span,
-.user__options__remove > span {
+.user__options__remove > span,
+.user__options__block > span {
   color: rgb(250, 105, 8);
   font-weight: 500;
   font-size: 18px;

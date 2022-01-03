@@ -47,6 +47,80 @@
     </div>
   </div>
 </section>
+<section class="relatedProduct" style="padding: 40px 500px">
+  <h3 class="section__title">Related Products</h3>
+  <div class="products" style="padding: 0">
+    <div class="product">
+      <div class="product__img">
+        <a href="/cakes/<%= cake._id %>"
+          ><img src="<%= cake.figure %>" alt="<%= cake.name %>"
+        /></a>
+        <span class="product__category"><%= cake.category.name %></span>
+      </div>
+      <div class="product__info">
+        <h5><%= cake.name %></h5>
+        <h5
+          style="
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+              serif;
+          "
+        >
+          $ <%= cake.price %>
+        </h5>
+      </div>
+      <div class="product__cart">
+        <button class="product__cart__btn">ADD TO CART</button>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product__img">
+        <a href="/cakes/<%= cake._id %>"
+          ><img src="<%= cake.figure %>" alt="<%= cake.name %>"
+        /></a>
+        <span class="product__category"><%= cake.category.name %></span>
+      </div>
+      <div class="product__info">
+        <h5><%= cake.name %></h5>
+        <h5
+          style="
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+              serif;
+          "
+        >
+          $ <%= cake.price %>
+        </h5>
+      </div>
+      <div class="product__cart">
+        <button class="product__cart__btn">ADD TO CART</button>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product__img">
+        <a href="/cakes/<%= cake._id %>"
+          ><img src="<%= cake.figure %>" alt="<%= cake.name %>"
+        /></a>
+        <span class="product__category"><%= cake.category.name %></span>
+      </div>
+      <div class="product__info">
+        <h5><%= cake.name %></h5>
+        <h5
+          style="
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+              serif;
+          "
+        >
+          $ <%= cake.price %>
+        </h5>
+      </div>
+      <div class="product__cart">
+        <button class="product__cart__btn">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="review">
   <h3 class="section__title">Product reviews</h3>
   <div class="review__comments">
@@ -95,9 +169,14 @@
         </p>
       </div>
     </div>
-    <form method='post' action='/comments?cake=<%= cake._id %>'>
+    <form method="post" action="/comments?cake=<%= cake._id %>">
       <div class="sendComment">
-        <input class="comment__input" type="text" placeholder="Your comment" name="content" />
+        <input
+          class="comment__input"
+          type="text"
+          placeholder="Your comment"
+          name="content"
+        />
         <button type="submit" class="send__btn">
           <img src="/img/send.png" alt="send-icon" />
         </button>
