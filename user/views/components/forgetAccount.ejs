@@ -1,30 +1,13 @@
 <div class="body">
-  <div class="signUp">
-    <div class="signUp__left">
-      <img src="/img/signin.jpg" alt="sign up picture" />
+  <div class="signIn">
+    <div class="signIn__left">
+      <img src="/img/signin.jpg" alt="sign in picture" />
     </div>
-    <div class="signUp__right">
-      <h3>ACCOUNT SIGN UP</h3>
+    <div class="signIn__right">
+      <h3>FORGET ACCOUNT</h3>
       <form method="post">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required />
-
         <label for="username">Email</label>
         <input type="email" name="email" id="email" required />
-
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
-
-        <label for="confirmPassword">Confirm Password</label>
-        <input
-          type="password"
-          name="confirmPassword"
-          id="confirmPassword"
-          required
-        />
-
-        <label for="phone">Phone number</label>
-        <input type="number" name="phone" id="phone" required />
 
         <label for="securityQuestion"
           >Security question
@@ -53,9 +36,11 @@
         <label for="securityAnswer">Your answer</label>
         <input type="text" name="securityAnswer" />
 
-        <button type="submit">SIGN UP</button>
+        <button type="submit">GET PASSWORD</button>
+        <a href="signIn"> SIGN IN</a>
+        <span> || </span>
+        <a href="signUp"> SIGN UP</a>
       </form>
-      <a href="signIn">SIGN IN</a>
     </div>
   </div>
 </div>
