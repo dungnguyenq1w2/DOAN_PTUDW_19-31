@@ -31,4 +31,8 @@ router.get('/view',
   authController.getRetrieveUser
 );
 
+router.get('/statistics', async (req, res) => {
+  res.render('statistics', { title: 'Statistics' });
+});
+
 module.exports = router;
