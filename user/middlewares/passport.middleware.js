@@ -20,6 +20,14 @@ passport.use(new Strategy({
         return done(null, false, { message: 'Incorrect password' });
       }
 
+      if (user.state.value === 'inactive') {
+        return done(null, false, { message: 'Account is locked' });
+      }
+
+      if (user.state.value === 'deleted') {
+        return done(null, false, { message: 'Incorrect email' });
+      }
+
       return done(null, user);
     } catch (error) {
       return done(error);

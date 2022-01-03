@@ -58,7 +58,7 @@ const getRetrieveUser = async (req, res, next) => {
 
 const getUpdateUser = async (req, res, next) => {
   res.render('updateUser', { title: req.user.name, which: 'contact' });
-}
+};
 
 const putUpdateUser = async (req, res, next) => {
   const { userId } = req.params;
@@ -70,7 +70,7 @@ const putUpdateUser = async (req, res, next) => {
   else {
     res.redirect(`/users/${userId}/update`);
   }
-}
+};
 
 module.exports = {
   getSignIn,

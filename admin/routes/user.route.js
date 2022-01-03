@@ -36,4 +36,9 @@ router.get('/:userId/delete',
   userController.deleteUser
 );
 
+router.put('/:userId/lock',
+  authMiddleware.adminMiddleware,
+  userController.putLockUser
+);
+
 module.exports = router;

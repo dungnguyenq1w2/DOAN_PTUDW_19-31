@@ -63,11 +63,25 @@ const deleteUser = async (req, res, next) => {
   res.redirect('/users');
 };
 
+const putLockUser = async (req, res) => {
+  const { userId } = req.params;
+
+  const newState = await userService.putLockUser(userId);
+
+  if (newState !== undefined) {
+    res.status(200).json({ msg: 'success', newState });
+  }
+  else {
+    res.status(404).json({ msg: 'failed' });
+  }
+};
+
 module.exports = {
   getRetrieveUsers,
   getCreateUser,
   postCreateUser,
   getUpdateUser,
   putUpdateUser,
-  deleteUser
+  deleteUser,
+  putLockUser
 };

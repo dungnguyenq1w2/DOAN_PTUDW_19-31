@@ -87,27 +87,27 @@
             <div class="user__state"><h5>STATE</h5></div>
             <div class="user__options"><h5>OPTIONS</h5></div>
           </li>
-          <% users.forEach(user => { %>
+          <% users.forEach(currentUser => { %>
             <li class="user">
               <div class="user__avatar">
-                <img src="<%= user.avatar %>" />
+                <img src="<%= currentUser.avatar %>" />
               </div>
               <div class="user__phone">
-                <h5><%= user.phone %></h5>
+                <h5><%= currentUser.phone %></h5>
               </div>
               <div class="user__name">
-                <h5><%= user.name %></h5>
+                <h5><%= currentUser.name %></h5>
               </div>
               <div class="user__email">
-                <h5><%= user.email %></h5>
+                <h5><%= currentUser.email %></h5>
               </div>
               <div class="user__state">
-                <h5><%= user.state.value.charAt(0).toUpperCase() + user.state.value.slice(1) %></h5>
+                <h5><%= currentUser.state.value.charAt(0).toUpperCase() + currentUser.state.value.slice(1) %></h5>
               </div>
               <div class="user__options">
                 <div
                   class="user__options__edit"
-                  onclick="location.href='/users/<%= user._id %>/update'"
+                  onclick="location.href='/users/<%= currentUser._id %>/update'"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -119,12 +119,12 @@
                       d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-5 17l1.006-4.036 3.106 3.105-4.112.931zm5.16-1.879l-3.202-3.202 5.841-5.919 3.201 3.2-5.84 5.921z"
                     ></path>
                   </svg>
-                  <span>Edit user</span>
+                    <span>Edit user</span>
                 </div>
 
                 <div
                 class="user__options__remove"
-                onclick="location.href='/users/<%= user._id %>/delete'"
+                onclick="location.href='/users/<%= currentUser._id %>/delete'"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -140,13 +140,23 @@
               </div>
               <div
                   class="user__options__block"
-                  onclick="location.href='/users/'"
+                  onclick="handleLock(this, '<%= currentUser._id %>')"
                 >
+              <% if (currentUser._id.toString() !== user._id.toString()) { %>
+              <% if (currentUser.state.value === 'active') { %>
                 <svg xmlns="http://www.w3.org/2000/svg"  width="24"
                 height="24" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd" />
                   </svg>
-                  <span>Block user</span>
+                <span>Lock user</span>
+              <% } else { %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                       class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                  </svg>
+              <span>Unlock user</span>
+              <% } %>
+              <% } %>
                 </div>
               </div>
             </li>

@@ -9,6 +9,10 @@ const { ITEM_PER_PAGE } = require('../bin/const');
 const getRetrieveUsers = async (page, search, sort) => {
   const pipeline = [];
 
+  pipeline.push({
+    '$match': { 'state.value': { '$ne': 'deleted' } }
+  });
+
   if (search !== undefined) {
     pipeline.push({
       '$match': {
@@ -88,7 +92,7 @@ const postCreateUser = async (req) => {
     console.log(error);
     return error;
   }
-}
+};
 
 const putUpdateUser = async (req) => {
   const { userId } = req.params;
@@ -116,7 +120,7 @@ const putUpdateUser = async (req) => {
     console.log(error);
     return error;
   }
-}
+};
 
 const deleteUser = async (userId) => {
   try {
@@ -125,6 +129,30 @@ const deleteUser = async (userId) => {
     console.log(error);
     return error;
   }
+};
+
+const putLockUser = async (userId) => {
+  try {
+    const user = await userModel.findById(userId);
+
+    let updatedUser;
+    if (user.state.value === 'active') {
+      updatedUser = await userModel
+        .findByIdAndUpdate(userId, { 'state.value': 'inactive' }, { new: true });
+    }
+    else if (user.state.value === 'inactive') {
+      updatedUser = await userModel
+        .findByIdAndUpdate(userId, { 'state.value': 'active' }, { new: true });
+    }
+    else {
+
+    }
+
+    return updatedUser.state.value;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 }
 
 module.exports = {
@@ -132,5 +160,6 @@ module.exports = {
   getRetrieveUserById,
   postCreateUser,
   putUpdateUser,
-  deleteUser
+  deleteUser,
+  putLockUser
 }
