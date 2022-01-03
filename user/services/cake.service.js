@@ -1,9 +1,8 @@
 const cakeModel = require('../models/cake.model');
 const categoryModel = require('../models/category.model');
 
-const { ITEM_PER_PAGE, PAGE_PER_PAGINATION } = require('../bin/const');
+const { ITEM_PER_PAGE, ITEM_RELATED, PAGE_PER_PAGINATION } = require('../bin/const');
 const paginationHelper = require("../helpers/pagination.helper");
-
 
 const getRetrieveCakes = async (page, category, search, sort) => {
   const pipeline = [];
@@ -67,11 +66,32 @@ const getRetrieveCakes = async (page, category, search, sort) => {
 }
 
 const getRetrieveCake = async (cakeId) => {
-  const cake = await cakeModel
-    .findOne({ _id: cakeId, isArchived: false })
-    .populate('category', 'name');
+  try {
+    const cake = await cakeModel
+      .findOne({
+        _id: cakeId,
+        isArchived: false
+      })
+      .populate('category', 'name');
 
-  return cake;
+    const relatedProducts = await cakeModel
+      .find({
+        _id: { $ne: cake._id },
+        category: cake.category,
+        isArchived: false
+      })
+      .populate('category', 'name')
+      .limit(ITEM_RELATED);
+
+    console.log(relatedProducts);
+
+    return {
+      cake,
+      relatedProducts
+    };
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 module.exports = {

@@ -50,6 +50,7 @@
 <section class="relatedProduct" style="padding: 40px 500px">
   <h3 class="section__title">Related Products</h3>
   <div class="products" style="padding: 0">
+  <% relatedProducts.forEach(cake => { %>
     <div class="product">
       <div class="product__img">
         <a href="/cakes/<%= cake._id %>"
@@ -73,52 +74,7 @@
         <button class="product__cart__btn">ADD TO CART</button>
       </div>
     </div>
-    <div class="product">
-      <div class="product__img">
-        <a href="/cakes/<%= cake._id %>"
-          ><img src="<%= cake.figure %>" alt="<%= cake.name %>"
-        /></a>
-        <span class="product__category"><%= cake.category.name %></span>
-      </div>
-      <div class="product__info">
-        <h5><%= cake.name %></h5>
-        <h5
-          style="
-            font-size: large;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
-              serif;
-          "
-        >
-          $ <%= cake.price %>
-        </h5>
-      </div>
-      <div class="product__cart">
-        <button class="product__cart__btn">ADD TO CART</button>
-      </div>
-    </div>
-    <div class="product">
-      <div class="product__img">
-        <a href="/cakes/<%= cake._id %>"
-          ><img src="<%= cake.figure %>" alt="<%= cake.name %>"
-        /></a>
-        <span class="product__category"><%= cake.category.name %></span>
-      </div>
-      <div class="product__info">
-        <h5><%= cake.name %></h5>
-        <h5
-          style="
-            font-size: large;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
-              serif;
-          "
-        >
-          $ <%= cake.price %>
-        </h5>
-      </div>
-      <div class="product__cart">
-        <button class="product__cart__btn">ADD TO CART</button>
-      </div>
-    </div>
+  <% }); %>
   </div>
 </section>
 <section class="review">

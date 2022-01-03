@@ -37,9 +37,9 @@ const getRetrieveCakes = async (req, res, next) => {
 const getRetrieveCake = async (req, res, next) => {
   const { cakeId } = req.params;
 
-  const cake = await cakeService.getRetrieveCake(cakeId);
+  const { cake, relatedProducts } = await cakeService.getRetrieveCake(cakeId);
 
-  res.render('viewCake', { title: 'Cakes', which: 'shop', cake });
+  res.render('viewCake', { title: 'Cakes', which: 'shop', cake, relatedProducts });
 }
 
 module.exports = {
