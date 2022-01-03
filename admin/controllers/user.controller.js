@@ -44,9 +44,9 @@ const postCreateUser = async (req, res, next) => {
 const getUpdateUser = async (req, res, next) => {
   const { userId } = req.params;
 
-  const user = await userService.getRetrieveUserById(userId);
+  const editingUser = await userService.getRetrieveUserById(userId);
 
-  res.render('user/update', { title: 'User', which: 'user', user });
+  res.render('user/update', { title: 'User', which: 'user', editingUser });
 };
 
 const putUpdateUser = async (req, res, next) => {

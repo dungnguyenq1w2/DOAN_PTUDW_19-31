@@ -32,7 +32,7 @@
               class="form-control"
               id="phone"
               name="phone"
-              value="<%= user.phone %>"
+              value="<%= editingUser.phone %>"
               required
             />
           </div>
@@ -59,7 +59,7 @@
               class="form-control"
               id="first-name"
               name="name"
-              value="<%= user.name %>"
+              value="<%= editingUser.name %>"
               required
             />
           </div>
@@ -71,8 +71,8 @@
               name="state"
               aria-label="Default select example"
               required>
-              <option value="active" <% if (user.state.value === 'active') { %>selected<% } %>>Active</option>
-              <option value="inactive"  <% if (user.state.value === 'inactive') { %>selected<% } %>>Inactive</option>
+              <option value="active" <% if (editingUser.state.value === 'active') { %>selected<% } %>>Active</option>
+              <option value="inactive"  <% if (editingUser.state.value === 'inactive') { %>selected<% } %>>Inactive</option>
             </select>
           </div>
           <div class="mb-3">
@@ -83,9 +83,9 @@
               name="role"
               aria-label="Default select example"
               required>
-              <option value="admin" <% if (user.roles.includes('admin')) { %>selected<% } %>>Admin</option>
-              <option value="buyer" <% if (user.roles.includes('buyer')) { %>selected<% } %>>Buyer</option>
-              <option value="shipper" <% if (user.roles.includes('shipper')) { %>selected<% } %>>Shipper</option>
+              <option value="admin" <% if (editingUser.roles.includes('admin')) { %>selected<% } %>>Admin</option>
+              <option value="buyer" <% if (editingUser.roles.includes('buyer')) { %>selected<% } %>>Buyer</option>
+              <option value="shipper" <% if (editingUser.roles.includes('shipper')) { %>selected<% } %>>Shipper</option>
             </select>
           </div>
           <div class="mb-3">
@@ -95,7 +95,7 @@
               class="form-control"
               id="email"
               name="email"
-              value="<%= user.email %>"
+              value="<%= editingUser.email %>"
               required/>
           </div>
         </div>
