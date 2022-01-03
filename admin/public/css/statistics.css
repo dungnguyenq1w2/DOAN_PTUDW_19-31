@@ -1,0 +1,339 @@
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------ */
+a {
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* ------------------------------------ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+}
+
+p {
+    margin: 0px;
+}
+
+ul,
+li {
+    margin: 0px;
+    list-style-type: none;
+}
+
+/* ------------------------------------ */
+/* input {
+    display: block;
+      outline: none;
+      border: none !important;
+  }
+  
+  textarea {
+    display: block;
+    outline: none;
+  }
+  
+  textarea:focus, input:focus {
+    border-color: transparent !important;
+  }
+  
+  /* ------------------------------------ */
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+iframe {
+    border: none !important;
+}
+*/
+  
+  
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ Scroll bar ]*/
+  .js-pscroll {
+    position: relative;
+    overflow: hidden;
+}
+
+.input__date {
+    margin: 20px 0px;
+    font-weight: 500;
+}
+
+.select__category {
+    margin: 10px 0px 20px 0px;
+    width: 200px;
+}
+
+.btn__period,
+.btn__product {
+    margin-left: 10px;
+    background-color: #e93a3a;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+}
+.btn__product {
+    background-color: #25b13c;
+}
+.table100 .ps__rail-y {
+    width: 9px;
+    background-color: transparent;
+    opacity: 1 !important;
+    right: 5px;
+}
+
+.table100 .ps__rail-y::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    width: 100%;
+    height: calc(100% - 30px);
+    left: 0;
+    top: 15px;
+}
+
+.table100 .ps__rail-y .ps__thumb-y {
+    width: 100%;
+    right: 0;
+    background-color: transparent;
+    opacity: 1 !important;
+}
+
+.table100 .ps__rail-y .ps__thumb-y::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #cccccc;
+    border-radius: 5px;
+    width: 100%;
+    height: calc(100% - 30px);
+    left: 0;
+    top: 15px;
+}
+
+/*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+
+.limiter {
+    width: 1366px;
+    margin: 0 auto;
+}
+
+.container-table100 {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+}
+
+.wrap-table100 {
+    width: 1170px;
+}
+
+/*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+.table100 {
+    background-color: #fff;
+}
+
+table {
+    width: 100%;
+}
+
+.column1 {
+    text-align: center;
+    width: 30%;
+}
+
+.column2 {
+    text-align: center;
+    width: 25%;
+}
+
+.column3 {
+    text-align: center;
+    width: 20%;
+}
+
+.column4 {
+    text-align: center;
+    width: 15%;
+}
+
+.column5 {
+    text-align: center;
+    width: 10%;
+}
+
+.column6 {
+    text-align: center;
+    width: 5%;
+}
+
+.table100-head th {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-weight: 700;
+}
+
+.table100-body td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+/*==================================================================
+  [ Fix header ]*/
+.table100 {
+    position: relative;
+    padding-top: 60px;
+}
+
+.table100-head {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.table100-body {
+    max-height: 585px;
+    overflow: auto;
+}
+
+/*==================================================================
+  [ Ver2 ]*/
+
+.table100.ver2 .table100-head {
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.table100.ver2 th {
+    font-size: 20px;
+    color: #fa4251;
+    line-height: 1.4;
+    background-color: transparent;
+}
+
+.table100.ver2 td {
+    font-size: 17px;
+    color: #808080;
+    line-height: 1.4;
+}
+
+.table100.ver2 .table100-body tr {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/*---------------------------------------------*/
+
+.table100.ver2 {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.table100.ver2 .ps__rail-y {
+    right: 5px;
+}
+
+.table100.ver2 .ps__rail-y::before {
+    background-color: #ebebeb;
+}
+
+.table100.ver2 .ps__rail-y .ps__thumb-y::before {
+    background-color: #cccccc;
+}
+
+/* ///////// */
+.table100.ver3 {
+    background-color: #393939;
+}
+
+.table100.ver3 th {
+    font-size: 20px;
+    color: #00ad5f;
+    line-height: 1.4;
+    background-color: #393939;
+}
+
+.table100.ver3 td {
+    font-size: 17px;
+    color: #a1a1a1;
+    line-height: 1.4;
+    background-color: #222222;
+    border-bottom: 1px solid rgb(56, 56, 56);
+}
+
+/*---------------------------------------------*/
+
+.table100.ver3 {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.table100.ver3 .ps__rail-y {
+    right: 5px;
+}
+
+.table100.ver3 .ps__rail-y::before {
+    background-color: #4e4e4e;
+}
+
+.table100.ver3 .ps__rail-y .ps__thumb-y::before {
+    background-color: #00ad5f;
+}

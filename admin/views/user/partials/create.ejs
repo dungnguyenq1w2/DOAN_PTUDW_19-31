@@ -1,117 +1,166 @@
 <main>
-  <section class="main__top">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-auto">
-          <div class="title__thin">
-            <h1><b>User detail</b></h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="main__user">
-    <form class="container" method="post" enctype="multipart/form-data">
-      <div class="row justify-content-center">
-        <div class="user-detail" style="width:60%">
-          <div class="mb-3">
-            <label for="inputGroupFile04" class="form-label">Avatar:</label>
-            <input
-              type="file"
-              class="form-control"
-              id="inputGroupFile04"
-              name="avatar"
-              aria-describedby="inputGroupFileAddon04"
-              aria-label="Upload"
-              onchange="readURL(this)">
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Phone:</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="phone"
-              name="phone"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="user-password" class="form-label">Password:</label>
-            <div class="input-group">
-              <input
-                type="password"
-                class="form-control"
-                id="user-password"
-                name="password"
-                required
-              />
-              <button
-                class="btn btn-secondary"
-                type="button"
-                onclick="document.getElementById('user-password').type=document.getElementById('user-password').type==='password'?'text':'password';"
-              >Show/Hide</button>
+    <section class="main__top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <div class="title__thin">
+                        <h1><b>User detail</b></h1>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <label for="first-name" class="form-label">Name:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="first-name"
-              name="name"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="state" class="form-label">State:</label>
-            <select
-              class="form-select"
-              id="state"
-              name="state"
-              aria-label="Default select example"
-              required>
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="address" class="form-label">Role:</label>
-            <select
-              class="form-select"
-              id="role"
-              name="role"
-              aria-label="Default select example"
-              required>
-              <option value="admin">Admin</option>
-              <option value="buyer">Buyer</option>
-              <option value="shipper">Shipper</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              required/>
-          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="save-user">
-            <button type="submit" class="btn btn-secondary">
-              <img
-                src="/images/save-icon.png"
-                alt="Save icon"
-                style="width:30px;height:30px"
-              />
-              <span>&nbsp;Save user</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </section>
+    </section>
+    <section class="main__user">
+        <form class="container" method="post" enctype="multipart/form-data">
+            <div class="row justify-content-center">
+                <div class="user-detail" style="width: 50%">
+                    <div
+                        class="
+                            user-big
+                            d-flex
+                            align-items-center
+                            pb-2
+                            border-bottom
+                        "
+                    >
+                        <img
+                            src="<%= user.avatar %>"
+                            class="img"
+                            alt="User image"
+                            id="user-big-image"
+                        />
+                        <div class="upload-img pl-0 ml-0" id="img-section">
+                            <label
+                                for="inputGroupFile"
+                                class="form-label"
+                                style="color: rgb(5, 5, 153)"
+                                >PROFILE PHOTO</label
+                            >
+                            <input
+                                type="file"
+                                class="form-control"
+                                id="inputGroupFile"
+                                name="avatar"
+                                aria-describedby="inputGroupFileAddon04"
+                                aria-label="Upload"
+                                onchange="readURL_user(this)"
+                            />
+                            <i>Accept image-type file only</i>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="first-name" class="form-label">Name:</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="first-name"
+                            name="name"
+                            required
+                        />
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="phone" class="form-label"
+                                    >Phone:</label
+                                >
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="phone"
+                                    name="phone"
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="email" class="form-label"
+                                    >Email:</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="user-password" class="form-label"
+                            >Password:</label
+                        >
+                        <div class="input-group">
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="user-password"
+                                name="password"
+                            />
+                            <button
+                                class="btn btn-secondary"
+                                type="button"
+                                onclick="document.getElementById('user-password').type=document.getElementById('user-password').type==='password'?'text':'password';"
+                            >
+                                Show/Hide
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="state" class="form-label"
+                                    >State:</label
+                                >
+                                <select
+                                    class="form-select"
+                                    id="state"
+                                    name="state"
+                                    aria-label="Default select example"
+                                    required
+                                >
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="address" class="form-label"
+                                    >Role:</label
+                                >
+                                <select
+                                    class="form-select"
+                                    id="role"
+                                    name="role"
+                                    aria-label="Default select example"
+                                    required
+                                >
+                                    <option value="admin">Admin</option>
+                                    <option value="buyer">Buyer</option>
+                                    <option value="shipper">Shipper</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="save-user">
+                        <button type="submit" class="btn btn-secondary">
+                            <img
+                                src="/images/save-icon.png"
+                                alt="Save icon"
+                                style="width: 30px; height: 30px"
+                            />
+                            <span>&nbsp;Save user</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
 </main>

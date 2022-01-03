@@ -1,4 +1,5 @@
 @import "global.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .main__top {
     padding: 40px 330px;
@@ -6,43 +7,57 @@
 
 .main__top__path > a,
 .main__top__path > span {
-    color:rgb(63, 62, 62);
+    color: rgb(63, 62, 62);
     font-size: 110%;
 }
 
 .user-big {
     display: block;
-    margin-left: 100px;
     width: 100%;
     margin-right: 0;
     margin-bottom: 10px;
 }
 
-.user-big > img {
-    height: 420px;
-    width: 420px;
+.user-big img {
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid rgb(160, 159, 159);
 }
 
-.main__user {
-    padding: 30px 0px;
+.user-big .upload-img {
+    width: 100%;
+    padding-left: 20px;
 }
 
-.user-detail button {
-    background-color: rgb(124, 18, 129);
-}
-
-.mb-3 > label {
+.main__user .mb-3 > label,
+.user-big label {
     font-weight: bold;
 }
 
-.save-user {
-    text-align: center;
-    padding: 30px 0px 20px;
+.main__user #state,
+.main__user #role {
+    outline: 1px solid #ced4da;
+}
+.main__user .user-detail {
+    font-family: "Poppins", sans-serif;
+    background: rgba(240, 239, 239, 0.938);
+    padding: 30px;
+    border-radius: 10px;
+}
+.main__user .user-detail button {
+    background-color: rgb(124, 18, 129);
 }
 
-.save-user > button {
-    height: 60px;
-    width: 350px;
+.main__user .save-user {
+    text-align: center;
+    padding: 30px 0px 30px;
+}
+
+.main__user .save-user button {
+    text-transform: uppercase;
+    height: 50px;
+    width: 200px;
     background-color: black;
-    font-size: 20px;
+    font-size: 18px;
 }
