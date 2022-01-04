@@ -40,6 +40,62 @@
               </svg>
             </button>
           </div>
+          <div class="filter-role">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  class="form-check-input query-control"
+                  name="role"
+                  id="role1"
+                  value="all"
+                  checked
+                  <% if (role === "all") { %>checked<% } %>
+                >
+                  <span>All</span>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  class="form-check-input query-control"
+                  name="role"
+                  id="role2"
+                  value="admin"
+                  <% if (role === "admin") { %>checked<% } %>
+                >
+                  <span>Admin</span>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  class="form-check-input query-control"
+                  name="role"
+                  id="role3"
+                  value="buyer"
+                  <% if (role === "buyer") { %>checked<% } %>
+                >
+                  <span>Buyer</span>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  class="form-check-input query-control"
+                  name="role"
+                  id="role2"
+                  value="shipper"
+                  <% if (role === "shipper") { %>checked<% } %>
+                >
+                  <span>Shipper</span>
+              </label>
+            </div>
+          </div>
+
           <div class="shop__features__right">
             <span>Sort by:</span>
             <div class="shop__features__sort">
@@ -77,6 +133,31 @@
           </div>
         </div>
       </div>
+
+      <!-- <div class="row filter-role">
+        <div class="col">
+          <form id="filter-role">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input query-control" name="filter-role" id="role1" value="all" checked>
+                All
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input query-control" name="filter-role" id="role2" value="admin" checked>
+                Admin
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input query-control" name="filter-role" id="role3" value="buyer">
+                Buyer
+              </label>
+            </div>
+          </form>
+        </div>
+      </div> -->
       <div class="row" style="margin-top:10px">
         <ul class="user-list">
           <li class="user user-header">

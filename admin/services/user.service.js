@@ -1,33 +1,40 @@
-const userModel = require('../models/user.model');
+const userModel = require("../models/user.model");
 
-const uploadFileHelper = require('../helpers/uploadFile.helper');
-const paginationHelper = require('../helpers/pagination.helper');
-const hashPasswordHelper = require('../helpers/hashPassword.helper');
+const uploadFileHelper = require("../helpers/uploadFile.helper");
+const paginationHelper = require("../helpers/pagination.helper");
+const hashPasswordHelper = require("../helpers/hashPassword.helper");
 
-const { ITEM_PER_PAGE } = require('../bin/const');
+const { ITEM_PER_PAGE } = require("../bin/const");
 
-const getRetrieveUsers = async (page, search, sort) => {
+const getRetrieveUsers = async (page, search, sort, role) => {
   const pipeline = [];
 
   pipeline.push({
-    '$match': { 'state.value': { '$ne': 'deleted' } }
+    $match: { "state.value": { $ne: "deleted" } },
   });
 
   if (search !== undefined) {
     pipeline.push({
-      '$match': {
-        '$text': {
-          '$search': search
-        }
-      }
+      $match: {
+        $text: {
+          $search: search,
+        },
+      },
     });
   }
 
-  if (sort !== undefined && sort !== 'Default sorting') {
+  if (sort !== undefined && sort !== "Default sorting") {
     pipeline.push({
-      '$sort': { [sort]: 1 }
-    })
+      $sort: { [sort]: 1 },
+    });
   }
+
+  if (role !== undefined && role !== "all") {
+    pipeline.push({
+      $match: { roles: role },
+    });
+  }
+  // .find({ roles: "admin" })
 
   let users;
   try {
@@ -41,12 +48,12 @@ const getRetrieveUsers = async (page, search, sort) => {
   }
 
   pipeline.push({
-    '$count': 'numUsers'
-  })
+    $count: "numUsers",
+  });
 
   let numUsers;
   try {
-    [ { numUsers } ] = await userModel.aggregate(pipeline);
+    [{ numUsers }] = await userModel.aggregate(pipeline);
   } catch (error) {
     console.log(error);
     numUsers = 0;
@@ -78,7 +85,7 @@ const postCreateUser = async (req) => {
       email,
       password,
       roles: [role],
-      'state.value': state,
+      "state.value": state,
     });
 
     if (req.file) {
@@ -103,9 +110,9 @@ const putUpdateUser = async (req) => {
     phone,
     email,
     roles: [role],
-    'state.value': state
+    "state.value": state,
   };
-  if (password !== '') {
+  if (password !== "") {
     preparedUser.password = await hashPasswordHelper(password);
   }
 
@@ -124,7 +131,7 @@ const putUpdateUser = async (req) => {
 
 const deleteUser = async (userId) => {
   try {
-    await userModel.findByIdAndUpdate(userId, { 'state.value': 'deleted' });
+    await userModel.findByIdAndUpdate(userId, { "state.value": "deleted" });
   } catch (error) {
     console.log(error);
     return error;
@@ -136,16 +143,19 @@ const putLockUser = async (userId) => {
     const user = await userModel.findById(userId);
 
     let updatedUser;
-    if (user.state.value === 'active') {
-      updatedUser = await userModel
-        .findByIdAndUpdate(userId, { 'state.value': 'inactive' }, { new: true });
-    }
-    else if (user.state.value === 'inactive') {
-      updatedUser = await userModel
-        .findByIdAndUpdate(userId, { 'state.value': 'active' }, { new: true });
-    }
-    else {
-
+    if (user.state.value === "active") {
+      updatedUser = await userModel.findByIdAndUpdate(
+        userId,
+        { "state.value": "inactive" },
+        { new: true }
+      );
+    } else if (user.state.value === "inactive") {
+      updatedUser = await userModel.findByIdAndUpdate(
+        userId,
+        { "state.value": "active" },
+        { new: true }
+      );
+    } else {
     }
 
     return updatedUser.state.value;
@@ -153,7 +163,7 @@ const putLockUser = async (userId) => {
     console.log(error);
     return false;
   }
-}
+};
 
 module.exports = {
   getRetrieveUsers,
@@ -161,5 +171,5 @@ module.exports = {
   postCreateUser,
   putUpdateUser,
   deleteUser,
-  putLockUser
-}
+  putLockUser,
+};

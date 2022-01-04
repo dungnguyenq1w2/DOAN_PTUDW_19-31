@@ -1,21 +1,31 @@
-const formQuery = document.getElementById('form-query');
-const selectSort = document.getElementById('select-sort');
-const btnSubmit = document.getElementById('btn-submit');
+const formQuery = document.getElementById("form-query");
+const selectSort = document.getElementById("select-sort");
+const btnSubmit = document.getElementById("btn-submit");
+const filterRole = document.querySelector("input[name='role']");
 
-formQuery.addEventListener('submit', (event) => {
-  const inputs = event.target.getElementsByClassName('query-control');
+formQuery.addEventListener("submit", (event) => {
+  const inputs = event.target.getElementsByClassName("query-control");
 
   for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value === '' ||
-      inputs[i].value === 'Category' ||
-      inputs[i].value === 'Default sorting') {
+    if (
+      inputs[i].value === "" ||
+      inputs[i].value === "Category" ||
+      inputs[i].value === "Default sorting" ||
+      inputs[i].value === "all"
+      // inputs[i].value === "admin" ||
+      // inputs[i].value === "buyer" ||
+      // inputs[i].value === "shipper"
+    ) {
       inputs[i].disabled = true;
     }
   }
 });
 
-const handleSubmit = function() {
+const handleSubmit = function () {
   btnSubmit.click();
-}
+};
 
-selectSort.addEventListener('change', handleSubmit);
+selectSort.addEventListener("change", handleSubmit);
+filterRole.addEventListener("click", () => {
+  btnSubmit.click();
+});

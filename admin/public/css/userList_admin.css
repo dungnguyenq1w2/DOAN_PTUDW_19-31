@@ -1,9 +1,32 @@
-@import "shop.css";
-
 .main__top {
   padding: 40px 330px;
 }
+.filter-role .form-check {
+  margin: 0;
+  padding: 0;
+}
+.filter-role .form-check-label {
+  /* font-size: 120%; */
+  width: 100px;
+  background-color: rgb(238, 237, 237);
+  border-radius: 5px;
+  border: 1px solid rgb(238, 237, 237);
+}
 
+.filter-role .form-check-label span {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 0px;
+  display: block;
+  text-transform: capitalize;
+}
+.filter-role .form-check-input {
+  display: none;
+}
+.filter-role .form-check-input:checked + span {
+  background-color: #0564f3;
+  color: #ffffff;
+}
 .add-product {
   text-align: center;
   padding: 0px 0px 40px;
