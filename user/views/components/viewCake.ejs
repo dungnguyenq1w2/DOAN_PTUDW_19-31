@@ -86,15 +86,17 @@
   <div class="review__comments">
     <div id="comments">
     </div>
-    <form id="form-comment" method="post" action="/comments?cake=<%= cake._id %>">
+    <form id="form-comment">
       <div class="sendComment">
         <input
+          id="comment-input"
           class="comment__input"
           type="text"
           placeholder="Your comment"
           name="content"
+          required
         />
-        <button type="submit" class="send__btn">
+        <button type="button" class="send__btn" onclick="handleComment('<%= cake._id %>')" id="btn-comment">
           <img src="/img/send.png" alt="send-icon" />
         </button>
       </div>

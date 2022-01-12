@@ -1,4 +1,5 @@
 const commentsList = document.getElementById('comments');
+const btnComment = document.getElementById('btn-comment');
 
 const createElement = (literal) => {
   const template = document.createElement('template');
@@ -6,19 +7,8 @@ const createElement = (literal) => {
   return template.content.childNodes;
 }
 
-(async () => {
-  const url = new URL(location.href);
-  const cakeId = url.pathname.split('/cakes/')[1];
-
-  const fetchUrl = `/comments?cake=${cakeId}`;
-  const response = await fetch(
-    fetchUrl,
-    {
-      method: 'GET'
-    }
-  );
-
-  const { comments, pagination } = await response.json();
+const renderComments = (comments) => {
+  commentsList.replaceChildren();
 
   for (const comment of comments) {
     const [commentTag] = createElement(
@@ -38,8 +28,41 @@ const createElement = (literal) => {
 
     commentsList.appendChild(commentTag);
   }
+}
+
+(async () => {
+  const url = new URL(location.href);
+  const cakeId = url.pathname.split('/cakes/')[1];
+
+  const fetchUrl = `/comments?cake=${cakeId}`;
+  const response = await fetch(
+    fetchUrl,
+    {
+      method: 'GET'
+    }
+  );
+
+  const { comments, pagination } = await response.json();
+
+  renderComments(comments);
 })();
 
-document.getElementById('form-comment').addEventListener('submit', event => {
-  event.preventDefault();
-});
+const handleComment = async (cakeId) => {
+  const url = `/comments?cake=${cakeId}`;
+
+  const response = await fetch(url,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        content: document.getElementById('comment-input').value
+      })
+    }
+  );
+
+  const { comments, pagination } = await response.json();
+
+  renderComments(comments);
+};
