@@ -86,6 +86,7 @@
   <div class="review__comments">
     <div id="comments">
     </div>
+    <% if (user) { %>
     <form id="form-comment">
       <div class="sendComment">
         <input
@@ -101,6 +102,7 @@
         </button>
       </div>
     </form>
+    <% } %>
     <div id="pagination-bar" class="pagination-bar">
     </div>
   </div>
