@@ -16,8 +16,6 @@ const postCreateComments = async (req, res, next) => {
   const { cake: cakeId } = req.query;
   const { _id: userId } = req.user;
 
-  console.log(req.body);
-
   const { content } = req.body;
 
   const { comments, pagination } = await commentService.postCreateComment(userId, cakeId, content);

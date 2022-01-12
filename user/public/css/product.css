@@ -211,3 +211,8 @@
     padding: 10px;
     background-color: transparent;
 }
+
+.pagination-bar .active {
+  background-color: rgb(124, 18, 129);
+  color: white;
+}
