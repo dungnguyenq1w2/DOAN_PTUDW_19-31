@@ -13,13 +13,13 @@ const getRetrieveComments = async (req, res, next) => {
 };
 
 const postCreateComments = async (req, res, next) => {
-  const { cake: cakeId } = req.query;
-  const { _id: userId } = req.user;
-  const { content } = req.body;
-
-  const { comments, pagination } = await commentService.postCreateComment(userId, cakeId, content);
-
-  res.status(200).json({ comments, pagination });
+  // const { cake: cakeId } = req.query;
+  // const { _id: userId } = req.user;
+  // const { content } = req.body;
+  //
+  // const { comments, pagination } = await commentService.postCreateComment(userId, cakeId, content);
+  //
+  // res.status(200).json({ comments, pagination });
 };
 
 module.exports = {

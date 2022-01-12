@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 const firebaseAdmin = require('firebase-admin');
 const passport = require('passport');
 const session = require('express-session');
+const flash = require('connect-flash');
 
 const indexRouter = require('./routes/index.route');
 const authRouter = require('./routes/auth.route');
@@ -37,6 +38,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 // for passport
 app.use((req, res, next) => {

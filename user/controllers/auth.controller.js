@@ -2,10 +2,11 @@ const authService = require('../services/auth.service');
 
 const getSignIn = async (req, res, next) => {
   if (req.user) {
+    console.log(req.flash('msg'));
     res.redirect('/');
   }
   else {
-    res.render('signIn', {
+    res.render(`signIn`, {
       title: 'Sign In',
       which: 'home'
     });
@@ -21,7 +22,7 @@ const postSignUp = async (req, res, next) => {
 
   try {
     if (password !== confirmPassword) {
-      res.redirect('/signUp?passwordsNotMatch');
+      res.redirect('/signUp');
     }
 
     const createdUser = await authService.postSignUp(name, phone, email, password);

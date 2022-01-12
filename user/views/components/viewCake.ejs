@@ -84,52 +84,9 @@
 <section class="review">
   <h3 class="section__title">Product reviews</h3>
   <div class="review__comments">
-    <div class="comment__box">
-      <div class="comment__customer__info">
-        <img src="/img/customer1.jpg" alt="" />
-        <div>
-          <h4>Kerry D.Silva</h4>
-          <span>New York</span>
-        </div>
-      </div>
-      <div class="comment__message">
-        <p>
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit et ea
-          blanditiis sequi."
-        </p>
-      </div>
+    <div id="comments">
     </div>
-    <div class="comment__box">
-      <div class="comment__customer__info">
-        <img src="/img/customer2.jpg" alt="" />
-        <div>
-          <h4>Ophela Nunez</h4>
-          <span>London</span>
-        </div>
-      </div>
-      <div class="comment__message">
-        <p>
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit et ea
-          blanditiis sequi."
-        </p>
-      </div>
-    </div>
-    <div class="comment__box">
-      <div class="comment__customer__info">
-        <img src="/img/customer3.jpg" alt="" />
-        <div>
-          <h4>Kim Dahyun</h4>
-          <span>Seoul</span>
-        </div>
-      </div>
-      <div class="comment__message">
-        <p>
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit et ea
-          blanditiis sequi."
-        </p>
-      </div>
-    </div>
-    <form method="post" action="/comments?cake=<%= cake._id %>">
+    <form id="form-comment" method="post" action="/comments?cake=<%= cake._id %>">
       <div class="sendComment">
         <input
           class="comment__input"

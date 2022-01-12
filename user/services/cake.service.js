@@ -1,5 +1,6 @@
 const cakeModel = require('../models/cake.model');
 const categoryModel = require('../models/category.model');
+const userModel = require('../models/user.model');
 
 const { ITEM_PER_PAGE, ITEM_RELATED, PAGE_PER_PAGINATION } = require('../bin/const');
 const paginationHelper = require("../helpers/pagination.helper");
@@ -82,8 +83,6 @@ const getRetrieveCake = async (cakeId) => {
       })
       .populate('category', 'name')
       .limit(ITEM_RELATED);
-
-    console.log(relatedProducts);
 
     return {
       cake,

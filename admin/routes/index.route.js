@@ -32,7 +32,7 @@ router.get('/view',
 );
 
 router.get('/statistics', async (req, res) => {
-  res.render('statistics', { title: 'Statistics' });
+  res.render('statistics', { title: 'Statistics', which: 'statistics' });
 });
 
 module.exports = router;
