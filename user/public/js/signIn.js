@@ -1,0 +1,1 @@
+document.getElementById('local-storage').value = JSON.stringify(localStorage);
