@@ -13,10 +13,13 @@
       <img src="<%= cake.figure %>" alt="" />
     </div>
     <div class="product__detail__info">
+      <span id="product__id" style="display: none"><%= cake._id%></span>
       <div class="product__detail__info__header">
         <span><%= cake.category.name %></span>
         <h3><%= cake.name %></h3>
-        <h4>$ <%= cake.price %></h4>
+        <h4>
+          $ <span id="product__detail__info__price"><%= cake.price %></span>
+        </h4>
       </div>
       <div class="product__detail__info__describe">
         <p><%= cake.introduction %></p>
@@ -28,14 +31,9 @@
           </ul>
         </div>
         <div class="product__detail__option">
-          <div class="quantity">
-            <div class="pro-qty">
-              <span class="dec qtybtn">-</span>
-              <input type="text" value="2" />
-              <span class="inc qtybtn">+</span>
-            </div>
-          </div>
-          <a href="#" class="cart">Add to cart</a>
+          <button id="product__cart__btn" class="cart" style="border: none">
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
@@ -52,28 +50,29 @@
   <div class="products" style="padding: 0">
     <% relatedProducts.forEach(cake => { %>
     <div class="product">
-      <div class="product__img">
-        <a href="/cakes/<%= cake._id %>"
-          ><img
+      <span id="product__id" style="display: none"><%= cake._id%></span>
+      <a href="/cakes/<%= cake._id %>">
+        <div class="product__img">
+          <img
             src="<%= cake.figure %>"
-            alt="<%= cake.name %>"
+            alt="product"
             style="width: 250px; height: 250px"
           />
-        </a>
-        <span class="product__category"><%= cake.category.name %></span>
-      </div>
-      <div class="product__info">
-        <h5><%= cake.name %></h5>
-        <h5
-          style="
-            font-size: large;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
-              serif;
-          "
-        >
-          $ <%= cake.price %>
-        </h5>
-      </div>
+          <span class="product__category"><%= cake.category.name %></span>
+        </div>
+        <div class="product__info">
+          <h5 id="product__name"><%= cake.name %></h5>
+          <h5
+            style="
+              font-size: large;
+              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+                serif;
+            "
+          >
+            $ <span id="product__price"><%= cake.price %></span>
+          </h5>
+        </div>
+      </a>
       <div class="product__cart">
         <button class="product__cart__btn">ADD TO CART</button>
       </div>
@@ -84,8 +83,7 @@
 <section class="review">
   <h3 class="section__title">Product reviews</h3>
   <div class="review__comments">
-    <div id="comments">
-    </div>
+    <div id="comments"></div>
     <% if (user) { %>
     <form id="form-comment">
       <div class="sendComment">
@@ -97,13 +95,17 @@
           name="content"
           required
         />
-        <button type="button" class="send__btn" onclick="handleComment('<%= cake._id %>')" id="btn-comment">
+        <button
+          type="button"
+          class="send__btn"
+          onclick="handleComment('<%= cake._id %>')"
+          id="btn-comment"
+        >
           <img src="/img/send.png" alt="send-icon" />
         </button>
       </div>
     </form>
     <% } %>
-    <div id="pagination-bar" class="pagination-bar">
-    </div>
+    <div id="pagination-bar" class="pagination-bar"></div>
   </div>
 </section>

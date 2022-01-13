@@ -1,3 +1,4 @@
+// Button Add to carts in Shop
 const buttonAddCarts = document.querySelectorAll(".product__cart__btn");
 const nodeListProducts = document.querySelectorAll(".product");
 
@@ -12,12 +13,7 @@ const products = arrayProducts.map((e) => {
   };
 });
 
-const productNumbers = parseInt(localStorage.getItem("cartNumbers"));
-
-if (productNumbers) {
-  document.querySelector(".header__cart__amount").textContent = productNumbers;
-}
-
+// Add event click for button Add to cart
 for (let i = 0; i < buttonAddCarts.length; i++) {
   buttonAddCarts[i].addEventListener("click", () => {
     addProduct(products[i]);
@@ -25,7 +21,37 @@ for (let i = 0; i < buttonAddCarts.length; i++) {
   });
 }
 
-const onLoadCartNumbers = () => {};
+// Button Add to cart in Product Detail
+const nodeProductDetail = document.querySelector(".product__detail");
+if (nodeProductDetail) {
+  const buttonAddCartsDetail = nodeProductDetail.querySelector(
+    "#product__cart__btn"
+  );
+  const productDetail = {
+    id: nodeProductDetail.querySelector("#product__id").textContent,
+    name: nodeProductDetail.querySelector(".product__detail__info h3")
+      .textContent,
+    price: parseInt(
+      nodeProductDetail.querySelector("#product__detail__info__price")
+        .textContent
+    ),
+    img: nodeProductDetail.querySelector(".product__detail__img img").src,
+    inCart: 0,
+  };
+  buttonAddCartsDetail.addEventListener("click", () => {
+    addProduct(productDetail);
+    totalCost(productDetail);
+  });
+}
+
+const onLoadCartNumbers = () => {
+  const productNumbers = parseInt(localStorage.getItem("cartNumbers"));
+
+  if (productNumbers) {
+    document.querySelector(".header__cart__amount").textContent =
+      productNumbers;
+  }
+};
 
 const addProduct = (product) => {
   const productNumbers = parseInt(localStorage.getItem("cartNumbers"));
