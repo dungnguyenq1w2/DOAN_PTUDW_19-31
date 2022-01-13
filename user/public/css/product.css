@@ -156,46 +156,66 @@
 
 .review__comments {
   padding: 10px;
-  background-color: #fff;
 }
 
 .comment__box {
-  margin: 0px 20px;
-  border-bottom: 1px solid orange;
+  display: flex;
+  margin: 5px 0px;
+  padding-left: 10px;
+  background-color: rgb(255, 251, 246);
+  border-radius: 10px;
+}
+
+.comment__box img {
+  margin-top: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  object-fit: contain;
+}
+
+.comment__content {
+  padding-left: 10px;
 }
 
 .comment__customer__info {
-  padding: 10px 20px;
+  padding: 10px 0px;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
-}
-.comment__customer__info img {
-  height: 70px;
-  border-radius: 100%;
-}
-.comment__customer__info div {
+  border-bottom: 1px solid gray;
   margin-left: 10px;
 }
 
-.comment__customer__info > h4 {
+.comment__customer__info h4 {
   font-size: 1rem;
+  margin: 0;
+  font-weight: bold;
 }
 
-.comment__customer__info > span {
+.comment__customer__info span {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 0.7rem;
   display: block;
+  margin-left: 10px;
+  opacity: 0.6;
 }
 
 .comment__message {
-  padding: 20px;
-  font-style: italic;
   letter-spacing: 1px;
+  font-size: 1rem;
+  padding: 10px;
 }
+
+.comment__message p {
+  margin: 0;
+}
+
 .sendComment {
-    display: flex;
-    align-items: center;
-    background-color: aliceblue;
-    margin-top: 20px;
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+  margin-top: 20px;
 }
 
 .comment__input {
@@ -203,13 +223,13 @@
   padding: 10px 15px;
   font-size: 18px;
   border: none;
-  background-color: transparent;
+  background-color: white;
 }
 
 .send__btn {
-    border: none;
-    padding: 10px;
-    background-color: transparent;
+  border: none;
+  padding: 10px;
+  background-color: white;
 }
 
 .pagination-bar .active {
