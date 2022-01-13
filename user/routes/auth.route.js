@@ -22,6 +22,8 @@ router.post('/signUp', authMiddleware.guestMiddleware, authController.postSignUp
 
 router.get('/forgetAccount', authMiddleware.guestMiddleware, authController.getForgetAccount);
 
+router.post('/forgetAccount', authMiddleware.guestMiddleware, authController.postForgetAccount);
+
 router.get('/signOut', authMiddleware.authMiddleware, authController.getSignOut);
 
 router.get('/users/:userId', authMiddleware.authMiddleware, authController.getRetrieveUser);

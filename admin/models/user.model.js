@@ -31,12 +31,24 @@ const userSchema = new mongoose.Schema({
       default: 'inactive'
     },
     token: {
-      type: String,
-      default: null
+      content: {
+        type: String,
+        default: null
+      },
+      generatedAt: {
+        type: Date,
+        default: null
+      }
     },
-    generatedAt: {
-      type: Date,
-      default: null
+    security: {
+      question: {
+        type: String,
+        default: null
+      },
+      answer: {
+        type: String,
+        default: null
+      }
     }
   },
   createdAt: {

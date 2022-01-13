@@ -18,14 +18,14 @@ const getSignUp = async (req, res, next) => {
 };
 
 const postSignUp = async (req, res, next) => {
-  const { name, phone, email, password, confirmPassword } = req.body;
+  const { name, phone, email, password, confirmPassword, securityQuestion, securityAnswer } = req.body;
 
   try {
     if (password !== confirmPassword) {
       res.redirect('/signUp');
     }
 
-    const createdUser = await authService.postSignUp(name, phone, email, password);
+    const createdUser = await authService.postSignUp(name, phone, email, password, securityQuestion, securityAnswer);
 
     if (createdUser) {
       req.login(createdUser, error => {
@@ -47,6 +47,29 @@ const postSignUp = async (req, res, next) => {
 const getForgetAccount = async (req, res, next) => {
   res.render('forgetAccount', { title: 'Forget Account', which: 'home' });
 }
+
+const postForgetAccount = async (req, res, next) => {
+  const { email, securityQuestion, securityAnswer, newPassword } = req.body;
+
+  try {
+    const updatedUser = await authService.postForgetAccount(email, securityQuestion, securityAnswer, newPassword);
+
+    if (updatedUser) {
+      req.login(updatedUser, error => {
+        if (error) {
+          return error;
+        }
+        res.locals.user = req.user;
+      });
+      res.redirect('/');
+    } else {
+      res.redirect('/forgetAccount');
+    }
+  } catch (e) {
+    console.log(e);
+    res.redirect('/forgetAccount');
+  }
+};
 
 const getSignOut = async (req, res, next) => {
   req.logout();
@@ -78,6 +101,7 @@ module.exports = {
   getSignUp,
   postSignUp,
   getForgetAccount,
+  postForgetAccount,
   getSignOut,
   getRetrieveUser,
   getUpdateUser,

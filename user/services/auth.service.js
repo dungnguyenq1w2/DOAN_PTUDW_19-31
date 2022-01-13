@@ -1,6 +1,7 @@
 const userModel = require('../models/user.model');
 
 const uploadFileHelper = require('../helpers/uploadFile.helper');
+const hashPasswordHelper = require('../helpers/hashPassword.helper');
 
 const getRetrieveUserById = async (userId) => {
   const user = await userModel.findById(userId).lean();
@@ -14,7 +15,7 @@ const getRetrieveUserByEmail = async (email) => {
   return user;
 };
 
-const postSignUp = async (name, phone, email, password) => {
+const postSignUp = async (name, phone, email, password, securityQuestion, securityAnswer) => {
   try {
     const user = await userModel.findOne({ email });
 
@@ -26,7 +27,13 @@ const postSignUp = async (name, phone, email, password) => {
       name,
       phone,
       email,
-      password
+      password,
+      state: {
+        security: {
+          question: securityQuestion,
+          answer: securityAnswer
+        }
+      }
     });
     const createdUser = await newUser.save();
 
@@ -55,9 +62,29 @@ const putUpdateUser = async (req) => {
   }
 }
 
+const postForgetAccount = async (email, securityQuestion, securityAnswer, newPassword) => {
+  try {
+    const checkedUser = await userModel.findOne({ email });
+
+    if (checkedUser) {
+      if (checkedUser.state.security.question === securityQuestion &&
+          checkedUser.state.security.answer === securityAnswer) {
+        const hashedPassword = await hashPasswordHelper(newPassword);
+
+        const user = await userModel.findOneAndUpdate({ email }, { password: hashedPassword });
+
+        return user;
+      }
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 module.exports = {
   getRetrieveUserById,
   getRetrieveUserByEmail,
   postSignUp,
-  putUpdateUser
+  putUpdateUser,
+  postForgetAccount
 };
