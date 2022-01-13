@@ -22,110 +22,7 @@
       <div class="row">
         <div class="col-8">
           <div class="row">
-            <table class="table">
-              <tr class="table__head">
-                <th><h5>PRODUCT</h5></th>
-                <th><h5>QUANTITY</h5></th>
-                <th><h5>TOTAL</h5></th>
-                <th></th>
-              </tr>
-              <tr>
-                <td class="table__product">
-                  <div class="table__product__img">
-                    <img src="/img/product-12.jpg" alt="T-SHIRT CONTRAST POCKET">
-                  </div>
-                  <div class="table__product__details">
-                    <h6>T-SHIRT CONTRAST POCKET</h6>
-                    <h5>$98.49</h5>
-                  </div>
-                </td>
-                <td class="table__quantity">
-                  <div class="table__quantity__adjust">
-                    <button type="button" class="decrease">-</button>
-                    <input type="number" class="quantity-input" value="1">
-                    <button type="button" class="increase">+</button>
-                  </div>
-                </td>
-                <td class="table__total"><h5>$30.00</h5></td>
-                <td class="table__remove-product">
-                  <div class="table__remove-product__img">
-                    <img src="/img/close-icon.png" alt="Close icon">
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__product">
-                  <div class="table__product__img">
-                    <img src="/img/product-8.jpg" alt="DIAGONAL TEXTURED CAP">
-                  </div>
-                  <div class="table__product__details">
-                    <h6>T-SHIRT CONTRAST POCKET</h6>
-                    <h5>$98.49</h5>
-                  </div>
-                </td>
-                <td class="table__quantity">
-                  <div class="table__quantity__adjust">
-                    <button type="button" class="decrease">-</button>
-                    <input type="number" class="quantity-input" value="1">
-                    <button type="button" class="increase">+</button>
-                  </div>
-                </td>
-                <td class="table__total"><h5>$30.00</h5></td>
-                <td class="table__remove-product">
-                  <div class="table__remove-product__img">
-                    <img src="/img/close-icon.png" alt="Close icon">
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__product">
-                  <div class="table__product__img">
-                    <img src="/img/product-2.jpg" alt="BASIC FLOWING SCARF">
-                  </div>
-                  <div class="table__product__details">
-                    <h6>T-SHIRT CONTRAST POCKET</h6>
-                    <h5>$98.49</h5>
-                  </div>
-                </td>
-                <td class="table__quantity">
-                  <div class="table__quantity__adjust">
-                    <button type="button" class="decrease">-</button>
-                    <input type="number" class="quantity-input" value="1">
-                    <button type="button" class="increase">+</button>
-                  </div>
-                </td>
-                <td class="table__total"><h5>$30.00</h5></td>
-                <td class="table__remove-product">
-                  <div class="table__remove-product__img">
-                    <img src="/img/close-icon.png" alt="Close icon">
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__product">
-                  <div class="table__product__img">
-                    <img src="/img/product-10.jpg" alt="BASIC FLOWING SCARF">
-                  </div>
-                  <div class="table__product__details">
-                    <h6>T-SHIRT CONTRAST POCKET</h6>
-                    <h5>$98.49</h5>
-                  </div>
-                </td>
-                <td class="table__quantity">
-                  <div class="table__quantity__adjust">
-                    <button type="button" class="decrease">-</button>
-                    <input type="number" class="quantity-input" value="1">
-                    <button type="button" class="increase">+</button>
-                  </div>
-                </td>
-                <td class="table__total"><h5>$30.00</h5></td>
-                <td class="table__remove-product">
-                  <div class="table__remove-product__img">
-                    <img src="/img/close-icon.png" alt="Close icon">
-                  </div>
-                </td>
-                <td></td>
-              </tr>
+            <table id="product__cart__container">
             </table>
           </div>
           <div class="row justify-content-between shopping-choice">
@@ -156,8 +53,8 @@
           <div class="cart-total">
             <h5><b>CART TOTAL</b></h5>
             <ul>
-              <li>Subtotal<span>$169.50</span></li>
-              <li>Total<span>$169.50</span></li>
+              <li>Total <span id="cart__total"></span></li>
+
             </ul>
             <button class="btn btn-secondary" type="submit" style="width:100%;" onclick="location.href='checkout'">PROCEED TO CHECKOUT</a>
           </div>

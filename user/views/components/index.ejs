@@ -109,36 +109,43 @@
 
 <section class="categories">
   <% categories.forEach(category => { %>
-    <div class="category">
-      <img
-        src="<%= category.figure %>"
-        alt="<%= category.name %>"
-        onclick="location.href='/shop?category=<%= category.name %>'"/>
-      <h4 class="category__name"><%= category.name %></h4>
-    </div>
+  <div class="category">
+    <img
+      src="<%= category.figure %>"
+      alt="<%= category.name %>"
+      onclick="location.href='/shop?category=<%= category.name %>'"
+    />
+    <h4 class="category__name"><%= category.name %></h4>
+  </div>
   <% }); %>
 </section>
 
 <section class="products">
   <% cakes.forEach((cake) => { %>
   <div class="product">
-    <div class="product__img">
-      <a href="/cakes/<%= cake._id %>"
-        ><img src="<%= cake.figure %>" alt="<%= cake.name %>"
-      /></a>
-      <span class="product__category"><%= cake.category.name %></span>
-    </div>
-    <div class="product__info">
-      <h5><%= cake.name %></h5>
-      <h5
-        style="
-          font-size: large;
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        "
-      >
-        $ <%= cake.price %>
-      </h5>
-    </div>
+    <span id="product__id" style="display: none"><%= cake._id%></span>
+    <a href="/cakes/<%= cake._id %>">
+      <div class="product__img">
+        <img
+          src="<%= cake.figure %>"
+          alt="product"
+          style="width: 250px; height: 250px"
+        />
+        <span class="product__category"><%= cake.category.name %></span>
+      </div>
+      <div class="product__info">
+        <h5 id="product__name"><%= cake.name %></h5>
+        <h5
+          style="
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+              serif;
+          "
+        >
+          $ <span id="product__price"><%= cake.price %></span>
+        </h5>
+      </div>
+    </a>
     <div class="product__cart">
       <button class="product__cart__btn">ADD TO CART</button>
     </div>

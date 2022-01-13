@@ -117,15 +117,15 @@ header {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 27px;
   border-radius: 100%;
   background-color: rgb(253 166 91);
   color: white;
   font-weight: bold;
   position: absolute;
   top: -15%;
-  right: -10%;
+  right: -20%;
 }
 
 .header__bottom {

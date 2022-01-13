@@ -66,14 +66,15 @@
   <div class="shop__products">
     <% cakes.forEach(cake => { %>
     <div class="product">
+        <span id="product__id" style="display: none;"><%= cake._id%></span>
       <a href="/cakes/<%= cake._id %>">
         <div class="product__img">
             <img src="<%= cake.figure %>" alt="product" style="width: 250px; height: 250px;"/>
-          <span class="product__category"><%= cake.category.name %></span>
+            <span class="product__category"><%= cake.category.name %></span>
         </div>
         <div class="product__info">
-          <h5><%= cake.name %></h5>
-          <h5 style="font-size:large; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">$ <%= cake.price %></h5>
+            <h5 id="product__name"><%= cake.name %></h5>
+            <h5 style="font-size:large; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">$ <span id="product__price"><%= cake.price %></span></h5>
 
         </div>
       </a>
