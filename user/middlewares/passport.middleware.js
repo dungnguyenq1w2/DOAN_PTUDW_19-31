@@ -2,12 +2,15 @@ const passport = require('passport');
 const { Strategy } = require('passport-local');
 
 const authService = require('../services/auth.service');
+const cartService = require('../services/cart.service');
+const {updateCart} = require("../services/cart.service");
 
 passport.use(new Strategy({
     usernameField: 'email',
-    passwordField: 'password'
+    passwordField: 'password',
+    passReqToCallback: true
   },
-  async (username, password, done) => {
+  async (req, username, password, done) => {
     try {
       const user = await authService.getRetrieveUserByEmail(username);
 
@@ -27,6 +30,8 @@ passport.use(new Strategy({
       if (user.state.value === 'deleted') {
         return done(null, false, { message: 'Incorrect email' });
       }
+
+      await updateCart(user, req.body.localStorage);
 
       return done(null, user);
     } catch (error) {
