@@ -1,7 +1,7 @@
 const formQuery = document.getElementById("form-query");
 const selectSort = document.getElementById("select-sort");
 const btnSubmit = document.getElementById("btn-submit");
-const filterRole = document.querySelector("input[name='role']");
+const filterRole = document.querySelectorAll("input[name='role']");
 
 formQuery.addEventListener("submit", (event) => {
   const inputs = event.target.getElementsByClassName("query-control");
@@ -12,9 +12,6 @@ formQuery.addEventListener("submit", (event) => {
       inputs[i].value === "Category" ||
       inputs[i].value === "Default sorting" ||
       inputs[i].value === "all"
-      // inputs[i].value === "admin" ||
-      // inputs[i].value === "buyer" ||
-      // inputs[i].value === "shipper"
     ) {
       inputs[i].disabled = true;
     }
@@ -26,6 +23,8 @@ const handleSubmit = function () {
 };
 
 selectSort.addEventListener("change", handleSubmit);
-filterRole.addEventListener("click", () => {
-  btnSubmit.click();
+filterRole.forEach((test) => {
+  test.addEventListener("click", () => {
+    btnSubmit.click();
+  });
 });
