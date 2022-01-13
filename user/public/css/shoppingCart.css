@@ -19,6 +19,10 @@
     padding: 20px 5px;
 } */
 
+.row__cart__item {
+  border-bottom: 1px solid rgb(218, 102, 7);
+}
+
 .table__product__img {
   float: left;
 }
@@ -39,8 +43,6 @@
 }
 
 .table__quantity__adjust {
-  padding-top: 35px;
-  padding-left: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -68,10 +70,6 @@ input[type="number"]::-webkit-outer-spin-button {
   /* padding: 58px 0px;*/
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   vertical-align: middle;
-}
-
-.table__remove-product__img {
-  padding-top: 32px;
 }
 
 .shopping-choice {
