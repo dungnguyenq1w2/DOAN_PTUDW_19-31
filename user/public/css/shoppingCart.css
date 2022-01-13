@@ -38,6 +38,10 @@
   padding-top: 25px;
 }
 
+.table__remove-product__img img {
+  cursor: pointer;
+}
+
 .table__product__details h5 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -276,5 +276,25 @@ const deleteCart = (cartItems, cart) => {
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 };
 
+const checkout = () => {
+  const checkoutProduct = document.querySelector("#order__product__container");
+  if (checkoutProduct) {
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+    if (cartItems) {
+      Object.values(cartItems).map((e) => {
+        checkoutProduct.innerHTML += `
+        <li>${e.name}<span>$${e.inCart * e.price}</span></li>
+        `;
+      });
+    }
+  }
+  const total = document.querySelector(".your-order__total h6 span");
+  if (total) {
+    total.innerText = "$" + localStorage.getItem("totalCost");
+  }
+};
+
+checkout();
 onLoadCartNumbers();
 displayCart();
