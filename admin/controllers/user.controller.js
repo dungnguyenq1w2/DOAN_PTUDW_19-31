@@ -4,8 +4,8 @@ const getRetrieveUsers = async (req, res, next) => {
   const { originalUrl } = req;
   let url = originalUrl;
   let { page, search, sort, role } = req.query;
-  // let role = req.body.optradio.value;
-  console.log(role);
+  // if (search.endsWith("/")) search = search.slice(0, -1);
+
   if (page === undefined) {
     page = 1;
   }

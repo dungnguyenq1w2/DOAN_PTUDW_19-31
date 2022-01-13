@@ -1,41 +1,41 @@
-const cakeModel = require('../models/cake.model');
-const categoryModel = require('../models/category.model');
-const uploadFileHelper = require('../helpers/uploadFile.helper');
-const paginationHelper = require('../helpers/pagination.helper');
-const { ITEM_PER_PAGE } = require('../bin/const');
+const cakeModel = require("../models/cake.model");
+const categoryModel = require("../models/category.model");
+const uploadFileHelper = require("../helpers/uploadFile.helper");
+const paginationHelper = require("../helpers/pagination.helper");
+const { ITEM_PER_PAGE } = require("../bin/const");
 
 const getRetrieveCakes = async (page, search, sort) => {
   const pipeline = [];
 
   if (search !== undefined) {
     pipeline.push({
-      '$match': {
-        '$text': {
-          '$search': search
-        }
-      }
+      $match: {
+        $text: {
+          $search: search,
+        },
+      },
     });
   }
 
   pipeline.push(
     {
-      '$match': { 'isArchived': false }
+      $match: { isArchived: false },
     },
     {
-      '$lookup': {
-        from: 'categories',
-        localField: 'category',
-        foreignField: '_id',
-        as: 'category'
-      }
+      $lookup: {
+        from: "categories",
+        localField: "category",
+        foreignField: "_id",
+        as: "category",
+      },
     },
-    { '$unwind': '$category' }
+    { $unwind: "$category" }
   );
 
-  if (sort !== undefined && sort !== 'Default sorting') {
+  if (sort !== undefined && sort !== "Default sorting") {
     pipeline.push({
-      '$sort': { [sort]: 1 }
-    })
+      $sort: { [sort]: 1 },
+    });
   }
 
   const cakes = await cakeModel
@@ -44,12 +44,12 @@ const getRetrieveCakes = async (page, search, sort) => {
     .limit(ITEM_PER_PAGE);
 
   pipeline.push({
-    '$count': 'numCakes'
-  })
+    $count: "numCakes",
+  });
 
   let numCakes;
   try {
-    [ { numCakes } ] = await cakeModel.aggregate(pipeline);
+    [{ numCakes }] = await cakeModel.aggregate(pipeline);
   } catch (error) {
     numCakes = 0;
   }
@@ -64,7 +64,7 @@ const postCreateCake = async (req) => {
 
   const { _id: categoryId } = await categoryModel.findOne({ name: category });
   const signedUrl = await uploadFileHelper(req);
-  const cleanedTag = tags.filter(tag => tag);
+  const cleanedTag = tags.filter((tag) => tag);
 
   const cake = new cakeModel({
     name,
@@ -73,7 +73,7 @@ const postCreateCake = async (req) => {
     price,
     category: categoryId,
     figure: signedUrl,
-    tags: cleanedTag
+    tags: cleanedTag,
   });
 
   try {
@@ -84,19 +84,18 @@ const postCreateCake = async (req) => {
 };
 
 const getUpdateCake = async (cakeId) => {
-  const cake = await cakeModel
-    .findById(cakeId)
-    .populate('category', 'name');
+  const cake = await cakeModel.findById(cakeId).populate("category", "name");
 
   return cake;
 };
 
 const putUpdateCake = async (req) => {
   const { cakeId } = req.params;
-  const { name, introduction, description, price, category, figure, tags } = req.body;
+  const { name, introduction, description, price, category, figure, tags } =
+    req.body;
 
   const { _id: categoryId } = await categoryModel.findOne({ name: category });
-  const cleanedTags = tags.filter(tag => tag);
+  const cleanedTags = tags.filter((tag) => tag);
 
   await cakeModel.findByIdAndUpdate(cakeId, {
     name,
@@ -105,13 +104,13 @@ const putUpdateCake = async (req) => {
     price,
     category: categoryId,
     figure,
-    tags: cleanedTags
+    tags: cleanedTags,
   });
 
   if (req.file) {
     const signedUrl = await uploadFileHelper(req);
 
-    await  cakeModel.findByIdAndUpdate(cakeId, { figure: signedUrl });
+    await cakeModel.findByIdAndUpdate(cakeId, { figure: signedUrl });
   }
 };
 
@@ -124,5 +123,5 @@ module.exports = {
   postCreateCake,
   getUpdateCake,
   putUpdateCake,
-  deleteCake
+  deleteCake,
 };
