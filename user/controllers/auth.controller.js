@@ -1,4 +1,5 @@
 const authService = require('../services/auth.service');
+const cartService = require("../services/cart.service");
 
 const getSignIn = async (req, res, next) => {
   if (req.user) {
@@ -11,6 +12,12 @@ const getSignIn = async (req, res, next) => {
       which: 'home'
     });
   }
+};
+
+const postSignIn = async (req, res) => {
+  const cart = await cartService.getCurrentCart(req.user);
+
+  res.status(200).json(cart);
 };
 
 const getSignUp = async (req, res, next) => {
@@ -98,6 +105,7 @@ const putUpdateUser = async (req, res, next) => {
 
 module.exports = {
   getSignIn,
+  postSignIn,
   getSignUp,
   postSignUp,
   getForgetAccount,

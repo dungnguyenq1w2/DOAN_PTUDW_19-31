@@ -3,7 +3,6 @@ const { Strategy } = require('passport-local');
 
 const authService = require('../services/auth.service');
 const cartService = require('../services/cart.service');
-const {updateCart} = require("../services/cart.service");
 
 passport.use(new Strategy({
     usernameField: 'email',
@@ -31,7 +30,7 @@ passport.use(new Strategy({
         return done(null, false, { message: 'Incorrect email' });
       }
 
-      await updateCart(user, req.body.localStorage);
+      await cartService.updateAuthCart(user, req.body.localStorage);
 
       return done(null, user);
     } catch (error) {

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const authController = require('../controllers/auth.controller');
+const cartController = require('../controllers/cart.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
 const passportMiddleware = require('../middlewares/passport.middleware');
 const uploadFileMiddleware = require('../middlewares/uploadFile.middleware');
@@ -10,10 +11,8 @@ router.get('/signIn', authController.getSignIn);
 router.post(
   '/signIn',
   authMiddleware.guestMiddleware,
-  passportMiddleware.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/signIn',
-  })
+  passportMiddleware.authenticate('local', { failureRedirect: '/signIn' }),
+  authController.postSignIn
 );
 
 router.get('/signUp', authMiddleware.guestMiddleware, authController.getSignUp);

@@ -1,3 +1,29 @@
+// const updateCart = async () => {
+//   const url = '/cart/update';
+//   const response = await fetch(url, {
+//     method: 'PUT',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({
+//       localStorage
+//     })
+//   });
+// };
+
+const updateCart = async () => {
+  const url = '/cart/update';
+  const response = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      localStorage: JSON.stringify(localStorage)
+    })
+  });
+};
+
 // Button Add to carts in Shop
 const buttonAddCarts = document.querySelectorAll(".product__cart__btn");
 const nodeListProducts = document.querySelectorAll(".product");
@@ -87,6 +113,8 @@ const setItems = (product) => {
   }
 
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+
+  updateCart().then();
 };
 
 const totalCost = (product) => {
@@ -210,6 +238,8 @@ const decreaseCart = (cartItems, cart) => {
   )}`;
 
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+
+  updateCart().then();
 };
 
 const increaseCart = (cartItems, cart) => {
@@ -245,6 +275,8 @@ const increaseCart = (cartItems, cart) => {
   )}`;
 
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+
+  updateCart().then();
 };
 
 const deleteCart = (cartItems, cart) => {
@@ -274,6 +306,8 @@ const deleteCart = (cartItems, cart) => {
   delete cartItems[cartId];
 
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+
+  updateCart().then();
 };
 
 const checkout = () => {

@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
 
 const cartModel = require('../models/cart.model');
-const {mongo} = require("mongoose");
+const cakeModel = require('../models/cake.model');
 
-const updateCart = async (user, rawLocalStorage) => {
+const updateAuthCart = async (user, rawLocalStorage) => {
   const localStorage = JSON.parse(rawLocalStorage);
-  const productsInCart = Object.values(JSON.parse(localStorage.productsInCart));
+
+  let productsInCart = [];
+
+  if (localStorage.productsInCart) {
+    productsInCart = Object.values(JSON.parse(localStorage.productsInCart));
+  }
 
   const instantWares = productsInCart.map(product => {
     const ware = {};
@@ -52,6 +57,50 @@ const updateCart = async (user, rawLocalStorage) => {
   }
 };
 
+const updateInstantCart = async (user, rawLocalStorage) => {
+  const localStorage = JSON.parse(rawLocalStorage);
+
+  let productsInCart = [];
+
+  if (localStorage.productsInCart) {
+    productsInCart = Object.values(JSON.parse(localStorage.productsInCart));
+  }
+
+  const instantWares = productsInCart.map(product => {
+    const ware = {};
+    ware.cake = mongoose.Types.ObjectId(product.id);
+    ware.quantity = product.inCart;
+
+    return ware;
+  });
+
+  try {
+    const updatedCart = await cartModel.findOneAndUpdate(
+      { user: user._id },
+      { wares: instantWares },
+      { new: true, upsert: true });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+const getCurrentCart = async (user) => {
+  try {
+    const cart = await cartModel.findOne({ user: user._id }).lean();
+
+    for (const ware of cart.wares) {
+      const cake = await cakeModel.findById(ware.cake, 'figure name price');
+      ware.cake = cake;
+    }
+
+    return cart;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 module.exports = {
-  updateCart
+  updateAuthCart,
+  updateInstantCart,
+  getCurrentCart
 }
