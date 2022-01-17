@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
     value: {
       type: String,
       enum: ['active', 'inactive', 'deleted'],
-      default: 'inactive'
+      default: 'active'
     },
     token: {
       content: {
