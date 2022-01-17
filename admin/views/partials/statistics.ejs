@@ -13,8 +13,11 @@
                 id="start"
                 name="start"
                 format="yyyy-MM-dd"
-                min="2022-01-01"
+                min="2021-01-01"
                 max="2023-01-01"
+                <% if (start) { %>
+                 value=<%= start %> 
+                <% } %>
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,8 +40,11 @@
                 id="end"
                 name="end"
                 format="yyyy-MM-dd"
-                min="2022-01-01"
+                min="2021-01-01"
                 max="2023-01-01"
+                <% if (end) { %>
+                  value=<%= end %> 
+                 <% } %>
               />
               <button class="btn__period" type="submit">Statistic</button>
             </form>
@@ -46,12 +52,15 @@
           <div class="table100 ver2">
             <div class="table100-head">
               <table>
-                <thead>
+                <thead class="text-center">
                   <tr class="row100">
-                    <th class="column1">Product</th>
+                    <!-- <th class="column1">Product</th>
                     <th class="column2">Category</th>
-                    <th class="column5">Quantity</th>
-                    <th class="column3">Total</th>
+                    <th class="column5">Quantity</th> -->
+                    <th style="text-align:center;width:7%;">OrderId</th>
+                    <th class="column6">Customer</th>
+                    <th class="column6">Datetime</th>
+                    <th class="column6">Total</th>
                   </tr>
                 </thead>
               </table>
@@ -60,16 +69,23 @@
             <div class="table100-body">
               <table>
                 <tbody>
-                  <% orders.forEach(currOrder => { %>
+                  <% if (orders) { %> <% orders.forEach(currOrder => { %>
                   <tr class="row100">
-                    <td class="column1"><%= currOrder.cake.name %></td>
-                    <td class="column2"><%= currOrder.cake.category.name %></td>
-                    <td class="column5"><%= currOrder.quantity %></td>
-                    <td class="column3">
-                      <%= currOrder.cake.price*currOrder.quantity %>
+                    <td class="column6"><%= currOrder._id %> </td>
+                    <td class="column2">
+                      <% if (currOrder.name != null){ %>
+                      <% } %>
+                      <%= currOrder.name.first + " " + currOrder.name.last %> 
+                    </td>
+                    <td class="column2">
+                      <%= currOrder.createdAt.toLocaleString() %>
+                    </td>
+                    <td class="column2">
+                      $<%= currOrder.total %>
                     </td>
                   </tr>
-                  <% }) %>
+                  <% }) %> <% } %>
+
                   <!-- <tr class="row100">
                     <td class="column1">Cupcake Strawberry</td>
                     <td class="column2">Cupcake</td>
@@ -86,8 +102,8 @@
                   <tr class="row100">
                     <td class="column1"></td>
                     <td class="column2"></td>
-                    <td class="column5"></td>
-                    <td class="column3">Total: $1950</td>
+                    <td class="column2"></td>
+                    <td class="column2" style="text-align:left;padding-left:10px"><b>Total Sum: $<%= total %> </b></td>
                   </tr>
                 </tbody>
               </table>
@@ -100,11 +116,12 @@
               <table>
                 <thead>
                   <tr class="row100">
-                    <th class="column3">Product</th>
-                    <th class="column4">Category</th>
-                    <th class="column3">Datetime</th>
                     <th class="column3">Customer</th>
-                    <th class="column5">Quantity</th>
+                    <th class="column3">Datetime</th>
+                    <th class="column3">Products</th>
+                    <th class="column4">Unit Price</th>
+                    <th class="column5">Money</th>
+                    <!-- <th class="column3">Price</th> -->
                     <th class="column4">Total</th>
                   </tr>
                 </thead>
@@ -114,20 +131,37 @@
             <div class="table100-body">
               <table>
                 <tbody>
-                  <% orders.forEach(currOrder => { %>
+                  <% if (orders) { %> <% orders.forEach(currOrder => { %>
+                  <!--  -->
                   <tr class="row100">
-                    <tr class="row100">
-                        <td class="column3"><%= currOrder.cake.name %></td>
-                        <td class="column4"><%= currOrder.cake.category.name %></td>
-                        <td class="column3"><%= currOrder.order.createdAt %></td>
-                        <td class="column3"><%= currOrder.order.orderer.name %></td>
-                        <td class="column5"><%= currOrder.quantity %></td>
-                        <td class="column4">
-                            <%= currOrder.cake.price*currOrder.quantity %>
-                        </td>
-                      </tr>
+                    <td class="column3">
+                      <% if (currOrder.name != null){ %>
+                      <% } %>
+                      <%= currOrder.name.first + " " + currOrder.name.last %> 
+                    </td>
+                    <td class="column3">
+                      <%= currOrder.createdAt.toLocaleString() %>
+                    </td>
+                    <td class="column3">
+                      <% currOrder.wares.forEach(item => { %>
+                       <p><%= item.cake.name %><b> x<%= item.quantity %></b></p> 
+                      <% }) %>
+                    </td>
+                    <td class="column4">
+                      <% currOrder.wares.forEach(item => { %>
+                        <p>$<%= item.cake.price %> </p> 
+                       <% }) %>
+                    </td>
+                    <td class="column5">
+                      <% currOrder.wares.forEach(item => { %>
+                        <p>$<%= item.quantity*item.cake.price %></p> 
+                       <% }) %>
+                    </td>
+                    <td class="column4">
+                      $<%= currOrder.total %>
+                    </td>
                   </tr>
-                  <% }) %>
+                  <% }) %> <% } %>
                   <!-- <tr class="row100">
                     <td class="column3">Cupcake Strawberry</td>
                     <td class="column4">Cupcake</td>
@@ -155,8 +189,15 @@
                 aria-label="Default select example"
                 name="category"
               >
-                <option>Category</option>
-                <option value="Cupcake">Cupcake</option>
+                <% categories.forEach(element => { %>
+                <option
+                  value="<%=element.name %>"
+                  style="color:black"
+                <% if (element.name == category) { %>selected>
+                  <%=element.name %>
+                <% } %>
+                </option>
+                <% }) %>
               </select>
               <button class="btn__product" type="submit">Statistic</button>
             </form>
