@@ -103,6 +103,34 @@ const putUpdateUser = async (req, res, next) => {
   }
 };
 
+const getChangePassword = async (req, res) => {
+  res.render('changePassword', { title: 'Change password', which: 'contact' });
+};
+
+const putChangePassword = async (req, res) => {
+  const { newPassword } = req.body;
+  const user = await authService.putChangePassword(req.user, newPassword);
+
+  if (user) {
+    res.status(200).json({ msg: 'success' });
+  }
+  else {
+    res.status(401).json({ msg: 'failed' });
+  }
+};
+
+const postCheckPassword = async (req, res) => {
+  const { currentPassword } = req.body;
+  const passwordMatch = await authService.postCheckPassword(req.user, currentPassword);
+
+  if (passwordMatch) {
+    res.status(200).json({ msg: 'success' });
+  }
+  else {
+    res.status(401).json({ msg: 'failed' });
+  }
+};
+
 module.exports = {
   getSignIn,
   postSignIn,
@@ -113,5 +141,8 @@ module.exports = {
   getSignOut,
   getRetrieveUser,
   getUpdateUser,
-  putUpdateUser
+  putUpdateUser,
+  getChangePassword,
+  putChangePassword,
+  postCheckPassword
 };

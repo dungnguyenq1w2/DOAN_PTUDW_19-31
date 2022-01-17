@@ -36,4 +36,10 @@ router.post(
   authController.putUpdateUser
 );
 
+router.get('/users/:userId/changePassword', authMiddleware.authMiddleware, authController.getChangePassword);
+
+router.put('/users/changePassword', authMiddleware.authMiddleware, authController.putChangePassword);
+
+router.post('/users/checkPassword', authMiddleware.authMiddleware, authController.postCheckPassword);
+
 module.exports = router;

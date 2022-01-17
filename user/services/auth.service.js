@@ -79,6 +79,29 @@ const postForgetAccount = async (email, securityQuestion, securityAnswer, newPas
   } catch (e) {
     console.log(e);
   }
+};
+
+const putChangePassword = async (user, newPassword) => {
+  try {
+    const hashedPassword = await hashPasswordHelper(newPassword);
+    const updatedUser = await userModel.findByIdAndUpdate(user._id.toString(), { password: hashedPassword });
+
+    return updatedUser;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+const postCheckPassword = async (user, password) => {
+  try {
+    const checkUser = await userModel.findById(user._id.toString());
+
+    const passwordMatch = await checkUser.comparePassword(password);
+
+    return passwordMatch;
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 module.exports = {
@@ -86,5 +109,7 @@ module.exports = {
   getRetrieveUserByEmail,
   postSignUp,
   putUpdateUser,
-  postForgetAccount
+  postForgetAccount,
+  putChangePassword,
+  postCheckPassword
 };
