@@ -31,34 +31,33 @@ const getRetrieveOrders = async (start, end, category) => {
   if (end == undefined || end === "") {
     end = new Date("2023-1-1");
   }
-  let orders;
+  let orders = [];
   try {
-    if (category == undefined) {
-      orders = await orderModel
-        .find({ createdAt: { $gte: start, $lte: end } })
-        .populate([
-          {
-            path: "orderer",
-            model: "User",
-          },
-          {
-            path: "wares.cake",
-            model: "Cake",
-            populate: { path: "category", model: "Category" },
-          },
-        ]);
-      //   {
-      //     path: "wares.cake",
-      //     model: "Cake",
-      //   },
-      //   // {
-      //   //   path: "wares",
-      //   //   populate: { path: "wares.cake", model: "Cake" },
-      //   // },
-      // ]);
-    } else {
-      orders = [];
-    }
+    orders = await orderModel
+      .find({ createdAt: { $gte: start, $lte: end } })
+      .populate([
+        {
+          path: "orderer",
+          model: "User",
+        },
+        {
+          path: "wares.cake",
+          model: "Cake",
+          populate: { path: "category", model: "Category" },
+        },
+      ]);
+    //   {
+    //     path: "wares.cake",
+    //     model: "Cake",
+    //   },
+    //   // {
+    //   //   path: "wares",
+    //   //   populate: { path: "wares.cake", model: "Cake" },
+    //   // },
+    // ]);
+    // } else {
+    //   orders = [];
+    // }
   } catch (error) {
     console.log(error);
     orders = [];
@@ -66,6 +65,67 @@ const getRetrieveOrders = async (start, end, category) => {
   return orders;
 };
 
+const getProductRanking = async () => {
+  let rankResults = [];
+  // let orders = [];
+  try {
+    // rankResults = await orderModel.find().populate([
+    //   {
+    //     path: "wares.cake",
+    //     model: "Cake",
+    //     populate: { path: "category", model: "Category" },
+    //   },
+    // ]);
+    const orders = await orderModel.find();
+    let arrTemp = [];
+    for (const order of orders)
+    {
+      arrTemp.push(...order.wares)
+    }
+    let frequency = [];
+    for (const ware of arrTemp)
+    {
+      if (frequency[ware.cake.toString()] !== undefined)
+        frequency[ware.cake.toString()] += ware.quantity;
+      else
+        frequency[ware.cake.toString()] = ware.quantity;
+    }
+    // let temp = frequency;
+    // keysSorted = Object.keys(frequency).sort(function(a,b){return list[b]-list[a]})
+    // frequency.sort();
+    let keys = Object.keys(frequency);
+    let values = Object.values(frequency);
+    // console.log(frequency);
+    // console.log(arrTemp);
+    for (let i = 0; i < keys.length; i++)
+    {
+      rankResults.push({
+        cake: keys[i],
+        quantity: values[i],
+      });
+    }
+    // console.log(temp);
+    rankResults.sort((a, b) => b.quantity - a.quantity);
+    // console.log(temp);
+    for (const t of rankResults) {
+      const cake = await cakeModel.findById(t.cake).populate([{path:"category",model:"Category"}]);
+      t.cake = cake;
+    }
+    // for (const t of rankResults) {
+    //   const cake = await cakeModel.findById(t.cake).lean();
+    //   const { name } = await categoryModel.findById(cake.category.toString()).lean();
+    //   cake.category = name;
+    //   t.cake = cake;
+    // }
+
+  } catch (err) {
+    console.log(err);
+    rankResults = [];
+    // temp = [];
+  }
+  return rankResults;
+};
 module.exports = {
   getRetrieveOrders,
+  getProductRanking,
 };

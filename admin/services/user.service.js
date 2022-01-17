@@ -13,8 +13,6 @@ const getRetrieveUsers = async (page, search, sort, role) => {
     $match: { "state.value": { $ne: "deleted" } },
   });
 
-  if (search.endsWith("/")) search = search.slice(0, -1);
-
   if (search !== undefined) {
     pipeline.push({
       $match: {
