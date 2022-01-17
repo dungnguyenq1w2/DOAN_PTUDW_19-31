@@ -17,7 +17,11 @@ const cartSchema = new Schema({
         default: 1
       }
     }
-  ]
+  ],
+  isArchived: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const cartModel = mongoose.model('Cart', cartSchema, 'carts');

@@ -1,16 +1,4 @@
-// const updateCart = async () => {
-//   const url = '/cart/update';
-//   const response = await fetch(url, {
-//     method: 'PUT',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({
-//       localStorage
-//     })
-//   });
-// };
-
+// Update cart whenever cart change
 const updateCart = async () => {
   const url = '/cart/update';
   const response = await fetch(url, {

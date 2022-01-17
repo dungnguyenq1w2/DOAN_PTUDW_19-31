@@ -10,39 +10,46 @@ const orderSchema = new Schema({
     type: Number,
     default: 0
   },
-  note: {
-    type: String,
-    default: null
+  name: {
+    first: String,
+    last: String
   },
-  delivery: {
-    shipper: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
+  address: {
+    number: {
+      type: String
+    },
+    street: {
+      type: String
+    },
+    city: {
+      type: String
     },
     state: {
       type: String
     },
-    address: {
-      number: {
-        type: Number
-      },
-      street: {
-        type: String
-      },
-      ward: {
-        type: String
-      },
-      district: {
-        type: String
-      },
-      city: {
-        type: String
-      }
-    },
-    deliveredAt: {
-      type: Date
+    country: {
+      type: String
     }
   },
+  phone: {
+    type: String
+  },
+  note: {
+    type: String,
+    default: null
+  },
+  wares: [
+    {
+      cake: {
+        type: Schema.Types.ObjectId,
+        ref: 'Cake'
+      },
+      quantity: {
+        type: Number,
+        default: 1
+      }
+    }
+  ],
   createdAt: {
     type: Date,
     default: Date.now()
