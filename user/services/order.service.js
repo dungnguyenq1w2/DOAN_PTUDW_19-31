@@ -27,6 +27,9 @@ const postCheckOut = async (user, body) => {
       total += price * ware.quantity;
     }
 
+    const updatedCart = await cartModel
+      .findOneAndUpdate( { user: user._id, isArchived: false }, { isArchived: true });
+
     const order = await orderModel.create({
       orderer: user._id,
       total,

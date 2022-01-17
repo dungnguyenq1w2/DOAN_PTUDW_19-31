@@ -27,7 +27,7 @@ formCheckOut.addEventListener('submit', async event => {
   if (msg === 'success') {
     localStorage.removeItem('productsInCart');
     localStorage.totalCost = 0;
-    localStorage.cartNumber = 0;
+    localStorage.cartNumbers = 0;
 
     location.href = '/shoppingCart';
   } else {

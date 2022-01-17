@@ -21,7 +21,7 @@ const updateAuthCart = async (user, rawLocalStorage) => {
   });
 
   try {
-    const cart = await cartModel.findOne({ user: user._id });
+    const cart = await cartModel.findOne({ user: user._id, isArchived: false });
     let dbWares = [];
     if (cart) {
       dbWares = cart.wares.map(dbWare => {
@@ -49,7 +49,7 @@ const updateAuthCart = async (user, rawLocalStorage) => {
     }
 
     const updatedCart = await cartModel.findOneAndUpdate(
-      { user: user._id },
+      { user: user._id, isArchived: false },
       { wares: dbWares },
       { new: true, upsert: true });
   } catch (e) {
@@ -76,7 +76,7 @@ const updateInstantCart = async (user, rawLocalStorage) => {
 
   try {
     const updatedCart = await cartModel.findOneAndUpdate(
-      { user: user._id },
+      { user: user._id, isArchived: false },
       { wares: instantWares },
       { new: true, upsert: true });
   } catch (e) {
@@ -86,7 +86,7 @@ const updateInstantCart = async (user, rawLocalStorage) => {
 
 const getCurrentCart = async (user) => {
   try {
-    const cart = await cartModel.findOne({ user: user._id }).lean();
+    const cart = await cartModel.findOne({ user: user._id, isArchived: false }).lean();
 
     for (const ware of cart.wares) {
       const cake = await cakeModel.findById(ware.cake, 'figure name price');
